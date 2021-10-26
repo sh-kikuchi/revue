@@ -1,0 +1,35 @@
+{
+  "name": "revue",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
+    "@nuxt/content": "^1.14.0",
+    "analytics": "^0.7.15",
+    "axios": "^0.22.0",
+    "core-js": "^3.15.1",
+    "lodash": "^4.17.21",
+    "nuxt": "^2.15.7",
+    "nuxt-fontawesome": "^0.4.0",
+    "prism-themes": "^1.9.0",
+    "vue-slick-carousel": "^1.0.6",
+    "vuedraggable": "^2.24.3",
+    "vuejs-paginate": "^2.1.0",
+    "vuetify": "^2.5.5"
+  },
+  "devDependencies": {
+    "@nuxtjs/google-adsense": "^1.4.0",
+    "@nuxtjs/google-analytics": "^2.4.0",
+    "@nuxtjs/vuetify": "^1.12.1"
+  }
+}

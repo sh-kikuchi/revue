@@ -1,0 +1,205 @@
+<template>
+  <div id="color">
+    <h1 class="page-title">Design your styles</h1>
+    <h3 class="page-sub-title">お気に入りを見つけてみて下さい♪</h3>
+    <hr class="mt-2" />
+    <section>
+      <div class="d-sm-flex justify-space-around">
+        <div class="content-md">
+          <div :style="bindStyle" class="circle"></div>
+        </div>
+        <div class="content-md d-flex align-center" height="500">
+          <div class="content-box mx-auto">
+            <h3 class="content-name">Colors</h3>
+            <div class="content-form mx-auto">
+              <div>
+                <span>赤:</span>
+                <input v-model="red" type="range" max="255" min="0" />
+              </div>
+              <div>
+                <span>緑:</span>
+                <input v-model="green" type="range" max="255" min="0" />
+              </div>
+              <div>
+                <span>青:</span>
+                <input v-model="blue" type="range" max="255" min="0" />
+              </div>
+              <div>
+                <span>透:</span>
+                <input
+                  v-model="opacity"
+                  type="range"
+                  max="1"
+                  min="0"
+                  step="0.1"
+                />
+              </div>
+              <div>
+                color: rgba({{ red }},{{ green }},{{ blue }},{{
+                  opacity
+                }})<br />
+                background-color: rgba({{ red }},{{ green }},{{ blue }},{{
+                  opacity
+                }})
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="d-sm-flex justify-space-around">
+        <div class="content-md order-1">
+          <div :style="bindBorder" class="triangle"></div>
+        </div>
+        <div class="content-md order-0">
+          <div class="content-box mx-auto">
+            <h3 class="content-name">Triangle</h3>
+            <div class="content-form mx-auto">
+              <div>
+                <span>左:</span>
+                <input v-model="border1" type="range" max="100" min="0" />
+              </div>
+              <div>
+                <span>右:</span>
+                <input v-model="border2" type="range" max="100" min="0" />
+              </div>
+              <div>
+                <span>底:</span>
+                <input v-model="border3" type="range" max="100" min="0" />
+              </div>
+              <div>
+                <span>転:</span>
+                <input v-model="rotate" type="range" max="180" min="-180" />
+              </div>
+              <div>
+                Border-left : {{ border1 }} px<br />
+                Border-right : {{ border2 }}px<br />
+                Border-bottom: {{ border3 }} px<br />
+                rotate: {{ rotate }}°<br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="d-sm-flex justify-space-around pt-3">
+        <div class="content-md">
+          <div class="position-parent">
+            <div :style="bindPosition" class="position-child"></div>
+          </div>
+        </div>
+        <div class="content-md">
+          <div class="content-box mx-auto">
+            <h3 class="content-name">Position</h3>
+            <div class="content-form mx-auto">
+              <div>
+                <span>上:</span>
+                <input v-model="top" type="range" max="150" min="0" />
+              </div>
+              <div>
+                <span>左:</span>
+                <input v-model="left" type="range" max="150" min="0" />
+              </div>
+              Top : {{ top }} px<br />
+              Left: {{ left }}px
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      red: 0,
+      blue: 0,
+      green: 0,
+      opacity: 1,
+      top: 0,
+      left: 0,
+      width: 0,
+      height: 0,
+      border1: 100,
+      border2: 100,
+      border3: 150,
+      rotate: 0,
+    };
+  },
+  computed: {
+    bindStyle() {
+      return `background-color: rgba(${this.red},${this.green},${this.blue},${this.opacity})`;
+    },
+    bindPosition() {
+      return `top: ${this.top}px;left: ${this.left}px;`;
+    },
+    bindBorder() {
+      return `  border-left: ${this.border1}px solid transparent;
+                border-right: ${this.border2}px solid transparent;
+                border-bottom: ${this.border3}px solid tomato;
+                transform: rotate(${this.rotate}deg);`;
+    },
+  },
+};
+</script>
+<style scoped>
+/* PC用レイアウト */
+.content-md {
+  width: 350px;
+  height: 350px;
+}
+
+.content-box {
+  height: 100%;
+  align-items: center;
+}
+
+/* 各コンテンツの名前 */
+.content-name {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* 各コンテンツのフォーム */
+.content-form {
+  width: 200px;
+}
+
+/* color */
+.circle {
+  width: 200px;
+  height: 200px;
+  /* background-color: grey; */
+  margin: 0 auto;
+  margin-top: 70px;
+  border-radius: 50%;
+}
+
+/* Triangle */
+.triangle {
+  width: 0px;
+  border-width: 30px;
+  border: 3px solid #fff;
+  margin: 10px auto;
+  margin-top: 70px;
+  vertical-align: middle;
+}
+
+/* position */
+.position-parent {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: deepskyblue;
+  margin: 10px auto;
+}
+.position-child {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: lightslategrey;
+}
+</style>
