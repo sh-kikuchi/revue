@@ -22,7 +22,7 @@
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
-        <v-list-item>
+        <!-- <v-list-item>
           <v-list-item-action>
             <v-icon>mdi-email</v-icon>
           </v-list-item-action>
@@ -36,7 +36,7 @@
               </a>
             </v-list-item-title>
           </v-list-item-content>
-        </v-list-item>
+        </v-list-item> -->
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
@@ -47,25 +47,10 @@
       <h2 class="site-title">
         Re:<span><font-awesome-icon :icon="['fab', 'vuejs']" /></span>ue
       </h2>
-      <!-- <v-toolbar-title>The Grand EXperiments</v-toolbar-title> -->
-      <v-spacer />
-      <!-- <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn> -->
     </v-app-bar>
-    <v-main class="v-main">
+    <v-main tag="div" class="v-main">
       <Nuxt />
     </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right">
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <!-- <v-list-item-title>Switch drawer (click me)</v-list-item-title> -->
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer :absolute="!fixed" app justify="center">
       <v-row justify="center">&copy; {{ new Date().getFullYear() }}</v-row>
     </v-footer>
@@ -133,6 +118,12 @@ export default {
 };
 </script>
 <style>
+.v-main {
+  height: 100%;
+  background: url("../assets/image/p_new0091_m_new00910.png");
+  background-repeat: repeat;
+}
+
 .site-title {
   margin-left: 3px;
 }
@@ -140,23 +131,10 @@ export default {
   text-decoration: none;
   color: black;
 }
-.html-class {
-  height: 100%;
-}
-.body-class {
-  height: 100%;
-}
+
 .v-toolbar__title {
   overflow: visible !important;
   margin-right: 50px !important;
-}
-.v-application {
-  /* ドット（水玉）模様のCSS */
-  background-color: #ffffff;
-  background-image: radial-gradient(#006633 28%, transparent 35%),
-    radial-gradient(#006633 28%, transparent 35%);
-  background-position: 0 0, 2px 2px;
-  background-size: 4px 4px;
 }
 
 .page-title,

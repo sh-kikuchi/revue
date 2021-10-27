@@ -1,4 +1,4 @@
-<template>
+<template tag="div" class="template">
   <div id="list">
     <h1 class="page-title">Drifter's List</h1>
     <h3 class="page-sub-title">やりたいことはあなたが選ぶ</h3>
@@ -90,6 +90,11 @@ export default {
 };
 </script>
 <style scoped>
+#list {
+  min-height: 100%;
+  background: url("../assets/image/p_new0091_m_new00910.png");
+  background-repeat: repeat;
+}
 .list-form {
   width: 380px;
   margin: 10px auto;
