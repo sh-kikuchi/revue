@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/blog/html_css", {data:[{lists:[{title:"Freedom Only",createdAt:"2021-10-07T00:00:00.000Z",path:"\u002Fblog\u002Fhtml_css\u002Ftest"}]}],fetch:{},mutations:[]});
