@@ -147,9 +147,12 @@ export default {
 </script>
 <style scoped>
 /* PC用レイアウト */
-.content-md {
-  width: 350px;
-  height: 350px;
+@media screen and (min-width: 767px) {
+  /*ウィンドウ幅が767px以上の場合に適用*/
+  .content-md {
+    width: 350px;
+    height: 350px;
+  }
 }
 
 .content-box {

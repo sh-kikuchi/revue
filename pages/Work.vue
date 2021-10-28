@@ -6,7 +6,7 @@
       <v-tabs pararell>
         <v-tab>
           <v-icon left> mdi-account </v-icon>
-          自己紹介・制作
+          個人制作
         </v-tab>
         <v-tab>
           <v-icon left> mdi-briefcase </v-icon>

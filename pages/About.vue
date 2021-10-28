@@ -1,7 +1,7 @@
 <template>
   <v-container fill-height>
     <v-row align-content="center">
-      <v-col cols="6" sm="12">
+      <v-col>
         <v-card class="mx-auto">
           <v-system-bar color="pink darken-2" dark>
             <v-spacer></v-spacer>
@@ -11,7 +11,7 @@
           </v-system-bar>
           <v-container>
             <v-row dense>
-              <v-col cols="6" sm="12">
+              <v-col>
                 <div chass="article-header">
                   <div width="300" class="text-center">
                     <v-avatar size="50"
@@ -103,7 +103,7 @@
           </v-container>
         </v-card>
       </v-col>
-      <v-col class="mb-4">
+      <div class="mb-4 ml-2 mr-2">
         <h6>>>免責事項</h6>
         <hr />
         <p class="about-text">
@@ -114,9 +114,9 @@
         <p class="about-text">
           当サイトで掲載している文章や画像などにつきましては、無断転載することを禁止します。当サイトは著作権や肖像権の侵害を目的としたものではありません。著作権や肖像権に関して問題がございましたら、お問い合わせフォームよりご連絡ください。迅速に対応いたします。
         </p>
-      </v-col>
+      </div>
     </v-row>
-    <v-col class="text-center .justify-md-space-between" cols="6" sm="12">
+    <v-col class="text-center justify-md-space-between">
       <VueSlickCarousel
         :arrows="true"
         :dots="false"

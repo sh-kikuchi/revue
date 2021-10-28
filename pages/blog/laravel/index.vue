@@ -5,9 +5,9 @@
       <v-list-item-group>
         <v-list-item v-for="(c, index) in contents" :key="index">
           <v-list-item-content>
-            <nuxt-link :to="c.path" tag="div" class="tag-div-nuxt-link"
-              >{{ c.title }}>>({{ c.createdAt }})</nuxt-link
-            >
+            <nuxt-link :to="c.path" tag="div" class="tag-div-nuxt-link">{{
+              c.title
+            }}</nuxt-link>
           </v-list-item-content>
         </v-list-item>
       </v-list-item-group>
@@ -37,7 +37,7 @@ export default {
   async asyncData({ store, $content, params }) {
     const contents = await $content("blog/laravel")
       .only(["title", "createdAt", "path"])
-      .sortBy("createdAt", "desc")
+      .sortBy("sortNumber", "asc")
       .skip(0)
       .limit(15)
       .fetch();
