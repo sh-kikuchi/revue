@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/blog/php", {data:[{lists:[{title:"Freedom Only",createdAt:"2021-10-07T00:00:00.000Z",path:"\u002Fblog\u002Fphp\u002Ftest"}]}],fetch:{},mutations:[]});
