@@ -6,7 +6,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - revue',
+    titleTemplate: '%s ',
     title: 'revue',
     htmlAttrs: {
       lang: 'en'
@@ -42,6 +42,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxt/content',
+    'nuxt-webfontloader',
     ['@nuxtjs/google-adsense', {
       id: process.env.GOOGLE_ADSENSE_ID
     }],

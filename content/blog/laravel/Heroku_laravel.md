@@ -42,7 +42,15 @@ https://toolbox-kanban.herokuapp.com/ | https://git.heroku.com/toolbox-kanban.gi
 ```
 <div style="page-break-before:always"></div>
 
-## 5. herokuサーバーにpush
+## 5. アプリの情報を設定する
+```
+$ heroku config:set APP_KEY=$(php artisan key:generate --show)
+```
+上記のコマンドが効かない場合は予め、php artisan key:generate --showでアプリキーを取得して、heroku config:set APP_KEY=<アプリキー>のコマンドを打つこと。
+
+<div style="page-break-before:always"></div>
+
+## 6. herokuサーバーにpush
 
 ①　既にアプリが出来上がっている場合
 （Gitも使っている状態）

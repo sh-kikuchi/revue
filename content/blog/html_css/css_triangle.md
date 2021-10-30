@@ -20,10 +20,8 @@ sortNumber: 1
 .triangle{
   width: 0px;
   border-color: tomato; //ここは好きな色♪
-  border-style: solid;
-  border-width: 30px;
   border-right: 50px solid transparent;
-  border-bottom: 50px solid #b2ce54;
+  border-bottom: 50px solid transparent;
   border-left: 50px solid transparent; 
 }
 ```

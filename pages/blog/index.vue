@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="text-center">Tech Blog</h1>
+    <h1 class="page-title text-center">Tech Blog</h1>
     <!-- langs配列からリストを表示 ...（2）-->
     <v-list>
       <v-list-item link v-for="lang in langsData" v-bind:key="lang.id">

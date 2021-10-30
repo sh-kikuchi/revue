@@ -11,6 +11,8 @@
 </template>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Teko:wght@500&display=swap");
+
 .first-view {
   position: relative;
   background-image: url("~@/assets/image/akabane.jpg");
@@ -26,11 +28,15 @@
   line-height: 40px;
 }
 .top-title h5 {
-  font-size: 20px;
+  font-size: 30px;
+  font-family: "Anton", sans-serif;
+  font-family: "Teko", sans-serif;
 }
 .top-title h2 {
   font-size: 50px;
   margin-bottom: 5px;
+  font-family: "Anton", sans-serif;
+  font-family: "Teko", sans-serif;
 }
 .top-title span {
   color: red;

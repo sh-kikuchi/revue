@@ -27,15 +27,7 @@ $ heroku config:set DB_PASSWORD=<パスワード>
 ```
 ※configを設定する際、イコールより先はクオーテーションマークは要らない。そのままコピぺ。
 
-## 3. アプリの情報を設定する
-```
-$ heroku config:set APP_KEY=$(php artisan key:generate --show)
-```
-上記のコマンドが効かない場合は予め、php artisan key:generate --showでアプリキーを取得して、heroku config:set APP_KEY=<アプリキー>のコマンドを打つこと。
-
-<div style="page-break-before:always"></div>
-
-## 4. DBのマイグレーション
+## 3. DBのマイグレーション
 ※準備：composer.jsonに加筆
 > Laravelの.env はgit管理外なので、Heroku用の.env.heroku を用意。デプロイの際にHerokuサーバー内で.env.heroku を.env にコピーするようにする。
 ```

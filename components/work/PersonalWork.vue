@@ -29,7 +29,7 @@
           </v-list-item-content>
         </v-list-item>
         <v-card-text>
-          アプリで「お道具箱」をつくるコンセプトで始めた自主企画ものが「toolbox」です。第1弾がトレロ風かんばんアプリです。個人向けのタスク管理で、wiki機能も搭載。並べ替えは出来るようにしましたが、本家のようにドラッグアンドドロップは出来ませんので悪しからず。緑を基調としたデザイン。(email:test@test.com
+          アプリで「お道具箱」をつくるコンセプトで始めた自主企画ものが「toolbox」です。第1弾（緑アプリ）がトレロ風かんばんアプリです。個人向けのタスク管理で、wiki機能も搭載。並べ替えは出来るようにしましたが、本家のようにドラッグアンドドロップは出来ませんので悪しからず。緑を基調としたデザイン。(email:test@test.com
           password:testtest ※パスワード変更はしないで下さい)
         </v-card-text>
         <v-card-actions>
@@ -43,7 +43,7 @@
           <v-list-item-content>
             <div class="text-overline mb-4">toolboxシリーズ</div>
             <v-list-item-title class="text-h5 mb-1">
-              smalltalk
+              smalltalk（ver.2）
             </v-list-item-title>
             <v-list-item-subtitle
               >Laravel8（6~）,Bootstrap,jQuery,MySQL,HTML,CSS</v-list-item-subtitle
@@ -51,8 +51,8 @@
           </v-list-item-content>
         </v-list-item>
         <v-card-text>
-          「toolbox」第2弾。TwitterのようなSNSアプリ。「お茶の間」トークを楽しめるように、つぶやきに対してのコメント機能を実装しました。でもたまには一人で居たいよね。。そんな時には「ひとりごと」という場所で独り言を呟けます←必要か？
-          青を基調としたデザイン。
+          「toolbox」第2弾（青アプリ）。元々、TwitterのようなSNSアプリを作っていたのですが、グループトークを意識したアプリにリミックスしました。（ver.1はGit
+          Hubでレガシーとして残している。）チャンネルを作って、それ毎に「お茶の間」トークを楽しめるようにしております。でも、たまには一人で居たい時も…。そんな時は「ひとりごと」を使ってぼそぼそ呟くことも可能です。必要かは別として。
         </v-card-text>
         <v-card-actions>
           <v-btn outlined rounded text
@@ -73,7 +73,7 @@
           </v-list-item-content>
         </v-list-item>
         <v-card-text>
-          「toolbox」第3弾はブックメモアプリ。自分で決めたテーマ毎に本の要約や引用をまとめられるもの。「自分が学生時代にレポートやレジュメを作成する中であったら便利だったな」という思いでつくってみました。複数の本から情報をまとめたい時には是非。赤を貴重としたデザイン
+          「toolbox」第3弾（赤アプリ）はブックメモアプリ。自分で決めたテーマ毎に本の要約や引用をまとめられるもの。「自分が学生時代にレポートやレジュメを作成する中であったら便利だったな」という思いでつくってみました。複数の本から情報をまとめたい時には是非。
         </v-card-text>
         <v-card-actions>
           <v-btn outlined rounded text

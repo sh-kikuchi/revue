@@ -1,12 +1,12 @@
 <template>
   <div>
     <h1 class="page-title">My Works</h1>
-    <h3 class="page-sub-title mb-3">( ﾟ ρ ﾟ )ﾎﾞｰ</h3>
+    <!-- <h3 class="page-sub-title mb-3">( ﾟ ρ ﾟ )ﾎﾞｰ</h3> -->
     <v-card class="ma-5">
       <v-tabs pararell>
         <v-tab>
           <v-icon left> mdi-account </v-icon>
-          個人制作
+          ポートフォリオ
         </v-tab>
         <v-tab>
           <v-icon left> mdi-briefcase </v-icon>
