@@ -1,7 +1,7 @@
 <template tag="div" class="template">
   <div id="list">
     <h1 class="page-title">Drifter's List</h1>
-    <h3 class="page-sub-title">やりたいことはあなたが選ぶ</h3>
+    <h3 class="page-sub-title"></h3>
     <h5 class="text-center">
       ブラウザにデータに保存していますので、<br />よくお使いになるブラウザで利用して下さい
     </h5>

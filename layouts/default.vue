@@ -22,21 +22,21 @@
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
-        <!-- <v-list-item>
+        <v-list-item tag="div" class="contact-link">
           <v-list-item-action>
             <v-icon>mdi-email</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title tag="a" class="link-color">
               <a
-                class="link-color"
+                class="link-color white--text"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSd_Rz-F6RMqCKGTalCROlcjbXie6mdy39izCkQnFZrRISbefw/viewform"
               >
                 Contacts
               </a>
             </v-list-item-title>
           </v-list-item-content>
-        </v-list-item> -->
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
@@ -67,7 +67,7 @@ export default {
       items: [
         {
           icon: "mdi-apps",
-          title: "Top",
+          title: "@home",
           to: "/",
         },
         {
@@ -77,17 +77,17 @@ export default {
         },
         {
           icon: "mdi-account",
-          title: "WorkS",
+          title: "Work",
           to: "/work",
         },
         {
           icon: "mdi-fountain-pen",
-          title: "TechS",
+          title: "Tech-blog",
           to: "/blog",
         },
         {
           icon: "mdi-format-list-bulleted",
-          title: "ListS",
+          title: "List",
           to: "/list",
         },
         {
@@ -97,7 +97,7 @@ export default {
         },
         {
           icon: "mdi-book-open-variant",
-          title: "BookS",
+          title: "Book",
           to: "/book",
         },
       ],
@@ -118,6 +118,7 @@ export default {
 };
 </script>
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Teko:wght@500&display=swap");
 .v-main {
   height: 100%;
   background: url("../assets/image/p_new0091_m_new00910.png");
@@ -129,7 +130,7 @@ export default {
 }
 .link-color {
   text-decoration: none;
-  color: black;
+  color: #fff;
 }
 
 .v-toolbar__title {
@@ -140,6 +141,8 @@ export default {
 .page-title,
 .page-sub-title {
   text-align: center;
+  font-family: "Anton", sans-serif;
+  font-family: "Teko", sans-serif;
 }
 
 .contents {
@@ -157,6 +160,11 @@ export default {
 .contents {
   margin: 0 auto;
 }
+.contact-link {
+  color: #fff;
+  background-color: rgba(143, 188, 143, 0.3);
+}
+
 .footer {
   margin: 0 auto;
 }

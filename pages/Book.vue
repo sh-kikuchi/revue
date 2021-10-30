@@ -1,7 +1,7 @@
 <template>
   <div id="book">
-    <h1 class="page-title">Library</h1>
-    <h3 class="page-sub-title">今、読みたい本はどんなもの？</h3>
+    <h1 class="page-title">Book</h1>
+    <h3 class="page-sub-title">Google APIで検索</h3>
     <div>
       <v-text-field
         class="search-input"

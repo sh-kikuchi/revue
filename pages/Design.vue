@@ -1,16 +1,15 @@
 <template>
   <div id="color">
-    <h1 class="page-title">Design your styles</h1>
-    <h3 class="page-sub-title">お気に入りを見つけてみて下さい♪</h3>
-    <hr class="mt-2" />
+    <h1 class="page-title">Designs</h1>
+    <h3 class="page-sub-title">CSSレンダリング</h3>
     <section>
-      <div class="d-sm-flex justify-space-around">
+      <h3 class="content-name text-center blue-grey">Colors</h3>
+      <div class="d-sm-flex justify-space-around pt-3">
         <div class="content-md">
           <div :style="bindStyle" class="circle"></div>
         </div>
-        <div class="content-md d-flex align-center" height="500">
-          <div class="content-box mx-auto">
-            <h3 class="content-name">Colors</h3>
+        <div class="content-md order-0">
+          <div class="content-box mx-auto d-flex align-center">
             <div class="content-form mx-auto">
               <div>
                 <span>赤:</span>
@@ -48,13 +47,13 @@
       </div>
     </section>
     <section>
+      <h3 class="content-name text-center blue-grey">Triangle</h3>
       <div class="d-sm-flex justify-space-around">
         <div class="content-md order-1">
           <div :style="bindBorder" class="triangle"></div>
         </div>
         <div class="content-md order-0">
-          <div class="content-box mx-auto">
-            <h3 class="content-name">Triangle</h3>
+          <div class="content-box mx-auto d-flex align-center">
             <div class="content-form mx-auto">
               <div>
                 <span>左:</span>
@@ -84,6 +83,7 @@
       </div>
     </section>
     <section>
+      <h3 class="content-name blue-grey">Position</h3>
       <div class="d-sm-flex justify-space-around pt-3">
         <div class="content-md">
           <div class="position-parent">
@@ -91,8 +91,7 @@
           </div>
         </div>
         <div class="content-md">
-          <div class="content-box mx-auto">
-            <h3 class="content-name">Position</h3>
+          <div class="content-box mx-auto d-flex align-center">
             <div class="content-form mx-auto">
               <div>
                 <span>上:</span>
@@ -147,14 +146,18 @@ export default {
 </script>
 <style scoped>
 /* PC用レイアウト */
-.content-md {
-  width: 350px;
-  height: 350px;
+@media screen and (min-width: 767px) {
+  /*ウィンドウ幅が767px以上の場合に適用*/
+  .content-md {
+    width: 350px;
+    height: 350px;
+  }
 }
 
 .content-box {
   height: 100%;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 /* 各コンテンツの名前 */
@@ -175,6 +178,7 @@ export default {
   /* background-color: grey; */
   margin: 0 auto;
   margin-top: 70px;
+  margin-bottom: 50px;
   border-radius: 50%;
 }
 
@@ -185,6 +189,7 @@ export default {
   border: 3px solid #fff;
   margin: 10px auto;
   margin-top: 70px;
+  margin-bottom: 50px;
   vertical-align: middle;
 }
 
@@ -195,6 +200,8 @@ export default {
   height: 200px;
   background-color: deepskyblue;
   margin: 10px auto;
+  margin-top: 70px;
+  margin-bottom: 50px;
 }
 .position-child {
   position: absolute;
