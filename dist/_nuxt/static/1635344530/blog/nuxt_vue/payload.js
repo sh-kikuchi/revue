@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/blog/nuxt_vue", (function(a){return {data:[{lists:[{title:"Freedom Only",createdAt:a,path:"\u002Fblog\u002Fnuxt_vue\u002Ftest"},{title:"【解体新書】Nuxt.jsのページネーション",createdAt:a,path:"\u002Fblog\u002Fnuxt_vue\u002Fpagination"}]}],fetch:{},mutations:[]}}("2021-10-07T00:00:00.000Z")));
