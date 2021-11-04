@@ -15,7 +15,7 @@ sortNumber: 2
 
 <br>
 
-1. position: absolute
+2. position: absolute
 - 親要素を基準として、配置を決めることが出来る。
 
 <br>
