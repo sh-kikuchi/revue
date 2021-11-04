@@ -1,7 +1,7 @@
 <template>
   <div id="color">
     <h1 class="page-title">Designs</h1>
-    <h3 class="page-sub-title">CSSレンダリング</h3>
+    <h3 class="page-sub-title">スタイルレンダリング</h3>
     <section>
       <h3 class="content-name text-center blue-grey">Colors</h3>
       <div class="d-sm-flex justify-space-around pt-3">
