@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/blog/php", {data:[{lists:[{title:"PHPでメール送信",createdAt:"2021-10-28T00:00:00.000Z",path:"\u002Fblog\u002Fphp\u002Fphp_mail"}]}],fetch:{},mutations:[]});

@@ -108,6 +108,76 @@
         </div>
       </div>
     </section>
+    <section>
+      <h3 class="content-name blue-grey">Flex</h3>
+      <div class="d-sm-flex justify-space-around pt-3">
+        <div class="content-md order-1">
+          <div class="content-box mx-auto d-flex align-center">
+            <div class="flex-parent mx-auto" :style="bindDisplay">
+              <div class="flex-child"></div>
+              <div class="flex-child"></div>
+              <div class="flex-child"></div>
+            </div>
+          </div>
+        </div>
+        <div class="content-md order-0">
+          <div class="content-box mx-auto d-flex align-center">
+            <div class="content-form mx-auto">
+              <form id="display-flex">
+                <div>
+                  <input
+                    v-model="display"
+                    type="radio"
+                    value="block"
+                    name="display"
+                  />
+                  <label for="display">block</label>
+                </div>
+                <div>
+                  <input
+                    v-model="display"
+                    type="radio"
+                    value="flex"
+                    name="display"
+                  />
+                  <label for="display">flex</label>
+                </div>
+              </form>
+              <hr />
+              <from>
+                <div>
+                  <input
+                    v-model="flex"
+                    type="radio"
+                    value="center"
+                    name="flex"
+                  />
+                  <label for="flex">center</label>
+                </div>
+                <div>
+                  <input
+                    v-model="flex"
+                    type="radio"
+                    value="space-between"
+                    name="flex"
+                  />
+                  <label for="flex">space-between</label>
+                </div>
+                <div>
+                  <input
+                    v-model="flex"
+                    type="radio"
+                    value="space-around"
+                    name="flex"
+                  />
+                  <label for="flex">space-around</label>
+                </div>
+              </from>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 <script>
@@ -126,6 +196,8 @@ export default {
       border2: 100,
       border3: 150,
       rotate: 0,
+      display: "block",
+      flex: "center",
     };
   },
   computed: {
@@ -140,6 +212,10 @@ export default {
                 border-right: ${this.border2}px solid transparent;
                 border-bottom: ${this.border3}px solid tomato;
                 transform: rotate(${this.rotate}deg);`;
+    },
+    bindDisplay() {
+      return ` display: ${this.display};
+               justify-content: ${this.flex};`;
     },
   },
 };
@@ -208,5 +284,24 @@ export default {
   width: 50px;
   height: 50px;
   background-color: lightslategrey;
+}
+
+.flex-parent {
+  width: 200px;
+  height: 200px;
+  background: white;
+  border: 1px solid black;
+}
+
+.flex-child {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border: 1px solid black;
+}
+
+.flex-child:nth-child(odd) {
+  background-color: gray;
+  border: 1px solid gray;
 }
 </style>
