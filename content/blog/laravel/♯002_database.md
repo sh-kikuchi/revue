@@ -4,7 +4,7 @@ description: DB設計をしよう
 category: Laravel
 createdAt: 2021-11-18
 updatedAt: 2021-11-18
-sortNumber: 2
+sortNumber: 002
 ---
 
 ## データベースの準備
