@@ -47,6 +47,13 @@ export default {
       id: process.env.GOOGLE_ADSENSE_ID
     }],
     ['nuxt-fontawesome'],
+    [
+      "@nuxtjs/google-adsense",
+      {
+        id: "ca-pub-8867179104088194",
+        pageLevelAds: false, // 自動広告を表示させる場合
+      },
+    ],
   ],
   fontawesome: {
     imports: [
@@ -88,6 +95,7 @@ export default {
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID
   },
+
   content: {
     markdown: {
       prism: {
