@@ -52,6 +52,23 @@
       <Nuxt />
     </v-main>
     <v-footer :absolute="!fixed" app justify="center">
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8867179104088194"
+        crossorigin="anonymous"
+      ></script>
+      <!-- wide -->
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-client="ca-pub-8867179104088194"
+        data-ad-slot="8235948241"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
       <v-row justify="center">&copy; {{ new Date().getFullYear() }}</v-row>
     </v-footer>
   </v-app>

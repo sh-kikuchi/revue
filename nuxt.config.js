@@ -39,7 +39,7 @@ export default {
     '@nuxtjs/vuetify',
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+  // Modules: https://go.nuxtjs.dev/cognfig-modules
   modules: [
     '@nuxt/content',
     'nuxt-webfontloader',
