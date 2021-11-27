@@ -1,5 +1,5 @@
 ---
-title: 【CRUD】ルーティング
+title: ルーティング
 description: ビューや機能用のURLを設定
 category: Laravel
 createdAt: 2021-11-21

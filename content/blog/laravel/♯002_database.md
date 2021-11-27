@@ -1,5 +1,5 @@
 ---
-title: マイグレーションとリレーション
+title: マイグレーション
 description: DB設計をしよう
 category: Laravel
 createdAt: 2021-11-18

@@ -1,5 +1,5 @@
 ---
-title: 【CRUD】Update
+title: CRUD_Update
 description: モーダルを使った更新機能の実装
 category: Laravel
 createdAt: 2021-11-15

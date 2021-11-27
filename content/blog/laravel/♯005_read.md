@@ -1,5 +1,5 @@
 ---
-title: 【CRUD】Read
+title: CRUD_Read
 description: ビュー表示の実装
 category: Laravel
 createdAt: 2021-11-15

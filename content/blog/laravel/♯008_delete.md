@@ -1,5 +1,5 @@
 ---
-title: 【CRUD】Delete
+title: CRUD_Delete
 description: 削除機能の実装
 category: Laravel
 createdAt: 2021-11-15
