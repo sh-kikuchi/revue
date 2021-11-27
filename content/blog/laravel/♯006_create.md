@@ -1,5 +1,5 @@
 ---
-title: 【CRUD】Create
+title: CRUD_Create
 description: 追加機能の実装
 category: Laravel
 createdAt: 2021-11-15
