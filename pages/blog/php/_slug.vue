@@ -25,6 +25,17 @@
         <!-- マークダウンのレンダリング箇所 -->
         <nuxt-content :document="content" />
       </div>
+      <iframe
+        src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=pc_store&f=ifr&linkID=7ca0525393884aa872d2a306588d834c&t=revue0f-22&tracking_id=revue0f-22"
+        class="amazon-link"
+        width="300"
+        height="250"
+        scrolling="no"
+        border="0"
+        marginwidth="0"
+        style="border: none"
+        frameborder="0"
+      ></iframe>
     </div>
   </div>
 </template>
@@ -44,3 +55,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.amazon-link {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+}
+</style>

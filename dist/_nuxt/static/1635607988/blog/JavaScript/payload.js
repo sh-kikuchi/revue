@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/blog/JavaScript", {data:[{lists:[{title:"モーダル画面を作ろう。",createdAt:"2021-10-28T00:00:00.000Z",path:"\u002Fblog\u002FJavaScript\u002Fjs-modal"}]}],fetch:{},mutations:[]});

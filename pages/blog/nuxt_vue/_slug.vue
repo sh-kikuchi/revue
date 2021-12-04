@@ -22,9 +22,41 @@
             </v-row>
           </div>
         </div>
-        <!-- マークダウンのレンダリング箇所 -->
-        <nuxt-content :document="content" />
+        <!-- PCの時だけサイドバー -->
+        <div class="d-sm-none d-md-flex">
+          <div class="content-body">
+            <!-- マークダウンのレンダリング箇所 -->
+            <nuxt-content :document="content" />
+          </div>
+          <div class="sidebar ml-3" style="width: 300px">
+            <div class="sidebar-detail pc" style="width: 150px; margin: 0 auto">
+              <p style="text-align: center">おすすめ図書</p>
+              <iframe
+                class="amazon-link"
+                style="width: 120px; height: 240px"
+                marginwidth="0"
+                marginheight="0"
+                scrolling="no"
+                frameborder="0"
+                src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=revue0f-22&m=amazon&o=9&p=8&l=as1&IS2=1&detail=1&asins=4297113775&linkId=91ec389d15e529df7398e42eb0cc04f1&bc1=000000&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- Amazonアソシエイト -->
+      <iframe
+        src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=pc_store&f=ifr&linkID=7ca0525393884aa872d2a306588d834c&t=revue0f-22&tracking_id=revue0f-22"
+        class="amazon-link"
+        width="300"
+        height="250"
+        scrolling="no"
+        border="0"
+        marginwidth="0"
+        style="border: none"
+        frameborder="0"
+      ></iframe>
     </div>
   </div>
 </template>
@@ -44,3 +76,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.amazon-link {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+}
+</style>

@@ -39,7 +39,7 @@ export default {
     '@nuxtjs/vuetify',
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+  // Modules: https://go.nuxtjs.dev/cognfig-modules
   modules: [
     '@nuxt/content',
     'nuxt-webfontloader',
@@ -47,6 +47,13 @@ export default {
       id: process.env.GOOGLE_ADSENSE_ID
     }],
     ['nuxt-fontawesome'],
+    [
+      "@nuxtjs/google-adsense",
+      {
+        id: "ca-pub-8867179104088194",
+        pageLevelAds: false, // 自動広告を表示させる場合
+      },
+    ],
   ],
   fontawesome: {
     imports: [
@@ -83,11 +90,13 @@ export default {
       const { $content } = require('@nuxt/content')
       const files = await $content({ deep: true }).only(['path']).fetch()
       return files.map(file => file.path === '/index' ? '/' : file.path);
-    }
+    },
+    dir: 'dist' //npm run generateで生成されるフォルダ名を変えられるよ。
   },
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID
   },
+
   content: {
     markdown: {
       prism: {
