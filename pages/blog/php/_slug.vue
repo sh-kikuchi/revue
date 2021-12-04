@@ -59,8 +59,6 @@ export default {
 <style scoped>
 .amazon-link {
   display: block;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  text-align: center;
+  margin: 10px auto;
 }
 </style>

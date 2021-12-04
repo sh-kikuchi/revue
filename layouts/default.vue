@@ -91,7 +91,7 @@ export default {
         },
         {
           icon: "mdi-palette",
-          title: "Designs",
+          title: "Design",
           to: "/design",
         },
         {

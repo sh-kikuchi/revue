@@ -1,5 +1,5 @@
 ---
-title: 【解体新書】Nuxt.jsでブログを作ろう
+title: 【解体新書】Nuxt.jsでブログを作ろう1
 description: ブログ記事を書こう
 category: Nuxt.js
 createdAt: 2021-11-25
@@ -50,7 +50,7 @@ sortNumber: 101
 │       |     |── abc.md
 │       |     |── def.md
 │       |     |── ghi.md
-|       |
+│       |
 │       |── JavaScript
 │       |── laravel
 │       |── nuxt_vue

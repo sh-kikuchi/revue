@@ -54,7 +54,7 @@ export default {
         },
         {
           id: 4,
-          name: "PHP/mySQL",
+          name: "PHP/MySQL",
           link: "/blog/php",
           summery: "サーバーサイド言語とデータベース。CRUDを学ぶ",
         },

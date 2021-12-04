@@ -5,7 +5,6 @@ category: php
 createdAt: 2021-11-13
 updatedAt: 2021-11-13
 sortNumber: 4
-
 ---
 
 ## comment.phpを作ろう（DB連携や操作部分）
