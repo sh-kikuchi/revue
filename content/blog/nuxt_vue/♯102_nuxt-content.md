@@ -1,5 +1,5 @@
 ---
-title: 【解体新書】Nuxt.jsでブログを作ろう
+title: 【解体新書】Nuxt.jsでブログを作ろう2
 description: 記事一覧作る
 category: Nuxt.js
 createdAt: 2021-11-25

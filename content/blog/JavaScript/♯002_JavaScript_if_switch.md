@@ -1,5 +1,5 @@
 ---
-title: JavaScript（ES6 導入）
+title: 条件分岐
 description: if文 switch文
 category: JavaScript
 createdAt: 2021-11-06

@@ -73,7 +73,6 @@
     </v-footer>
   </v-app>
 </template>
-
 <script>
 export default {
   data() {
@@ -109,7 +108,7 @@ export default {
         },
         {
           icon: "mdi-palette",
-          title: "Designs",
+          title: "Design",
           to: "/design",
         },
         {
@@ -184,5 +183,32 @@ export default {
 
 .footer {
   margin: 0 auto;
+}
+
+/*アマゾンアソシエイツ*/
+.amazon-banner .amazon-link {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+/*レスポンスデザイン */
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+.pc {
+  display: block !important;
+  margin: 10px auto;
+}
+.sp {
+  display: none !important;
+}
+
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+@media only screen and (max-width: 750px) {
+  .pc {
+    display: none !important;
+  }
+  .sp {
+    display: block !important;
+  }
 }
 </style>

@@ -5,7 +5,6 @@ category: Laravel
 createdAt: 2021-11-15
 updatedAt: 2021-11-21
 sortNumber: 008
-
 ---
 
 ## ノート記事を削除出来るようにしよう（DELETE）

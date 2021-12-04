@@ -2,6 +2,17 @@
   <v-container fill-height>
     <v-row align-content="center">
       <v-col>
+      <iframe
+        src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=pc_store&f=ifr&linkID=4d06146f4b4f62e7d49216adce72aa64&t=revue0f-22&tracking_id=revue0f-22"
+        class="pc amazon-banner"
+        width="728"
+        height="90"
+        scrolling="no"
+        border="0"
+        marginwidth="0"
+        style="border: none text-align: center"
+        frameborder="0">
+      </iframe>
         <v-card class="mx-auto">
           <v-system-bar color="pink darken-2" dark>
             <v-spacer></v-spacer>
@@ -145,15 +156,15 @@
           <p>
             利用者からお預かりした個人情報の開示・訂正・削除をご希望の場合は、ご本人様よりお申し出ください。適切な本人確認を行った後、速やかに対応させていただきます。
           </p>
-          <h6>【アクセス解析ツールについて】</h6>
+          <!-- <h6>【アクセス解析ツールについて】</h6>
           <p>
             当サイトは、Googleが提供するアクセス解析ツール「Googleアナリティクス」を利用しています。Googleアナリティクスは、Cookieを使用することで利用者のトラフィックデータを収集しています。利用者はブラウザの設定でCookie（クッキー）を無効にすることで、トラフィックデータの収集を拒否することができます。なお、トラフィックデータから利用者個人を特定することはできません。詳しくは<a
               href="https://marketingplatform.google.com/about/analytics/terms/jp/"
               >Googleアナリティクス利用規約</a
             >をご確認ください。（Cookieとは、利用者のサイト閲覧履歴を利用者のコンピュータにデータとして保存しておく仕組みのこと）
-          </p>
-          <h6>【Googleアドセンスについて】</h6>
-          <p>Google などの第三者配信事業者が Cookie を使用して、ユーザーがそのウェブサイトや他のウェブサイトに過去にアクセスした際の情報に基づいて広告を配信します。とりわけ、Google が広告 Cookie を使用することにより、ユーザーがそのサイトや他のサイトにアクセスした際の情報に基づいて、Google やそのパートナーが適切な広告をユーザーに表示できます。ユーザーは、広告設定でパーソナライズ広告を無効にできます（または、www.aboutads.info にアクセスすれば、パーソナライズ広告に使われる第三者配信事業者の Cookie を無効にできます）。
+          </p> -->
+          <h6>【Amazonアソシエイト・プログラムについて】</h6>
+          <p>当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。」
           </p>
           <h6>【本ポリシーの変更】</h6>
           <p>

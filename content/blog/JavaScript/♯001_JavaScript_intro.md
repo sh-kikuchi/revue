@@ -1,9 +1,9 @@
 ---
-title: JavaScript（ES6 導入）
-description: console.log、変数、定数
+title: 変数と定数
+description: console.log、let、const
 category: JavaScript
 createdAt: 2021-11-06
-updatedAt: 2021-11-06
+updatedAt: 2021-12-04
 sortNumber: 1
 ---
 
