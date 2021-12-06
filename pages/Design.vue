@@ -72,7 +72,9 @@
                 <input v-model="rotate" type="range" max="180" min="-180" />
               </div>
               <div>
-                Border-left : {{ border1 }} px<br />
+                width: 0px; <br />
+                border-color: tomato; <br />
+                Border-left :{{ border1 }} px<br />
                 Border-right : {{ border2 }}px<br />
                 Border-bottom: {{ border3 }} px<br />
                 rotate: {{ rotate }}°<br />
@@ -101,8 +103,10 @@
                 <span>左:</span>
                 <input v-model="left" type="range" max="150" min="0" />
               </div>
+              ▼ 大きい正方形のCSS position: relative;<br />
+              ▼ 小さい正方形のCSS position:absolute;<br />
               Top : {{ top }} px<br />
-              Left: {{ left }}px
+              Left: {{ left }}px <br />
             </div>
           </div>
         </div>
@@ -124,6 +128,7 @@
           <div class="content-box mx-auto d-flex align-center">
             <div class="content-form mx-auto">
               <form id="display-flex">
+                <div>display:</div>
                 <div>
                   <input
                     v-model="display"
@@ -145,6 +150,7 @@
               </form>
               <hr />
               <from>
+                <div>justify-content:</div>
                 <div>
                   <input
                     v-model="flex"

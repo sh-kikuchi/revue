@@ -3,7 +3,13 @@
     <h1 class="page-title text-center">Tech Blog</h1>
     <!-- langs配列からリストを表示 ...（2）-->
     <v-list>
-      <v-list-item link v-for="lang in langsData" v-bind:key="lang.id">
+      <v-list-item
+        link
+        v-for="lang in langsData"
+        v-bind:key="lang.id"
+        tag="div"
+        class="lang-list"
+      >
         <v-list-item-content>
           <v-list-item-title class="text-h6">
             <nuxt-link v-bind:to="lang.link" class="nuxt-link">{{
@@ -75,5 +81,24 @@ export default {
 .nuxt-link {
   color: black;
   text-decoration: none;
+}
+.lang-list:nth-child(1) {
+  background: linear-gradient(
+    to right,
+    rgba(255, 165, 0, 0.8),
+    rgba(0, 255, 255, 0.8)
+  );
+}
+.lang-list:nth-child(2) {
+  background-color: rgba(255, 241, 0, 0.8);
+}
+.lang-list:nth-child(3) {
+  background-color: rgba(102, 238, 187, 0.8);
+}
+.lang-list:nth-child(4) {
+  background-color: rgba(148, 139, 219, 0.8);
+}
+.lang-list:nth-child(5) {
+  background-color: rgba(255, 51, 51, 0.8);
 }
 </style>
