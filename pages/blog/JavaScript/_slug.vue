@@ -60,4 +60,4 @@ export default {
   display: block;
   margin: 10px auto;
 }
-</style>>
+</style>

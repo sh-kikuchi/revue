@@ -11,15 +11,19 @@
 </template>
 <script>
 import PictureGallery from "../components/picture/PictureGallery";
+import Modal from "../components/picture/Modal";
 
 export default {
   name: "Picture",
 
   components: {
     PictureGallery,
+    Modal,
   },
   data() {
     return {
+      isShown: false,
+      selectedPicture: "",
       pictures: [
         {
           path: require("@/assets/image/panda.jpg"),
@@ -32,6 +36,21 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    onSelectPicture(path) {
+      this.setPicture(path);
+      this.openModal();
+    },
+    openModal() {
+      this.isShown = true;
+    },
+    closeModal() {
+      this.isShown = false;
+    },
+    setPicture(path) {
+      this.selectedPicture = path;
+    },
   },
 };
 </script>
