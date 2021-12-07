@@ -25,6 +25,7 @@
         <!-- マークダウンのレンダリング箇所 -->
         <nuxt-content :document="content" />
         <iframe
+          class="amazon-link"
           src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=12&l=ur1&category=pc_store&f=ifr&linkID=7ca0525393884aa872d2a306588d834c&t=revue0f-22&tracking_id=revue0f-22"
           width="300"
           height="250"

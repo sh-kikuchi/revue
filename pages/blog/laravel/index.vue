@@ -30,9 +30,8 @@
             marginheight="0"
             scrolling="no"
             frameborder="0"
-            src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=revue0f-22&m=amazon&o=9&p=8&l=as1&IS2=1&detail=1&asins=B08625YD7H&linkId=c69b6be660d3493715f856891ea97585&bc1=000000&amp;lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"
-          >
-          </iframe>
+            src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=revue0f-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4297103680&linkId=21f25f149ba9671bcbaf040424c47be7"
+          ></iframe>
         </div>
       </div>
     </v-list>
@@ -92,6 +91,7 @@ tag-div-nuxt-link {
   width: 800px;
 }
 
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
 .amazon-link {
   display: block;
   margin: 0 auto;
