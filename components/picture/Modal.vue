@@ -1,6 +1,6 @@
 <template>
   <div v-if="isShown" class="modal" @click="$emit('close')">
-    <img class="modal-picture" :src="picturePath" alt="selectedSection" />
+    <img class="modal-picture" :src="picturePath" alt="selectedPicture" />
   </div>
 </template>
 <script>

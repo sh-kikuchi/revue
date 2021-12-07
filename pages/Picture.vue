@@ -1,11 +1,19 @@
 <template>
-  <div id="picture">
+  <div>
     <div class="picture-wrap">
       <picture-gallery
         v-for="(pic, i) in pictures"
         :key="i"
         :path="pic.path"
+        @clickPicture="onSelectPicture(pic.path)"
       ></picture-gallery>
+      <transition name="fade">
+        <Modal
+          :is-shown="isShown"
+          :picture-path="selectedPicture"
+          @close="closeModal"
+        ></Modal>
+      </transition>
     </div>
   </div>
 </template>
@@ -14,8 +22,6 @@ import PictureGallery from "../components/picture/PictureGallery";
 import Modal from "../components/picture/Modal";
 
 export default {
-  name: "Picture",
-
   components: {
     PictureGallery,
     Modal,
