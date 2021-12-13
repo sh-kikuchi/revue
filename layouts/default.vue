@@ -22,21 +22,6 @@
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
-        <v-list-item tag="div" class="contact-link">
-          <v-list-item-action>
-            <v-icon>mdi-email</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title tag="a" class="link-color">
-              <a
-                class="link-color white--text"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSd_Rz-F6RMqCKGTalCROlcjbXie6mdy39izCkQnFZrRISbefw/viewform"
-              >
-                Contacts
-              </a>
-            </v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
@@ -52,24 +37,14 @@
       <Nuxt />
     </v-main>
     <v-footer :absolute="!fixed" app justify="center">
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8867179104088194"
-        crossorigin="anonymous"
-      ></script>
-      <!-- wide -->
-      <ins
-        class="adsbygoogle"
-        style="display: block"
-        data-ad-client="ca-pub-8867179104088194"
-        data-ad-slot="8235948241"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
       <v-row justify="center">&copy; {{ new Date().getFullYear() }}</v-row>
+      <v-icon>mdi-email</v-icon>
+      <a
+        class="link-color"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSd_Rz-F6RMqCKGTalCROlcjbXie6mdy39izCkQnFZrRISbefw/viewform"
+      >
+        Contacts
+      </a>
     </v-footer>
   </v-app>
 </template>
@@ -146,7 +121,7 @@ export default {
 }
 .link-color {
   text-decoration: none;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .v-toolbar__title {
