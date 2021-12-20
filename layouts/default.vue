@@ -15,61 +15,39 @@
           router
           exact
         >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item tag="div" class="contact-link">
-          <v-list-item-action>
-            <v-icon>mdi-email</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title tag="a" class="link-color">
-              <a
-                class="link-color white--text"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSd_Rz-F6RMqCKGTalCROlcjbXie6mdy39izCkQnFZrRISbefw/viewform"
-              >
-                Contacts
-              </a>
-            </v-list-item-title>
-          </v-list-item-content>
+          <div>
+            <v-list-item-action tag="div" class="v-list-item-action">
+              <v-icon size="30">
+                {{ item.icon }}
+              </v-icon>
+              <v-list-item-title v-text="item.title" class="item-subtitle" />
+            </v-list-item-action>
+          </div>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
-      </v-btn>
-      <h2 class="site-title">
-        Re:<span><font-awesome-icon :icon="['fab', 'vuejs']" /></span>ue
-      </h2>
+    <v-app-bar fixed app>
+      <div>
+        <h2 class="site-title">Re:Vue</h2>
+      </div>
+      <div>
+        <span>
+          <a
+            class="link-color"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd_Rz-F6RMqCKGTalCROlcjbXie6mdy39izCkQnFZrRISbefw/viewform"
+            ><v-icon>mdi-email</v-icon>
+          </a>
+        </span>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      </div>
     </v-app-bar>
     <v-main tag="div" class="v-main">
       <Nuxt />
     </v-main>
     <v-footer :absolute="!fixed" app justify="center">
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8867179104088194"
-        crossorigin="anonymous"
-      ></script>
-      <!-- wide -->
-      <ins
-        class="adsbygoogle"
-        style="display: block"
-        data-ad-client="ca-pub-8867179104088194"
-        data-ad-slot="8235948241"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <v-row justify="center">&copy; {{ new Date().getFullYear() }}</v-row>
+      <v-row justify="center">
+        &copy; Project R {{ new Date().getFullYear() }}</v-row
+      >
     </v-footer>
   </v-app>
 </template>
@@ -83,12 +61,12 @@ export default {
       items: [
         {
           icon: "mdi-apps",
-          title: "@home",
+          title: "",
           to: "/",
         },
         {
           icon: "mdi-information-outline",
-          title: "Readme",
+          title: "About",
           to: "/about",
         },
         {
@@ -98,7 +76,7 @@ export default {
         },
         {
           icon: "mdi-fountain-pen",
-          title: "Tech-blog",
+          title: "Blog",
           to: "/blog",
         },
         {
@@ -117,8 +95,8 @@ export default {
           to: "/book",
         },
       ],
-      miniVariant: false,
-      right: true,
+      miniVariant: true,
+      right: false,
       rightDrawer: false,
       title: "Vuetify.js",
     };
@@ -135,18 +113,40 @@ export default {
 </script>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Teko:wght@500&display=swap");
+.v-toolbar__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .v-main {
   height: 100%;
   background: url("../assets/image/p_new0091_m_new00910.png");
-  background-repeat: repeat;
+  /* background-repeat: repeat; */
 }
 
 .site-title {
   margin-left: 3px;
 }
+
+/**メニュータイトル */
+.list-item {
+  display: block;
+}
+
+.item-title {
+  text-align: center;
+}
+
+.item-subtitle {
+  text-align: center;
+  font-size: 7px;
+  padding: 0;
+}
+
 .link-color {
   text-decoration: none;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .v-toolbar__title {

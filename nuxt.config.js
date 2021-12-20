@@ -41,19 +41,17 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/cognfig-modules
   modules: [
-    '@nuxt/content',
-    'nuxt-webfontloader',
-    ['@nuxtjs/google-adsense', {
-      id: process.env.GOOGLE_ADSENSE_ID
-    }],
-    ['nuxt-fontawesome'],
+    ['@nuxt/content'],
+    ['nuxt-webfontloader'],
     [
-      "@nuxtjs/google-adsense",
+      '@nuxtjs/google-gtag',
       {
-        id: "ca-pub-8867179104088194",
-        pageLevelAds: false, // 自動広告を表示させる場合
-      },
+        id: 'G-M7RFW1SFQY',
+        debug: true
+      }
     ],
+    ['nuxt-fontawesome'],
+
   ],
   fontawesome: {
     imports: [
