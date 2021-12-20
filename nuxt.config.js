@@ -41,8 +41,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/cognfig-modules
   modules: [
-    '@nuxt/content',
-    'nuxt-webfontloader',
+    ['@nuxt/content'],
+    ['nuxt-webfontloader'],
     [
       '@nuxtjs/google-gtag',
       {

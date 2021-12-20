@@ -7,10 +7,10 @@
           <v-icon left> mdi-account </v-icon>
           ポートフォリオ
         </v-tab>
-        <v-tab>
+        <!-- <v-tab>
           <v-icon left> mdi-briefcase </v-icon>
           おしごと
-        </v-tab>
+        </v-tab> -->
         <v-tab>
           <v-icon left> mdi-account-multiple </v-icon>
           ユニット活動
@@ -18,9 +18,9 @@
         <v-tab-item>
           <PersonalWork></PersonalWork>
         </v-tab-item>
-        <v-tab-item>
+        <!-- <v-tab-item>
           <MainJob></MainJob>
-        </v-tab-item>
+        </v-tab-item> -->
         <v-tab-item>
           <TeamWork></TeamWork>
         </v-tab-item>

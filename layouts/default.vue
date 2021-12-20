@@ -15,36 +15,39 @@
           router
           exact
         >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
+          <div>
+            <v-list-item-action tag="div" class="v-list-item-action">
+              <v-icon size="30">
+                {{ item.icon }}
+              </v-icon>
+              <v-list-item-title v-text="item.title" class="item-subtitle" />
+            </v-list-item-action>
+          </div>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
-      </v-btn>
-      <h2 class="site-title">
-        Re:<span><font-awesome-icon :icon="['fab', 'vuejs']" /></span>ue
-      </h2>
+    <v-app-bar fixed app>
+      <div>
+        <h2 class="site-title">Re:Vue</h2>
+      </div>
+      <div>
+        <span>
+          <a
+            class="link-color"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd_Rz-F6RMqCKGTalCROlcjbXie6mdy39izCkQnFZrRISbefw/viewform"
+            ><v-icon>mdi-email</v-icon>
+          </a>
+        </span>
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      </div>
     </v-app-bar>
     <v-main tag="div" class="v-main">
       <Nuxt />
     </v-main>
     <v-footer :absolute="!fixed" app justify="center">
-      <v-row justify="center">&copy; {{ new Date().getFullYear() }}</v-row>
-      <v-icon>mdi-email</v-icon>
-      <a
-        class="link-color"
-        href="https://docs.google.com/forms/d/e/1FAIpQLSd_Rz-F6RMqCKGTalCROlcjbXie6mdy39izCkQnFZrRISbefw/viewform"
+      <v-row justify="center">
+        &copy; Project R {{ new Date().getFullYear() }}</v-row
       >
-        Contacts
-      </a>
     </v-footer>
   </v-app>
 </template>
@@ -58,12 +61,12 @@ export default {
       items: [
         {
           icon: "mdi-apps",
-          title: "@home",
+          title: "",
           to: "/",
         },
         {
           icon: "mdi-information-outline",
-          title: "Readme",
+          title: "About",
           to: "/about",
         },
         {
@@ -73,7 +76,7 @@ export default {
         },
         {
           icon: "mdi-fountain-pen",
-          title: "Tech-blog",
+          title: "Blog",
           to: "/blog",
         },
         {
@@ -92,8 +95,8 @@ export default {
           to: "/book",
         },
       ],
-      miniVariant: false,
-      right: true,
+      miniVariant: true,
+      right: false,
       rightDrawer: false,
       title: "Vuetify.js",
     };
@@ -110,15 +113,37 @@ export default {
 </script>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Teko:wght@500&display=swap");
+.v-toolbar__content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .v-main {
   height: 100%;
   background: url("../assets/image/p_new0091_m_new00910.png");
-  background-repeat: repeat;
+  /* background-repeat: repeat; */
 }
 
 .site-title {
   margin-left: 3px;
 }
+
+/**メニュータイトル */
+.list-item {
+  display: block;
+}
+
+.item-title {
+  text-align: center;
+}
+
+.item-subtitle {
+  text-align: center;
+  font-size: 7px;
+  padding: 0;
+}
+
 .link-color {
   text-decoration: none;
   /* color: #fff; */
