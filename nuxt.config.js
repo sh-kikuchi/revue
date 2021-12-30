@@ -83,6 +83,11 @@ export default {
       }
     }
   },
+  webfontloader: {
+    google: {
+      families: ['Anton:400,700', 'Teko:400,700']
+    }
+  },
   generate: {
     async routes() {
       const { $content } = require('@nuxt/content')
