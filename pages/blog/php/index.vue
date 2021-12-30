@@ -1,6 +1,12 @@
 <template>
   <div>
     <v-list shaped>
+      <a
+        href="#"
+        onclick="window.history.back(); return false;"
+        class="back-link"
+        >◀BACK</a
+      >
       <v-subheader>記事一覧</v-subheader>
       <div class="d-sm-none d-md-flex">
         <v-list-item-group tag="div" class="tag-div-item-group">

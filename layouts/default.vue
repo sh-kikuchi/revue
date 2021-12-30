@@ -79,20 +79,21 @@ export default {
           title: "Blog",
           to: "/blog",
         },
-        {
-          icon: "mdi-format-list-bulleted",
-          title: "List",
-          to: "/list",
-        },
+
         {
           icon: "mdi-palette",
           title: "Design",
           to: "/design",
         },
         {
-          icon: "mdi-book-open-variant",
-          title: "Book",
-          to: "/book",
+          icon: "mdi-camera",
+          title: "Views",
+          to: "/picture",
+        },
+        {
+          icon: "mdi-format-list-bulleted",
+          title: "List",
+          to: "/list",
         },
       ],
       miniVariant: true,
@@ -190,6 +191,12 @@ export default {
   display: block;
   margin: 0 auto;
   margin-bottom: 10px;
+}
+
+/*テックブログの記事一覧*/
+.back-link {
+  color: black;
+  text-decoration: none;
 }
 
 /*レスポンスデザイン */

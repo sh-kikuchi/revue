@@ -1,6 +1,15 @@
 <template>
   <div v-if="isShown" class="modal" @click="$emit('close')">
-    <img class="modal-picture" :src="picturePath" alt="selectedPicture" />
+    <div class="modal-detail">
+      <img class="modal-picture" :src="picturePath" alt="selectedPicture" />
+      <input
+        type="text"
+        class="modal-text"
+        :value="pictureText"
+        readonly
+        disabled
+      />
+    </div>
   </div>
 </template>
 <script>
@@ -11,6 +20,10 @@ export default {
       default: false,
     },
     picturePath: {
+      type: String,
+      default: "",
+    },
+    pictureText: {
       type: String,
       default: "",
     },
@@ -26,13 +39,22 @@ export default {
   height: 100%;
   background: rgba(29, 29, 36, 0.9);
 }
-.modal-picture {
+.modal-detail {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: calc(100vw - 200px);
-  height: calc(100vh -100px);
   object-fit: contain;
+}
+.modal-picture {
+  display: block;
+  width: 300px;
+  height: 300px;
+}
+.modal-text {
+  display: block;
+  width: 300px;
+  font-size: 12px;
+  color: whitesmoke;
 }
 </style>

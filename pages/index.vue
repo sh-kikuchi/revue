@@ -1,5 +1,5 @@
 <template>
-  <v-row align="center" class="first-view">
+  <v-row align="center" class="first-view first-view-sp">
     <v-col cols="12" sm="8" md="6">
       <div class="top-title">
         <h5 class="my-0">The Grand</h5>
@@ -24,6 +24,22 @@
   margin: 0;
   padding: 0;
 }
+
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+@media only screen and (max-width: 750px) {
+  .first-view-sp {
+    position: relative;
+    background-image: url("~@/assets/image/akabane_sp.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
 .top-title {
   line-height: 40px;
 }
