@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="page-title">My Works</h1>
+    <h1 class="page-title text-center mt-4">Works</h1>
     <v-card class="ma-5">
       <v-tabs pararell>
         <v-tab>

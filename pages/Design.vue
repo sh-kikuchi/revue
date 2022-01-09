@@ -1,7 +1,6 @@
 <template>
   <div id="color">
-    <h1 class="page-title">Designs</h1>
-    <h3 class="page-sub-title">スタイルレンダリング</h3>
+    <h1 class="page-title mt-4">Designs</h1>
     <section>
       <h3 class="content-name text-center blue-grey">Colors</h3>
       <div class="d-sm-flex justify-space-around pt-3">
@@ -71,13 +70,13 @@
                 <span>転:</span>
                 <input v-model="rotate" type="range" max="180" min="-180" />
               </div>
-              <div>
+              <div style="font-size: 12px">
                 width: 0px; <br />
-                border-color: tomato; <br />
-                Border-left :{{ border1 }} px<br />
-                Border-right : {{ border2 }}px<br />
-                Border-bottom: {{ border3 }} px<br />
-                rotate: {{ rotate }}°<br />
+                border: 3px solid #fff; <br />
+                border-left :{{ border1 }}px solid transparent;<br />
+                border-right : {{ border2 }}px solid transparent;<br />
+                border-bottom: {{ border3 }}px solid tomato;<br />
+                transform: rotate({{ rotate }}deg);
               </div>
             </div>
           </div>
