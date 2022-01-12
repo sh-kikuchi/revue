@@ -3,8 +3,8 @@ title: 【解体新書】Nuxt.jsのページネーション
 description: 簡単にページネーション実装♪
 category: Nuxt.js
 createdAt: 2021-10-07
-updatedAt: 2021-11-27
-sortNumber: 104
+updatedAt: 2022-01-08
+sortNumber: 105
 ---
 
 # 1. はじめに

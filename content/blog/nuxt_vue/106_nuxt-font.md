@@ -3,8 +3,9 @@ title: 【解体新書】Nuxt.jsでフォント指定
 description: Googleフォントの使い方
 category: Nuxt.js
 createdAt: 2021-10-30
-updatedAt: 2021-11-25
-sortNumber: 105
+updatedAt: 2022-01-08
+sortNumber: 106
+
 ---
 
 # 1.はじめに

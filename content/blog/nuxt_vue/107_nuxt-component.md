@@ -3,8 +3,8 @@ title: 【解体新書】インスタ風ギャラリーをつくる
 description: コンポーネントの概念に触れる。
 category: Nuxt.js
 createdAt: 2021-11-25
-updatedAt: 2021-12-28
-sortNumber: 106
+updatedAt: 2022-01-08
+sortNumber: 107
 ---
 
 # 1.はじめに

@@ -4,7 +4,7 @@ description: ブログのメニューをつくる
 category: Nuxt.js
 createdAt: 2021-01-08
 updatedAt: 2022-01-08
-sortNumber: 103
+sortNumber: 102
 ---
 # 1. はじめに
 ブログの最初はメニュー画面にしたいと思います。各言語の記事一覧に遷移出来るように実装します。
