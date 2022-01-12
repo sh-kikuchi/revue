@@ -158,7 +158,7 @@ export default {
 .page-title,
 .page-sub-title {
   text-align: center;
-  font-family: "Anton", sans-serif;
+  font-family: "" Anton, sans-serif;
   font-family: "Teko", sans-serif;
 }
 

@@ -1,106 +1,112 @@
 ---
-title: 【解体新書】Nuxt.jsでブログを作ろう2
-description: 記事一覧作る
+title: 【解体新書】Nuxt.jsでテックブログを作ろう2
+description: ブログのメニューをつくる
 category: Nuxt.js
-createdAt: 2021-11-25
-updatedAt: 2021-11-25
+createdAt: 2021-01-08
+updatedAt: 2022-01-08
 sortNumber: 102
 ---
+# 1. はじめに
+ブログの最初はメニュー画面にしたいと思います。各言語の記事一覧に遷移出来るように実装します。
 
-### ブログ記事を読み込みましょう
->  `index.vue`を作成
+<br>
+
+# 2. `index.vue`を作成（blog直下）
 ---
+ディレクトリは下記のように作ります。今回の実装はblogフォルダ直下にある`index.vue`を編集していきます。
 ```
 プロジェクトディレクトリ
 |
 |── pages
 │   |── blog
-│       |── html_css
+│       |── _articles
 │       |     |── _slug.vue
 │       |     |── index.vue
-│       |
-│       |── JavaScript
-│       |── laravel
-│       |── nuxt_vue
-│       |── php
-│   
+│       |── index.vue　←ここ
 ```
 <br>
 
-### template部分 
+## template部分 
 ---
 ```html
 <template>
-  <div>
-    <v-list shaped>
-      <v-subheader>記事一覧</v-subheader>
-      <v-list-item-group>
-        <v-list-item v-for="(c, index) in contents" :key="index">
-          <v-list-item-content>
-            <nuxt-link :to="c.path" tag="div" class="tag-div-nuxt-link">{{
-              c.title
+  <div class="container">
+    <h1 class="page-title text-center">Tech Blog</h1>
+    <!-- langs配列からリストを表示 -->
+    <v-list>
+      <v-list-item
+        link
+        v-for="lang in langsData"
+        v-bind:key="lang.id"
+        tag="div"
+        class="lang-list"
+      >
+        <v-list-item-content>
+          <v-list-item-title class="text-h6">
+            <nuxt-link v-bind:to="lang.link" class="nuxt-link">{{
+              lang.name
             }}</nuxt-link>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list-item-group>
+          </v-list-item-title>
+          <v-list-item-subtitle>{{ lang.summery }}</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
     </v-list>
   </div>
 </template>
 ```
+■ `v-for="lang in langsData"`
+> 変数`lang`に格納された情報をループで表示される。`<script>`タグで`langsData`の配列を用意し、その中にID、名前、URL、サマリの情報が入ったオブジェクトをセットしてあります。そのデータをループさせています。
 
-■ `v-for="(c, index) in contents" :key="index"`
-> 変数`c`に格納された情報をループで表示される。例えば、`c.title`ようにメタ情報を表示することが出来る。
-  
 <br>
 
-### script部分 
+## script部分 
 ---
 ```js
 <script>
 export default {
   data() {
     return {
-      page: 1,
-      length: 0,
-      lists: [],
-      contents: [],
-      pageSize: 10,
+      langsData: [
+        {
+          id: 1,
+          name: "HTML/CSS",
+          link: "/blog/html_css",
+          summery: "マークアップ言語とデザインを学ぶ",
+        },
+        {
+          id: 2,
+          name: "JavaScript",
+          link: "/blog/JavaScript",
+          summery: "JavaScriptとjQueryを知る",
+        },
+        {
+          id: 3,
+          name: "Vue.js/Nuxt.js",
+          link: "/blog/nuxt_vue",
+          summery:
+            "JavaScriptのフレームワークがVue.js。そしてVue.jsのフレームワークがNuxt.js",
+        },
+        {
+          id: 4,
+          name: "PHP/MySQL",
+          link: "/blog/php",
+          summery: "サーバーサイド言語とデータベース。CRUDを学ぶ",
+        },
+        {
+          id: 5,
+          name: "Laravel",
+          link: "/blog/laravel",
+          summery: "PHPのフレームワーク。",
+        },
+      ],
     };
   },
-  mounted: function () {
-    this.length = Math.ceil(this.lists.length / this.pageSize);
-    this.contents = this.lists.slice(0, this.pageSize);
-  },
-  async asyncData({ store, $content, params }) {
-    const contents = await $content("blog/html_css")
-      .only(["title", "createdAt", "path"])
-      .sortBy("sortNumber", "asc")
-      .skip(0)
-      .limit(15)
-      .fetch();
-    return {
-      contents
-    };
-  },
-
 };
 </script>
 ```
-■ 【Pick Up】 asyncDataを利用して記事一覧
-- `$content('blog/html_css')`
-  > content内のblog/html_cssフォルダーより記事を抽出
+<br>
 
-- `.only(["title", "createdAt", "path"])`
-  > コンテンツ取得をする。
+# 3.おわりに
+今回はメニュー画面を作ってみました。見たい言語をクリックした時に`~/blog/言語名`に遷移し、見たい言語の記事リストが表示されるようになります。そのURLの言語名の部分は後ほど重要になります。次回は記事リストの表示についてまとめます。
 
-- `.sortBy("sortNumber", "asc")`
-  > ソート番号を昇順で並べる。
-
-- `.skip(n)`
-  > 結果をnだけスキップします。
-
-- `.limit(n)`
-  > 結果の数を最大でnまでに制限します。
-
-- `.fetch()`
-  > データを収集
+<br>
