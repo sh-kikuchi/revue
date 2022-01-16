@@ -51,7 +51,8 @@ export default {
       }
     ],
     ['nuxt-fontawesome'],
-    ['@nuxtjs/google-adsense']
+    ['@nuxtjs/google-adsense'],
+    ['@nuxtjs/moment']
   ],
   fontawesome: {
     imports: [
@@ -108,6 +109,10 @@ export default {
         theme: 'prism-themes/themes/prism-material-oceanic.css'
       }
     }
+  },
+  moment: {
+    // ここにオプションが記述できる
+    locales: ['ja']
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

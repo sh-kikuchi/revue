@@ -2,7 +2,7 @@
   <v-container fill-height>
     <v-row align-content="center">
       <v-col>
-        <iframe
+        <!-- <iframe
           src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=pc_store&f=ifr&linkID=4d06146f4b4f62e7d49216adce72aa64&t=revue0f-22&tracking_id=revue0f-22"
           class="pc amazon-banner"
           width="728"
@@ -13,7 +13,7 @@
           style="border: none text-align: center"
           frameborder="0"
         >
-        </iframe>
+        </iframe> -->
         <v-card class="mx-auto">
           <v-system-bar color="pink darken-2" dark>
             <v-spacer></v-spacer>
@@ -167,13 +167,13 @@
                     >Googleアナリティクス利用規約</a
                   >をご確認ください。（Cookieとは、利用者のサイト閲覧履歴を利用者のコンピュータにデータとして保存しておく仕組みのこと）
                 </p>
-                <h6>【Googleアドセンスについて】</h6>
+                <!-- <h6>【Googleアドセンスについて】</h6>
                 <p>
                   当サイトはGoogle などの第三者配信事業者が Cookie を使用して、ユーザーがそのウェブサイトや他のウェブサイトに過去にアクセスした際の情報に基づいて広告を配信しております。ユーザーは広告設定でパーソナライズ広告を無効にできます。（または、www.aboutads.info にアクセスすれば、パーソナライズ広告に使われる第三者配信事業者の Cookie を無効にできます）。
-                </p>
-                <h6>【Amazonアソシエイト・プログラムについて】</h6>
+                </p> -->
+                <!-- <h6>【Amazonアソシエイト・プログラムについて】</h6>
                 <p>当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
-                </p>
+                </p> -->
                 <h6>【本ポリシーの変更】</h6>
                 <p>
                   当サイトは、法令の制定、改正等により、本ポリシーを適宜見直し、予告なく変更する場合があります。本ポリシーの変更は、変更後の本ポリシーが当サイトに掲載された時点、またはその他の方法により変更後の本ポリシーが閲覧可能となった時点で有効になります。
