@@ -1,5 +1,10 @@
 <template>
-  <div class="container">
+  <div class="container tech-blog">
+    <!--ナビゲーションバー-->
+    <div class="navigation-bar pt-1">
+      <v-icon>mdi-home</v-icon>
+      <nuxt-link to="/" tag="a" class="navigation"> Home</nuxt-link>
+    </div>
     <h1 class="page-title text-center">Tech Blog</h1>
     <!-- langs配列からリストを表示 ...（2）-->
     <v-list>
@@ -20,7 +25,7 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-    <iframe
+    <!-- <iframe
       src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=pc_store&f=ifr&linkID=4d06146f4b4f62e7d49216adce72aa64&t=revue0f-22&tracking_id=revue0f-22"
       class="pc amazon-banner"
       width="728"
@@ -30,7 +35,7 @@
       marginwidth="0"
       style="border: none"
       frameborder="0"
-    ></iframe>
+    ></iframe> -->
   </div>
 </template>
 <script>
@@ -78,7 +83,19 @@ export default {
 };
 </script>
 <style scoped>
+.tech-blog {
+  max-width: 820px;
+  margin: 0 auto;
+}
+.navigation {
+  color: black;
+  text-decoration: none;
+}
+.navigation:hover {
+  color: lightgreen;
+}
 .nuxt-link {
+  max-width: 820px;
   color: black;
   text-decoration: none;
 }

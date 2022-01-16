@@ -1,6 +1,19 @@
 
 <template>
   <div class="p-main-container">
+    <!--ナビゲーションバー-->
+    <div class="navigation-bar pt-1">
+      <v-icon>mdi-home</v-icon>
+      <nuxt-link to="/" tag="a" class="navigation"> Home</nuxt-link
+      ><span> > </span>
+      <v-icon>mdi-fountain-pen</v-icon>
+      <nuxt-link to="/blog" tag="a" class="navigation"> Blog</nuxt-link>
+      <span> > </span>
+      <v-icon>mdi-fountain-pen</v-icon>
+      <nuxt-link to="{navigation}" tag="a" class="navigation">
+        {{ dirParam }}</nuxt-link
+      >
+    </div>
     <div class="p-main-wrapper">
       <!-- メインのエリア -->
       <div id="l-center-area" class="ma-3">
@@ -50,9 +63,14 @@ export default {
     const content = await $content("blog/" + dirParam)
       .where({ path: "/blog/" + dirParam + "/" + params.slug })
       .fetch();
+
+    const navigation = "blog/" + dirParam;
+
     if (content.length > 0) {
       return {
         content: content[0],
+        navigation,
+        dirParam,
       };
     } else {
       redirect("/blog/" + dirParam);
@@ -61,6 +79,13 @@ export default {
 };
 </script>
 <style scoped>
+.navigation {
+  color: black;
+  text-decoration: none;
+}
+.navigation:hover {
+  color: lightgreen;
+}
 .p-main-container {
   max-width: 820px;
   margin: 0 auto;

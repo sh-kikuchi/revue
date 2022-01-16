@@ -7,23 +7,23 @@ updatedAt: 2021-12-04
 sortNumber: 1
 ---
 
-## ■ JavaScriptとは？
-> 動的にコンテンツを更新したり、マルチメディアを管理したり、その他多くのことができるスクリプト言語　[JavaScript - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript)
+# 1. はじめに
+JavaScriptは動的にコンテンツを更新したり、マルチメディアを管理したりなどが出来るスクリプト言語です。（[JavaScript - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript)）もっとザックリ言うならば。Webページに様々な動きを加えることが出来るものです。これから様々な学びを通して、JavaScriptの可能性を広げてみたいです。
 
-⇒Webページに様々な動きを加えることが出来る。
+<br>
 
-## ■ まずはコンソールを出してみよう
+# 2. まずはコンソールを出してみよう
 - windows：「Google Chromeの設定」->「その他のツール」->「デベロッパーツール」
   <br> ⇒実は「F12」を押せば一発。
 
 - 「デベロッパーツール」内にあるconsoleをクリックすれば、プログラムが書けるスペースが出現。
 
 - 試しに書いてみよう。
-    ```js
-    console.log(123);
-    console.log(1+2+3);
-    console.log("文字列");
-    console.log("1"+"2"+"3");
+    ```js 
+     console.log(123);
+      console.log(1+2+3);
+      console.log("文字列");
+      console.log("1"+"2"+"3");
     ```
 
 ★Point <br>
@@ -35,8 +35,10 @@ sortNumber: 1
 
 - 演算子には「+」の他に「-」（引き算）、「*」（掛け算）、「/」(割り算)、「%」（剰余）がある。いろいろ計算してみよう。
 
-## ■ 変数と定数
-### 1. 変数とは？
+<br>
+
+# 3.  変数と定数
+■ 変数とは？
 - 値や文字列を入れる箱のようなもの。
 - 「let 変数名 = 値」（右辺の値を左辺の変数に入れるイメージ）
 - 繰り返し値を使えるし、更新することが出来るのがメリット
@@ -61,7 +63,7 @@ sortNumber: 1
     console.log(math);
     ```
 
-### 2. 定数とは？
+■ 定数とは？
 - 値や文字列を入れる箱のようなもの。これは変数と同じ。
 - 「const 変数名 = 値」
 - 変数と違うところは値が更新されない。
@@ -79,3 +81,8 @@ sortNumber: 1
     console.log(math);　//エラー発生
     ```
     ⇒エラー：`Uncaught SyntaxError: Identifier 'math' has already been declared`
+
+<br>
+
+# 4. おわりに
+console.logはデバッグに使えるので実装する時に処理がどのようにされているかを確認するのに役立つかと思います。変数や定数も今後、死ぬほど使うので意味をここで把握して色々なコーディングを通じて、それぞれの役割を体験していきましょう（自分もね）。

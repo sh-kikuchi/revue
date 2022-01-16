@@ -114,6 +114,7 @@ export default {
 </script>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Teko:wght@500&display=swap");
+
 .v-toolbar__content {
   width: 100%;
   display: flex;
