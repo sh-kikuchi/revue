@@ -7,12 +7,14 @@ updatedAt: 2021-11-14
 sortNumber: 1
 ---
 
-## MySQLにおけるデータベース接続
-今回は`tests`というデータベース（以下、DB）を作って、その中に`comments`というテーブルを作ってみましょう。このDBを利用してコメント一覧を使っていきます。
+# 1. はじめに
+PHPはデータベースの操作を得意とします。MySQLとの親和性が高く、DBのデータ表示、追加、更新、削除が出来ます。今回は`tests`というデータベース（以下、DB）を作って、その中に`comments`というテーブルを作ってみましょう。このDBを利用してコメント一覧を使っていきます。
 
 <br>
 
-■ MySQL設定<br>
+# 2. MySQLにおけるデータベース接続
+
+### ■ MySQL設定<br>
 1. XAMPPがあるディレクトリまで移動
     ```
     cd /xampp/mysql/bin
@@ -43,3 +45,8 @@ sortNumber: 1
     ```
     INSERT INTO `comments` (`id`, `name`, `title`, `comment`, `created_at`, `updated_at`) VALUES (NULL, 'JEDI', 'Force Awakens', 'May the force be with you.', current_timestamp(), current_timestamp());
     ```
+
+<br>
+
+# 3.おわりに
+PHPに入る前にMySQLのDBの設定やテーブルの作るという準備で終わってしまいました。。が、次回はPHPと連携するにはどうすれば良いかを見ていきます。
