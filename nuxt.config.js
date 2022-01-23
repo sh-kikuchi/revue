@@ -51,7 +51,7 @@ export default {
       }
     ],
     ['nuxt-fontawesome'],
-    ['@nuxtjs/google-adsense'],
+    // ['@nuxtjs/google-adsense'],
     ['@nuxtjs/moment']
   ],
   fontawesome: {
@@ -100,9 +100,9 @@ export default {
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID
   },
-  'google-adsense': {
-    id: 'ca-pub-8867179104088194'
-  },
+  // 'google-adsense': {
+  //   id: 'ca-pub-8867179104088194'
+  // },
   content: {
     markdown: {
       prism: {

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="work-page">
     <h1 class="page-title text-center mt-4">Works</h1>
-    <v-card class="ma-5">
+    <v-card tag="div" class="ma-5">
       <v-tabs pararell>
         <v-tab>
           <v-icon left> mdi-account </v-icon>
@@ -55,3 +55,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+.work-page {
+  max-width: 820px;
+  margin: 0 auto;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height>
+  <v-container fill-height tag="div" class="about-page">
     <v-row align-content="center">
       <v-col>
         <!-- <iframe
@@ -244,6 +244,9 @@ export default {
   color: white;
   padding: 5px;
 } */
+.about-page {
+  max-width: 820px;
+}
 .link-github {
   display: inline;
   width: 100%;

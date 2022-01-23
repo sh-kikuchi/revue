@@ -148,7 +148,7 @@
                 </div>
               </form>
               <hr />
-              <from>
+              <form>
                 <div>justify-content:</div>
                 <div>
                   <input
@@ -177,23 +177,12 @@
                   />
                   <label for="flex">space-around</label>
                 </div>
-              </from>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <iframe
-      src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=pc_store&f=ifr&linkID=4d06146f4b4f62e7d49216adce72aa64&t=revue0f-22&tracking_id=revue0f-22"
-      class="pc amazon-banner"
-      width="728"
-      height="90"
-      scrolling="no"
-      border="0"
-      marginwidth="0"
-      style="border: none"
-      frameborder="0"
-    ></iframe>
   </div>
 </template>
 <script>
