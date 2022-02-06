@@ -183,6 +183,78 @@
         </div>
       </div>
     </section>
+    <section>
+      <h3 class="content-name blue-grey">Border-Style</h3>
+      <div class="d-sm-flex justify-space-around pt-3">
+        <div class="content-md order-0">
+          <div class="outer-border">
+            <div class="border-line" :style="borderStyle"></div>
+          </div>
+        </div>
+        <div class="content-md order-1">
+          <div class="content-box mx-auto d-flex align-center">
+            <div class="content-form mx-auto">
+              <form id="display-flex">
+                <div>
+                  <select v-model="borderTop" id="border-top">
+                    <option value="">--Please choose --</option>
+                    <option value="none">none</option>
+                    <option value="hidden">hidden</option>
+                    <option value="solid">solid</option>
+                    <option value="dotted">dotted</option>
+                    <option value="dashed">dashed</option>
+                    <option value="double">double</option>
+                    <option value="groove">groove</option>
+                    <option value="ridge">ridge</option>
+                    <option value="inset">inset</option>
+                    <option value="outset">outset</option>
+                  </select>
+                  <select v-model="borderRight" id="border-right">
+                    <option value="">--Please choose --</option>
+                    <option value="none">none</option>
+                    <option value="hidden">hidden</option>
+                    <option value="solid">solid</option>
+                    <option value="dotted">dotted</option>
+                    <option value="dashed">dashed</option>
+                    <option value="double">double</option>
+                    <option value="groove">groove</option>
+                    <option value="ridge">ridge</option>
+                    <option value="inset">inset</option>
+                    <option value="outset">outset</option>
+                  </select>
+                  <select v-model="borderBottom" id="border-bottom">
+                    <option value="">--Please choose --</option>
+                    <option value="none">none</option>
+                    <option value="hidden">hidden</option>
+                    <option value="solid">solid</option>
+                    <option value="dotted">dotted</option>
+                    <option value="dashed">dashed</option>
+                    <option value="double">double</option>
+                    <option value="groove">groove</option>
+                    <option value="ridge">ridge</option>
+                    <option value="inset">inset</option>
+                    <option value="outset">outset</option>
+                  </select>
+                  <select v-model="borderLeft" id="border-left">
+                    <option value="">--Please choose --</option>
+                    <option value="none">none</option>
+                    <option value="hidden">hidden</option>
+                    <option value="solid">solid</option>
+                    <option value="dotted">dotted</option>
+                    <option value="dashed">dashed</option>
+                    <option value="double">double</option>
+                    <option value="groove">groove</option>
+                    <option value="ridge">ridge</option>
+                    <option value="inset">inset</option>
+                    <option value="outset">outset</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 <script>
@@ -203,6 +275,10 @@ export default {
       rotate: 0,
       display: "block",
       flex: "center",
+      borderTop: "solid",
+      borderRight: "solid",
+      borderBottom: "solid",
+      borderLeft: "solid",
     };
   },
   computed: {
@@ -221,6 +297,9 @@ export default {
     bindDisplay() {
       return ` display: ${this.display};
                justify-content: ${this.flex};`;
+    },
+    borderStyle() {
+      return ` border-style: ${this.borderTop} ${this.borderRight} ${this.borderBottom} ${this.borderLeft};`;
     },
   },
 };
@@ -308,5 +387,27 @@ export default {
 .flex-child:nth-child(odd) {
   background-color: gray;
   border: 1px solid gray;
+}
+
+/*ボーダーライン */
+.border-line {
+  border: 5px;
+  width: 200px;
+  height: 200px;
+  color: black;
+}
+.outer-border {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#border-top,
+#border-right,
+#border-bottom,
+#border-left {
+  border-bottom-style: dotted;
+  margin-bottom: 2px;
 }
 </style>

@@ -25,6 +25,43 @@
           </div>
         </v-list-item>
       </v-list>
+      <v-menu top :offset-x="offset">
+        <v-icon>mdi-email</v-icon>
+        <v-list>
+          <v-list-item v-for="(item, index) in items" :key="index">
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <v-menu right :offset-x="offset">
+        <template v-slot:activator="{ on, attrs }">
+          <div dark v-bind="attrs" v-on="on" style="text-align: center">
+            <v-icon size="30">mdi-dots-horizontal</v-icon>
+          </div>
+        </template>
+
+        <v-list>
+          <v-list-item
+            v-for="(subItem, index) in subItems"
+            :to="subItem.to"
+            router
+            exact
+            :key="index"
+          >
+            <div style="width: 30px; margin: 0 auto">
+              <v-list-item-action tag="div" class="v-list-item-action">
+                <v-icon size="30">
+                  {{ subItem.icon }}
+                </v-icon>
+                <v-list-item-title
+                  v-text="subItem.title"
+                  class="item-subtitle"
+                />
+              </v-list-item-action>
+            </div>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-navigation-drawer>
     <v-app-bar fixed app>
       <div>
@@ -85,6 +122,22 @@ export default {
           title: "Design",
           to: "/design",
         },
+        // {
+        //   icon: "mdi-dots-horizontal-circle-outline",
+        //   title: "",
+        // },
+        // {
+        //   icon: "mdi-camera",
+        //   title: "Views",
+        //   to: "/picture",
+        // },
+        // {
+        //   icon: "mdi-format-list-bulleted",
+        //   title: "List",
+        //   to: "/list",
+        // },
+      ],
+      subItems: [
         {
           icon: "mdi-camera",
           title: "Views",
