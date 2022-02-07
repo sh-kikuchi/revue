@@ -32,9 +32,9 @@ HTMLには、上記の2つの要素を用意する。
 <header>
     <!-- メニューボタン -->
     <div id="menu-btn">
-        <span></span>
-        <span></span>
-        <span></span>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
     <!-- メニュー内容 -->
     <div id="menu">
