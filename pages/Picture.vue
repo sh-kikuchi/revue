@@ -1,9 +1,8 @@
 <template>
   <div>
     <h1 class="text-center page-title mt-2">Views</h1>
-    <p class="text-center sub-title">
-      <span class="sp">キーボードを打ち疲れた貴方に見せたい</span
-      ><span>赤羽の憧憬或いは慕情のほんの「一部分」</span>
+    <p class="text-center sub-title blue-grey">
+      <span>Akabane</span>
     </p>
     <div class="picture-wrap">
       <picture-gallery
@@ -91,7 +90,6 @@ export default {
 }
 .sub-title {
   font-size: 15px;
-  background: salmon;
 }
 .sub-title span {
   color: whitesmoke;
@@ -106,7 +104,7 @@ export default {
   max-width: 600px;
   margin: 0 auto;
   vertical-align: bottom;
-  background-color: rgba(240, 128, 128, 0.7);
+  background-color: rgba(225, 231, 238, 0.5);
 }
 
 /* スマートフォン*/

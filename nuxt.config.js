@@ -28,6 +28,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: "~plugins/persistedstate.js", ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -86,7 +87,7 @@ export default {
   },
   webfontloader: {
     google: {
-      families: ['Anton:400,700', 'Teko:400,700']
+      families: ['Anton:400,700', 'Teko:400,700', 'Allura:400,700', 'Rock Salt:400,700']
     }
   },
   generate: {

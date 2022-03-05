@@ -25,15 +25,7 @@
           </div>
         </v-list-item>
       </v-list>
-      <v-menu top :offset-x="offset">
-        <v-icon>mdi-email</v-icon>
-        <v-list>
-          <v-list-item v-for="(item, index) in items" :key="index">
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-      <v-menu right :offset-x="offset">
+      <v-menu right tag="div" class="v-list-item-actions">
         <template v-slot:activator="{ on, attrs }">
           <div dark v-bind="attrs" v-on="on" style="text-align: center">
             <v-icon size="30">mdi-dots-horizontal</v-icon>
@@ -49,7 +41,7 @@
             :key="index"
           >
             <div style="width: 30px; margin: 0 auto">
-              <v-list-item-action tag="div" class="v-list-item-action">
+              <v-list-item-action>
                 <v-icon size="30">
                   {{ subItem.icon }}
                 </v-icon>
@@ -69,22 +61,25 @@
       </div>
       <div>
         <span>
-          <a
-            class="link-color"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSd_Rz-F6RMqCKGTalCROlcjbXie6mdy39izCkQnFZrRISbefw/viewform"
-            ><v-icon>mdi-email</v-icon>
-          </a>
+          <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
         </span>
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       </div>
     </v-app-bar>
     <v-main tag="div" class="v-main">
       <Nuxt />
     </v-main>
-    <v-footer :absolute="!fixed" app justify="center">
-      <v-row justify="center">
-        &copy; Project R {{ new Date().getFullYear() }}</v-row
+    <v-footer padless style="background-color: rgb(62, 60, 65)">
+      <v-card
+        flat
+        tile
+        class="lighten-1 white--text text-center mx-auto"
+        style="background-color: rgb(62, 60, 65)"
       >
+        <v-card-text class="white--text">
+          <img class="footer-img" src="~@/assets/image/s_logo_gray.png" />
+          2021-{{ new Date().getFullYear() }} — <strong>Re:Vue</strong>
+        </v-card-text>
+      </v-card>
     </v-footer>
   </v-app>
 </template>
@@ -122,20 +117,6 @@ export default {
           title: "Design",
           to: "/design",
         },
-        // {
-        //   icon: "mdi-dots-horizontal-circle-outline",
-        //   title: "",
-        // },
-        // {
-        //   icon: "mdi-camera",
-        //   title: "Views",
-        //   to: "/picture",
-        // },
-        // {
-        //   icon: "mdi-format-list-bulleted",
-        //   title: "List",
-        //   to: "/list",
-        // },
       ],
       subItems: [
         {
@@ -144,9 +125,9 @@ export default {
           to: "/picture",
         },
         {
-          icon: "mdi-format-list-bulleted",
-          title: "List",
-          to: "/list",
+          icon: "mdi-label",
+          title: "Label",
+          to: "/label",
         },
       ],
       miniVariant: true,
@@ -166,24 +147,30 @@ export default {
 };
 </script>
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Teko:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Rock+Salt&family=Teko:wght@500&display=swap");
 
 .v-toolbar__content {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  background-color: rgb(225, 231, 238);
 }
 
 .v-main {
   height: 100%;
-  background: url("../assets/image/p_new0091_m_new00910.png");
-  /* background-repeat: repeat; */
+  background-color: rgb(183, 204, 219);
+  /* background-image: url("../assets/image/p_new0091_m_new00910.png");
+  background-repeat: repeat; */
 }
 
 .site-title {
   margin-left: 3px;
 }
 
+.v-navigation-drawer__content {
+  background-color: rgb(241, 241, 243);
+  /* background-color: rgb(225, 231, 238); */
+}
 /**メニュータイトル */
 .list-item {
   display: block;
@@ -212,15 +199,25 @@ export default {
 .page-title,
 .page-sub-title {
   text-align: center;
-  font-family: "" Anton, sans-serif;
-  font-family: "Teko", sans-serif;
+  font-family: "Rock Salt", cursive;
+  /* font-family: 'Allura', cursive;
+  font-family: 'Anton', sans-serif;
+  font-family: 'Teko', sans-serif; */
 }
 
 .contents {
   margin: 0 auto;
 }
 .footer {
+  height: 180px;
   margin: 0 auto;
+  vertical-align: middle;
+  line-height: 180px;
+}
+.footer-img {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
 }
 
 .page-title,
@@ -238,13 +235,6 @@ export default {
 
 .footer {
   margin: 0 auto;
-}
-
-/*アマゾンアソシエイツ*/
-.amazon-banner .amazon-link {
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 10px;
 }
 
 /*テックブログの記事一覧*/
