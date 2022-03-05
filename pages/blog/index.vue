@@ -1,11 +1,11 @@
 <template>
-  <div class="container tech-blog">
+  <div class="container tech-blog mt-5">
+    <h1 class="page-title text-center">Tech Blog</h1>
     <!--ナビゲーションバー-->
     <div class="navigation-bar pt-1">
       <v-icon>mdi-home</v-icon>
       <nuxt-link to="/" tag="a" class="navigation"> Home</nuxt-link>
     </div>
-    <h1 class="page-title text-center">Tech Blog</h1>
     <!-- langs配列からリストを表示 ...（2）-->
     <v-list>
       <v-list-item
@@ -25,17 +25,6 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-    <!-- <iframe
-      src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=pc_store&f=ifr&linkID=4d06146f4b4f62e7d49216adce72aa64&t=revue0f-22&tracking_id=revue0f-22"
-      class="pc amazon-banner"
-      width="728"
-      height="90"
-      scrolling="no"
-      border="0"
-      marginwidth="0"
-      style="border: none"
-      frameborder="0"
-    ></iframe> -->
   </div>
 </template>
 <script>
@@ -92,30 +81,18 @@ export default {
   text-decoration: none;
 }
 .navigation:hover {
-  color: lightgreen;
+  color: darkslategray;
 }
 .nuxt-link {
   max-width: 820px;
   color: black;
   text-decoration: none;
 }
-.lang-list:nth-child(1) {
-  background: linear-gradient(
-    to right,
-    rgba(255, 165, 0, 0.8),
-    rgba(0, 255, 255, 0.8)
-  );
+
+.lang-list:nth-child(even) {
+  background-color: rgb(241, 241, 243);
 }
-.lang-list:nth-child(2) {
-  background-color: rgba(255, 241, 0, 0.8);
-}
-.lang-list:nth-child(3) {
-  background-color: rgba(102, 238, 187, 0.8);
-}
-.lang-list:nth-child(4) {
-  background-color: rgba(148, 139, 219, 0.8);
-}
-.lang-list:nth-child(5) {
-  background-color: rgba(255, 51, 51, 0.8);
+.lang-list:nth-child(odd) {
+  background-color: rgb(225, 231, 238);
 }
 </style>

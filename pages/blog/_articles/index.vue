@@ -1,18 +1,19 @@
 <template>
   <div class="article-list-container">
-    <v-list shaped>
-      <div class="navigation-bar pt-1">
-        <v-icon>mdi-home</v-icon>
-        <nuxt-link to="/" tag="a" class="navigation"> Home</nuxt-link
-        ><span> > </span>
-        <v-icon>mdi-fountain-pen</v-icon>
-        <nuxt-link to="/blog" tag="a" class="navigation"> Blog</nuxt-link>
-      </div>
-      <v-subheader>記事一覧</v-subheader>
-      <div class="d-md-flex">
+    <h1 class="page-title text-center mt-3">Tech Blog</h1>
+    <div class="navigation-bar pt-1">
+      <v-icon>mdi-home</v-icon>
+      <nuxt-link to="/" tag="a" class="navigation"> Home</nuxt-link
+      ><span> > </span>
+      <v-icon>mdi-fountain-pen</v-icon>
+      <nuxt-link to="/blog" tag="a" class="navigation"> Blog</nuxt-link>
+      <v-subheader tag="div" class="text-center">記事一覧</v-subheader>
+    </div>
+    <v-list shaped class="ma-2">
+      <div>
         <v-list-item-group tag="div" class="tag-div-item-group">
           <v-list-item v-for="(c, index) in contents" :key="index">
-            <v-list-item-content>
+            <v-list-item-content tag="div" class="list-item-content">
               <nuxt-link :to="c.path" tag="div" class="tag-div-nuxt-link">
                 <div>
                   <div class="text-right">
@@ -100,24 +101,17 @@ export default {
   text-decoration: none;
 }
 .navigation:hover {
-  color: lightgreen;
+  color: darkslategray;
 }
 .article-list-container {
   max-width: 820px;
   margin: 0 auto;
 }
-tag-div-nuxt-link {
+.tag-div-nuxt-link {
   color: black;
   text-decoration: none;
 }
-.tag-div-item-group {
-  width: 800px;
-}
-
-.amazon-link {
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  text-align: center;
+.list-item-content {
+  border-bottom: 1px dotted black;
 }
 </style>

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/Label", {data:[{}],fetch:{},mutations:[]});

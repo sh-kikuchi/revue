@@ -2,20 +2,8 @@
   <v-container fill-height tag="div" class="about-page">
     <v-row align-content="center">
       <v-col>
-        <!-- <iframe
-          src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=pc_store&f=ifr&linkID=4d06146f4b4f62e7d49216adce72aa64&t=revue0f-22&tracking_id=revue0f-22"
-          class="pc amazon-banner"
-          width="728"
-          height="90"
-          scrolling="no"
-          border="0"
-          marginwidth="0"
-          style="border: none text-align: center"
-          frameborder="0"
-        >
-        </iframe> -->
         <v-card class="mx-auto">
-          <v-system-bar color="pink darken-2" dark>
+          <v-system-bar color="blue-grey" dark>
             <v-spacer></v-spacer>
             <v-icon>mdi-window-minimize</v-icon>
             <v-icon>mdi-window-maximize</v-icon>
@@ -24,25 +12,35 @@
           <v-container>
             <v-row dense>
               <v-col>
-                <div chass="article-header">
+                <div class="article-header">
                   <div width="300" class="text-center">
-                    <v-avatar size="50"
-                      ><img src="@/assets/image/s_logo.png" alt="logo"
+                    <v-avatar size="150" tile
+                      >
+                    <img src="@/assets/image/r_logo.png" alt="logo"
                     /></v-avatar>
-                    <span class="text-center">きくち/kikuchi (´・ω・)</span>
                   </div>
-                  <p class="text-center">1994年7月26日、獅子座</p>
-                    <!-- github -->
-                    <a href="https://github.com/sh-kikuchi" class="link-github"
-                      ><font-awesome-icon
-                        :icon="['fab', 'github']"
-                        class="float-right"
-                      /></a>
                 </div>
                 <div class="ma-5">
                   <h3>Re:vue[rivjúː]</h3>
                   <p>【1】プログラミングで学習してきたことを振り返るアウトプットの場。（<b>Review</b>←<small>サイト制作者はGLAYファンか!?</small>）【2】サイト制作者のVue.js（Nuxt.js）の学習スペース。ここだけの話、<b>Vue</b>.jsは一度心が折れたので、<b>Re</b>tryの場でもある。【3】本サイトのテーマは上記の想ひを込めつつ、「壮大な実験」（The Grand Experiments）をテーマに掲げ、Vue.jsを使ってどのようなモノが作れるのかという個人的な実験要素を盛り込んでいくものとなっている。【追記】本サイトの制作者はEd-Techに興味があり、Nuxt-contentを導入して作ったブログは教育コンテンツとして昇華させたい想ひがある。それまではどうか温かな目を。<small>(Update 2021/12/25 3:36)</small>
                   </p>
+                  <v-divider></v-divider>
+                  <div width="300" class="text-center mt-3">
+                                      <v-avatar size="50"
+                      ><img src="@/assets/image/s_logo.png" alt="logo"
+                  /></v-avatar>
+                  <span class="text-center">きくち/kikuchi</span>
+                  <p class="text-center pt-2">平成最初の戌/誕生花はブーゲンビリア</p>
+                  <div class="text-center">(´・ω・)こころはヴィジュアル系</div>
+                  <div>          <a
+            class="link-color"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd_Rz-F6RMqCKGTalCROlcjbXie6mdy39izCkQnFZrRISbefw/viewform"
+            ><v-icon>mdi-email</v-icon>なにかあればコチラへ
+          </a></div>
+
+                  </div>
+
+
                 </div>
                 <h3 class="text-center text-h6">Skills</h3>
                 <div class="pg-lang text-center">
@@ -65,14 +63,14 @@
                   </v-chip>
                   <v-chip class="mt-1">
                     <span
-                      ><font-awesome-icon :icon="['fab', 'php']" />PHP7</span
+                      ><font-awesome-icon :icon="['fab', 'php']" />PHP7-8</span
                     >
                   </v-chip>
                   <v-chip class="mt-1">
                     <span
                       ><font-awesome-icon
                         :icon="['fab', 'laravel']"
-                      />Laravel(5.5-8)</span
+                      />Laravel(5.5-9)</span
                     >
                   </v-chip>
                   <v-chip class="mt-1">
@@ -103,6 +101,20 @@
                       />Markdown</span
                     >
                   </v-chip>
+                  <!-- <v-chip class="mt-1">
+                    <span
+                      ><font-awesome-icon
+                        :icon="['fab', 'flutter']"
+                      />Flutter(勉強中)</span
+                    >
+                  </v-chip>
+                  <v-chip class="mt-1">
+                    <span
+                      ><font-awesome-icon
+                        :icon="['fab', 'aws']"
+                      />AWS(lambda,dynamoDB)</span
+                    >
+                  </v-chip> -->
                 </div>
                 <div>
                   <v-dialog v-model="dialog" scrollable max-width="600px">
@@ -167,13 +179,6 @@
                     >Googleアナリティクス利用規約</a
                   >をご確認ください。（Cookieとは、利用者のサイト閲覧履歴を利用者のコンピュータにデータとして保存しておく仕組みのこと）
                 </p>
-                <!-- <h6>【Googleアドセンスについて】</h6>
-                <p>
-                  当サイトはGoogle などの第三者配信事業者が Cookie を使用して、ユーザーがそのウェブサイトや他のウェブサイトに過去にアクセスした際の情報に基づいて広告を配信しております。ユーザーは広告設定でパーソナライズ広告を無効にできます。（または、www.aboutads.info にアクセスすれば、パーソナライズ広告に使われる第三者配信事業者の Cookie を無効にできます）。
-                </p> -->
-                <!-- <h6>【Amazonアソシエイト・プログラムについて】</h6>
-                <p>当サイトは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
-                </p> -->
                 <h6>【本ポリシーの変更】</h6>
                 <p>
                   当サイトは、法令の制定、改正等により、本ポリシーを適宜見直し、予告なく変更する場合があります。本ポリシーの変更は、変更後の本ポリシーが当サイトに掲載された時点、またはその他の方法により変更後の本ポリシーが閲覧可能となった時点で有効になります。
@@ -190,44 +195,10 @@
         </v-card>
       </v-col>
       </v-row>
-
-    <v-col class="text-center justify-md-space-between">
-      <VueSlickCarousel
-        :arrows="true"
-        :dots="false"
-        :autoplay="true"
-        :autoplaySpeed="5000"
-      >
-        <div>
-          <v-avatar size="100"
-            ><img src="@/assets/image/revue.png" alt="logo"
-          /></v-avatar>
-        </div>
-        <div>
-          <v-avatar size="100"
-            ><img src="@/assets/image/osaka.jpg" alt="獅子君"
-          /></v-avatar>
-        </div>
-        <div>
-          <v-avatar size="100"
-            ><img src="@/assets/image/fukui.png" alt="レッサー君"
-          /></v-avatar>
-        </div>
-        <div>
-          <v-avatar size="100"
-            ><img src="@/assets/image/panda.jpg" alt="パンダら"
-          /></v-avatar>
-        </div>
-      </VueSlickCarousel>
-    </v-col>
   </v-container>
 </template>
 
 <script>
-import VueSlickCarousel from "vue-slick-carousel";
-import "vue-slick-carousel/dist/vue-slick-carousel.css";
-// optional style for arrows & dots
-import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 export default {
   name: "HelloWorld",
   data() {
@@ -235,15 +206,9 @@ export default {
       dialog: false,
     };
   },
-  components: { VueSlickCarousel },
 };
 </script>
 <style scoped>
-/* span {
-  background-color: darkgreen;
-  color: white;
-  padding: 5px;
-} */
 .about-page {
   max-width: 820px;
 }

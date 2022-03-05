@@ -14,8 +14,19 @@
           </v-list-item-content>
         </v-list-item>
         <v-card-text>
-          自分にフィットする本や音楽、そして旅行という逃避行（笑）など、プライベート感が爆発しているサイト。それに加えて、学生時代に研究していた日本近現代史をまとめたページもあり、研究成果を発表しています。まだお恥ずかしいので未公開。
+          小さな趣味ではありますが、読書や音楽のプレイリスト、旅行の写真などをまとめたアルバム的なサイト。学生時代に日本近現代史を専攻していたので、そこで学んだことを新聞風にまとめたページも有り。PHPをメイン言語としており、CRUD機能や問い合わせフォームからメール送信出来るようにしたりと色々やってみたりしています。Re:VueがPublicであるとするなら、こちらはPrivate色が強いです。。。
         </v-card-text>
+
+        <v-card-actions tag="div" v-if="kakushi">
+          <v-btn outlined rounded text
+            ><a
+              href="http://sh21mysite.com/mysite/main/index.php"
+              target="_blank"
+            >
+              Welcome
+            </a></v-btn
+          >
+        </v-card-actions>
       </v-card>
       <v-card class="mx-auto" outlined>
         <v-list-item three-line>
@@ -23,7 +34,7 @@
             <div class="text-overline mb-4">toolboxシリーズ</div>
             <v-list-item-title class="text-h5 mb-1"> kanban </v-list-item-title>
             <v-list-item-subtitle
-              >Laravel8（5.5~）,jQuery,MySQL,HTML,CSS</v-list-item-subtitle
+              >Laravel9（5.5~）,jQuery,MySQL,HTML,CSS</v-list-item-subtitle
             >
           </v-list-item-content>
         </v-list-item>
@@ -33,7 +44,9 @@
         </v-card-text>
         <v-card-actions>
           <v-btn outlined rounded text
-            ><a href="http://sk-kanban.herokuapp.com/"> DEMO </a></v-btn
+            ><a href="http://sk-kanban.herokuapp.com/" target="_blank">
+              DEMO
+            </a></v-btn
           >
         </v-card-actions>
       </v-card>
@@ -45,7 +58,7 @@
               smalltalk（ver.2）
             </v-list-item-title>
             <v-list-item-subtitle
-              >Laravel8（6~）,Bootstrap,jQuery,MySQL,HTML,CSS</v-list-item-subtitle
+              >Laravel9（6~）,Bootstrap,jQuery,MySQL,HTML,CSS</v-list-item-subtitle
             >
           </v-list-item-content>
         </v-list-item>
@@ -57,7 +70,9 @@
         </v-card-text>
         <v-card-actions>
           <v-btn outlined rounded text
-            ><a href="http://toolbox-smalltalk.herokuapp.com/"> DEMO </a></v-btn
+            ><a href="http://toolbox-smalltalk.herokuapp.com/" target="_blank">
+              DEMO
+            </a></v-btn
           >
         </v-card-actions>
       </v-card>
@@ -69,7 +84,7 @@
               bookstock
             </v-list-item-title>
             <v-list-item-subtitle
-              >Laravel8,Bootstrap,jQuery,MySQL,HTML,CSS</v-list-item-subtitle
+              >Laravel9(8~),Bootstrap,jQuery,MySQL,HTML,CSS</v-list-item-subtitle
             >
           </v-list-item-content>
         </v-list-item>
@@ -79,7 +94,9 @@
         </v-card-text>
         <v-card-actions>
           <v-btn outlined rounded text
-            ><a href="http://sk-bookstock.herokuapp.com/"> DEMO </a></v-btn
+            ><a href="http://sk-bookstock.herokuapp.com/" target="_blank">
+              DEMO
+            </a></v-btn
           >
         </v-card-actions>
       </v-card>
@@ -89,6 +106,41 @@
 <script>
 export default {
   name: "PersonalWork",
+  data() {
+    return {
+      kakushi: false,
+    };
+  },
+  mounted: function () {
+    document.addEventListener("keydown", this.inputKey);
+  },
+  beforeDestroy: function () {
+    document.removeEventListener("keydown", this.inputKey);
+  },
+  methods: {
+    inputKey(e) {
+      const command = [192];
+      let inputCommand = [];
+
+      inputCommand.push(e.keyCode);
+
+      let inputCommandLen = inputCommand.length;
+      let inputCode = inputCommand[inputCommandLen - 1];
+      let commandCode = command[inputCommandLen - 1];
+
+      console.log(inputCommand);
+
+      if (inputCode === commandCode) {
+        if (inputCommandLen === command.length) {
+          //v-ifによる表示切替
+          this.kakushi = !this.kakushi;
+          inputCommand.length = 0;
+        }
+      } else {
+        inputCommand.length = 0;
+      }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -103,5 +155,12 @@ a {
 .btn-github {
   text-decoration: none;
   color: white;
+}
+
+.kakushi {
+  display: none;
+}
+.kakushi-active {
+  display: block;
 }
 </style>
