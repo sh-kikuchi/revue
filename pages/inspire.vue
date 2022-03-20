@@ -1,11 +1,7 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <img
-        src="~@/assets/image/s_logo.png"
-        alt="Vuetify.js"
-        class="mb-5 mt-5"
-      />
+      <img src="~@/assets/image/revue.png" alt="Vuetify.js" class="mb-5 mt-5" />
       <blockquote class="blockquote"></blockquote>
       &#8220;Sometimes the best gain is lose.&#8221;
       <footer>

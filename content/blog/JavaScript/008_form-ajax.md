@@ -11,11 +11,11 @@ sortNumber: 8
 前回、メールフォームを作って、バリデーションの実装をしました。フォームというと、普通は送信ボタンを押したら、フォームの`actions`で指定されたファイルに遷移されて何らかの処理が動きます。その時に`method`に指定していた通信方法（POST・GET）で値も渡してくれますね。でも、送信ボタンを押した時にJS側でエラーチェックをすると、PHPファイルにPOST送信するのは一筋縄では行きません。そこで今回はjQueryを利用してAjaxによるPOST送信を実現させたいと思います。<br>
 
 ```
-   |── js
-   |   |── script.js
-   |
-   |── index.html
-   |── send_mail.php
+   │── js
+   │   │── script.js
+   │
+   │── index.html
+   │── send_mail.php
 ```
 ※index.htmlとscript.jsのエラーチェックのコードは前回を参照のこと。
 <br>

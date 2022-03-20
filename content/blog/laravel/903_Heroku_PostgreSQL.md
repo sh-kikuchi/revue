@@ -34,7 +34,7 @@ $ heroku config:set DB_PASSWORD=<パスワード>
     "scripts": {
         (前略)
         "compile": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "@php -r \"file_exists('.env') ││ copy('.env.example', '.env');\""
         ]
     },
 ```

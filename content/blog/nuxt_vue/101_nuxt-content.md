@@ -48,18 +48,18 @@ sortNumber: 101
 
 ```
 プロジェクトディレクトリ
-|
-|── content ←新規作成して下さい。
-│   |── blog
-│       |── html_css
-│       |     |── abc.md
-│       |     |── def.md
-│       |     |── ghi.md
-│       |
-│       |── JavaScript
-│       |── laravel
-│       |── nuxt_vue
-│       |── php
+│
+│── content ←新規作成して下さい。
+│   │── blog
+│       │── html_css
+│       │     │── abc.md
+│       │     │── def.md
+│       │     │── ghi.md
+│       │
+│       │── JavaScript
+│       │── laravel
+│       │── nuxt_vue
+│       │── php
 │   
 │  
 ```
@@ -84,7 +84,3 @@ sortNumber: 101
 
 # 4. おわりに
 今回はNuxt.jsの環境を整え、ブログ作りのためにNuxt-contentというパッケージをインストールしました。そして、プロジェクトディレクトリにcontentフォルダを作成し、私の場合はその中にblogフォルダを作ってから各言語のフォルダを用意しました。次から数回にわたってマークダウンで書いたブログ記事を表示させていきたいと思います。
-
-
-
-

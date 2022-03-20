@@ -1,18 +1,6 @@
 
 <template>
   <div class="p-main-container">
-    <!--ナビゲーションバー-->
-    <div class="navigation-bar pt-1">
-      <v-icon>mdi-home</v-icon>
-      <nuxt-link to="/" tag="a" class="navigation"> Home</nuxt-link
-      ><span> > </span>
-      <v-icon>mdi-fountain-pen</v-icon>
-      <nuxt-link to="/blog" tag="a" class="navigation"> Blog</nuxt-link>
-      <span> > </span>
-      <nuxt-link to="{navigation}" tag="a" class="navigation">
-        {{ dirParam }}</nuxt-link
-      >
-    </div>
     <div class="p-main-wrapper">
       <!-- メインのエリア -->
       <div id="l-center-area" class="ma-3">
@@ -33,9 +21,24 @@
               </v-col>
             </v-row>
           </div>
+          <!--ナビゲーションバー-->
+          <div class="navigation-bar">
+            <v-icon>mdi-home</v-icon>
+            <nuxt-link to="/" tag="a" class="navigation"> Home</nuxt-link
+            ><span> ／ </span>
+            <v-icon>mdi-fountain-pen</v-icon>
+            <nuxt-link to="/blog" tag="a" class="navigation"> Blog</nuxt-link>
+            <span> ／ </span>
+            <v-icon>mdi-folder</v-icon>
+            <nuxt-link to="{navigation}" tag="a" class="navigation">
+              {{ dirParam }}</nuxt-link
+            >
+          </div>
         </div>
-        <!-- マークダウンのレンダリング箇所 -->
-        <nuxt-content :document="content" />
+        <div class="md-content ma-2 pa-2">
+          <!-- マークダウンのレンダリング箇所 -->
+          <nuxt-content :document="content" />
+        </div>
       </div>
     </div>
   </div>
@@ -81,8 +84,8 @@ export default {
 .article-header {
   text-align: center;
 }
-.amazon-link {
-  display: block;
-  margin: 10px auto;
+.md-content {
+  background-color: rgb(241, 241, 243);
+  border-radius: 15px;
 }
 </style>

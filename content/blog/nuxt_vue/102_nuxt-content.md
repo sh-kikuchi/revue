@@ -16,13 +16,13 @@ sortNumber: 102
 ディレクトリは下記のように作ります。今回の実装はblogフォルダ直下にある`index.vue`を編集していきます。
 ```
 プロジェクトディレクトリ
-|
-|── pages
-│   |── blog
-│       |── _articles
-│       |     |── _slug.vue
-│       |     |── index.vue
-│       |── index.vue　←ここ
+│
+│── pages
+│   │── blog
+│       │── _articles
+│       │     │── _slug.vue
+│       │     │── index.vue
+│       │── index.vue　←ここ
 ```
 <br>
 

@@ -4,7 +4,7 @@
     <div class="navigation-bar pt-1">
       <v-icon>mdi-home</v-icon>
       <nuxt-link to="/" tag="a" class="navigation"> Home</nuxt-link
-      ><span> > </span>
+      ><span> ／ </span>
       <v-icon>mdi-fountain-pen</v-icon>
       <nuxt-link to="/blog" tag="a" class="navigation"> Blog</nuxt-link>
       <v-subheader tag="div" class="text-center">記事一覧</v-subheader>
