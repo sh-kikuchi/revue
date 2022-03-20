@@ -1,6 +1,6 @@
 <template>
   <div class="container tech-blog mt-5">
-    <h1 class="page-title text-center">Tech Blog</h1>
+    <h1 class="page-title text-center mt-3">Tech Blog</h1>
     <!--ナビゲーションバー-->
     <div class="navigation-bar pt-1">
       <v-icon>mdi-home</v-icon>
@@ -64,8 +64,12 @@ export default {
           link: "/blog/laravel",
           summery: "PHPのフレームワーク。",
         },
-        // { id: 6, name: "闇鍋", link: "/phones/Samsung" },
-        // { id: 7, name: "お茶の間", link: "/phones/Samsung" },
+        // {
+        //   id: 99,
+        //   name: "闇鍋",
+        //   link: "/blog/yaminabe",
+        //   summery: "カテゴライズ出来ぬ者たち",
+        // },
       ],
     };
   },

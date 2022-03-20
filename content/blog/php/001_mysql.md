@@ -19,9 +19,11 @@ PHPはデータベースの操作を得意とします。MySQLとの親和性が
     ```
     cd /xampp/mysql/bin
     ```
-2. `mysql -u root -p`でMySQLにログイン
+2. MySQLにログイン
     > mysql -u ユーザー名 -p password：←なにも入れずにEnter
-
+	  ```
+ 	 mysql -u root -p
+ 	 ```
 3. データベースを作る。
    ```
    create database tests default charset utf8;
@@ -43,7 +45,7 @@ PHPはデータベースの操作を得意とします。MySQLとの親和性が
 5. テーブルにデータを入れる<br>
 
     ```
-    INSERT INTO `comments` (`id`, `name`, `title`, `comment`, `created_at`, `updated_at`) VALUES (NULL, 'JEDI', 'Force Awakens', 'May the force be with you.', current_timestamp(), current_timestamp());
+    INSERT INTO `comments` (`name`, `title`, `comment`, `created_at`, `updated_at`) VALUES ('JEDI', 'Force Awakens', 'May the force be with you.', current_timestamp(), current_timestamp());
     ```
 
 <br>

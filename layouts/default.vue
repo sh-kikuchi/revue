@@ -32,7 +32,7 @@
           </div>
         </template>
 
-        <v-list>
+        <v-list tag="div" style="margin-left: 30px" class="d-flex">
           <v-list-item
             v-for="(subItem, index) in subItems"
             :to="subItem.to"
@@ -126,8 +126,23 @@ export default {
         },
         {
           icon: "mdi-label",
-          title: "Label",
+          title: "Labels",
           to: "/label",
+        },
+        {
+          icon: "mdi-sync",
+          title: "Convert",
+          to: "/convert",
+        },
+        {
+          icon: "mdi-newspaper",
+          title: "News",
+          to: "/news",
+        },
+        {
+          icon: "mdi-target",
+          title: "scratch",
+          to: "/scratch",
         },
       ],
       miniVariant: true,

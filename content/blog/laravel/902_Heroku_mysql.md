@@ -24,7 +24,7 @@ $ heroku addons:add cleardb
 
 ## 3. configで環境変数の取得
 ```
-heroku config | grep CLEARDB_DATABASE_URL
+heroku config │ grep CLEARDB_DATABASE_URL
 ```
 > ▼コマンドを打つとしたのようなURLが出現（環境変数を設定するのに必要）
 CLEARDB_DATABASE_URL: mysql://[DB_USERNAME]:[DB_PASSWORD]@[DB_HOST]/[DB_DATABASE]?reconnect=true

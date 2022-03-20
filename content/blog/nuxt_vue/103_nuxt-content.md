@@ -16,12 +16,12 @@ sortNumber: 103
 ---
 ```
 プロジェクトディレクトリ
-|
-|── pages
-│   |── blog
-│       |── _articles
-│       |     |── _slug.vue
-│       |     |── index.vue　←ここ
+│
+│── pages
+│   │── blog
+│       │── _articles
+│       │     │── _slug.vue
+│       │     │── index.vue　←ここ
 ```
 <br>
 

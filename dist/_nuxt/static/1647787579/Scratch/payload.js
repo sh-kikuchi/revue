@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/Scratch", {data:[{}],fetch:{},mutations:[]});

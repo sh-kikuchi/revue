@@ -37,7 +37,7 @@ Logged in as ~~　←loggedでログイン成功！
 ```
 $ heroku create toolbox-kanban
 Creating ⬢ toolbox-kanban... done
-https://toolbox-kanban.herokuapp.com/ | https://git.heroku.com/toolbox-kanban.git
+https://toolbox-kanban.herokuapp.com/ │ https://git.heroku.com/toolbox-kanban.git
 
 ```
 <div style="page-break-before:always"></div>
