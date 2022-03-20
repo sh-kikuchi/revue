@@ -134,11 +134,11 @@ export default {
           title: "Convert",
           to: "/convert",
         },
-        {
-          icon: "mdi-newspaper",
-          title: "News",
-          to: "/news",
-        },
+        // {
+        //   icon: "mdi-newspaper",
+        //   title: "News",
+        //   to: "/news",
+        // },
         {
           icon: "mdi-target",
           title: "scratch",
