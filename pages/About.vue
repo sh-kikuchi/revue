@@ -22,7 +22,7 @@
                 </div>
                 <div class="ma-5">
                   <h3>Re:vue[rivjúː]</h3>
-                  <p>【1】プログラミングで学習してきたことを振り返るアウトプットの場。（<b>Review</b>←<small>サイト制作者はGLAYファンか!?</small>）【2】サイト制作者のVue.js（Nuxt.js）の学習スペース。ここだけの話、<b>Vue</b>.jsは一度心が折れたので、<b>Re</b>tryの場でもある。【3】本サイトのテーマは上記の想ひを込めつつ、「壮大な実験」（The Grand Experiments）をテーマに掲げ、Vue.jsを使ってどのようなモノが作れるのかという個人的な実験要素を盛り込んでいくものとなっている。【追記】本サイトの制作者はEd-Techに興味があり、Nuxt-contentを導入して作ったブログは教育コンテンツとして昇華させたい想ひがある。それまではどうか温かな目を。<small>(Update 2021/12/25 3:36)</small>
+                  <p>【1】プログラミングで学習してきたことを振り返るアウトプットの場。【2】サイト制作者のVue.js（Nuxt.js）の学習スペース。ここだけの話、<b>Vue</b>.jsは一度心が折れたので、<b>Re</b>tryの場でもある。【3】本サイトのテーマは上記の想ひを込めつつ、「壮大な実験」（The Grand Experiments）をテーマに掲げ、Vue.jsを使ってどのようなモノが作れるのかという個人的な実験要素を盛り込んでいくものとなっている。<small>(Update 2021/12/25 3:36)</small>
                   </p>
                   <v-divider></v-divider>
                   <div width="300" class="text-center mt-3">
@@ -30,8 +30,9 @@
                       ><img src="@/assets/image/s_logo.png" alt="logo"
                   /></v-avatar>
                   <span class="text-center">きくち/kikuchi</span>
-                  <p class="text-center pt-2">平成最初の戌/誕生花はブーゲンビリア</p>
-                  <div class="text-center">(´・ω・)こころはヴィジュアル系</div>
+                  <!-- <p class="text-center pt-2">平成最初の戌/誕生花はブーゲンビリア</p> -->
+                  <p class="text-center pt-2">1994.7.26/B型/獅子座</p>
+                  <div class="text-center"></div>
                   <div>          <a
             class="link-color"
             href="https://docs.google.com/forms/d/e/1FAIpQLSd_Rz-F6RMqCKGTalCROlcjbXie6mdy39izCkQnFZrRISbefw/viewform"
