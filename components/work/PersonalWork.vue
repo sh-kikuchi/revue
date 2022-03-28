@@ -6,7 +6,7 @@
           <v-list-item-content>
             <div class="text-overline mb-4">個人サイト</div>
             <v-list-item-title class="text-h5 mb-1">
-              mysite -Into the Wild-
+              mysite -Into the Wild-(改修中)
             </v-list-item-title>
             <v-list-item-subtitle
               >HTML,CSS,JavaScript/jQuery,MySQL,PHP</v-list-item-subtitle
@@ -16,7 +16,29 @@
         <v-card-text>
           小さな趣味ではありますが、読書や音楽のプレイリスト、旅行の写真などをまとめたアルバム的なサイト。学生時代に日本近現代史を専攻していたので、そこで学んだことを新聞風にまとめたページも有り。PHPをメイン言語としており、CRUD機能や問い合わせフォームからメール送信出来るようにしたりと色々やってみたりしています。Re:VueがPublicであるとするなら、こちらはPrivate色が強いです。。。
         </v-card-text>
-
+        <v-card-actions>
+          <v-dialog v-model="dialog" scrollable max-width="700px">
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn color="" dark v-bind="attrs" v-on="on"> image </v-btn>
+            </template>
+            <v-card>
+              <v-card-title>2020.11-2022.3_legacy</v-card-title>
+              <v-divider></v-divider>
+              <v-card-text style="height: 100vh">
+                <img
+                  class="mx-auto mysite-img"
+                  src="@/assets/image/IntotheWild.png"
+                />
+              </v-card-text>
+              <v-divider></v-divider>
+              <v-card-actions>
+                <v-btn color="blue darken-1" text @click="dialog = false">
+                  Close
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </v-card-actions>
         <v-card-actions tag="div" v-if="kakushi">
           <v-btn outlined rounded text
             ><a
@@ -109,6 +131,7 @@ export default {
   data() {
     return {
       kakushi: false,
+      dialog: false,
     };
   },
   mounted: function () {
@@ -162,5 +185,10 @@ a {
 }
 .kakushi-active {
   display: block;
+}
+.mysite-img {
+  width: 100%;
+  object-fit: contain;
+  margin: 0 auto;
 }
 </style>
