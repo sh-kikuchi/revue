@@ -140,7 +140,7 @@ export default {
         //   to: "/news",
         // },
         {
-          icon: "mdi-target",
+          icon: "mdi-bullseye",
           title: "scratch",
           to: "/scratch",
         },

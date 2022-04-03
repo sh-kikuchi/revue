@@ -88,4 +88,18 @@ export default {
   background-color: rgb(241, 241, 243);
   border-radius: 15px;
 }
+input[type="file"] {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+label {
+  padding: 10px 25px;
+  margin: 0 0 10px;
+  background: #aaa;
+  color: #fff;
+  display: inline-block;
+  cursor: pointer;
+}
 </style>
