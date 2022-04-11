@@ -9,6 +9,11 @@
       <div><input type="number" v-model="gb" /> GB</div>
       <div><input type="number" v-model="tb" /> TB</div>
     </section>
+    <section class="mx-auto mt-4" style="width: 300px">
+      <p class="text-center blue-grey">文字コード</p>
+      <div>Unicode：<input type="number" v-model="unicodeToString" /></div>
+      <div>文字：<input type="text" v-model="stringToUnicode" /></div>
+    </section>
     <!-- <section class="mx-auto mt-4" style="width: 300px">
       <p class="text-center blue-grey">フォント換算</p>
       <div>HTML{ font-size: <input type="number" v-model="fontSize" /> px}</div>
@@ -31,6 +36,8 @@ export default {
       fontSize: 16,
       px: 16,
       rem: 1,
+      unicodeToString: 0,
+      stringToUnicode: "",
     };
   },
   watch: {
@@ -71,6 +78,14 @@ export default {
       this.tb = value;
     },
     //フォントサイズ
+    unicodeToString: function (num) {
+      this.unicodeToString = num;
+      this.stringToUnicode = String.fromCharCode(num);
+    },
+    stringToUnicode: function (str) {
+      this.stringToUnicode = str;
+      this.unicodeToString = str.charCodeAt(0);
+    },
   },
 };
 </script>
