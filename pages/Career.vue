@@ -1,17 +1,36 @@
 <template>
   <div id="career">
     <h1 class="page-title">Career</h1>
+    <div class="text-center pt-2">
+      <ul>
+        <li>業務内容の記入ではカンマ入れないで下さい</li>
+        <li>「CSV出力」を押下するとCSV形式でダウンロードできます</li>
+        <li>「ファイル選択」でCSV形式ファイルをアップロード可</li>
+      </ul>
+    </div>
 
     <div class="button-area d-flex justify-space-between overflow-x-auto">
+      <v-tooltip top class="ml-2">
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            class="ma-2"
+            outlined
+            large
+            fab
+            color="indigo"
+            v-on:click="add"
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon>mdi-pencil</v-icon>
+          </v-btn>
+        </template>
+        <span>行を追加</span>
+      </v-tooltip>
       <div>
-        <v-btn class="ma-2" outlined large fab color="indigo" v-on:click="add">
-          <v-icon>mdi-pencil</v-icon>
-        </v-btn>
-      </div>
-      <div>
-        <button class="csv-download-button" v-on:click="downloadCSV">
+        <button class="csv-download-button mb-2" v-on:click="downloadCSV">
           <v-icon>mdi-download</v-icon>
-          CSV出力
+          CSVダウンロード
         </button>
         <input type="file" class="csv-read-button" @change="fileChange" />
       </div>
@@ -24,7 +43,7 @@
             <th class="text-left date-col">終了日</th>
             <th class="text-left company-col">企業名</th>
             <th class="text-left task-col">業務内容</th>
-            <th class="text-left destroy-col"></th>
+            <th class="destroy-col"></th>
           </tr>
         </thead>
         <tbody>
@@ -35,10 +54,14 @@
             <td>
               <input type="text" v-model="item.endDate" />
             </td>
-            <td><input type="text" v-model="item.company" /></td>
+            <td>
+              <input type="text" v-model="item.company" class="input-company" />
+            </td>
             <td><textarea v-model="item.task"></textarea></td>
             <td>
-              <button v-on:click="destroy"><v-icon>mdi-delete</v-icon></button>
+              <button v-on:click="destroy">
+                <v-icon>mdi-delete</v-icon>
+              </button>
             </td>
           </tr>
         </tbody>
@@ -131,7 +154,7 @@ export default {
     },
     add: function () {
       //行追加
-      this.careers.push({
+      this.careers.unshift({
         startDate: "",
         endDate: "",
         company: "",
@@ -146,14 +169,24 @@ export default {
 };
 </script>
 <style scoped>
+li {
+  list-style: none;
+}
 .date-col {
   width: 75px;
 }
 .company-col {
   width: 200px;
 }
+.input-company {
+  display: block;
+  width: 200px;
+}
 textarea {
-  width: 400px;
+  width: 100%;
+}
+.destroy-col {
+  width: 75px;
 }
 .csv-upload-button,
 .csv-download-button {

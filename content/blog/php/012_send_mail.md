@@ -1,9 +1,9 @@
 ---
-title: PHPでメール送信
+title: メール送信
 description: mb_send_mail関数を使ってみよう。
 category: php
 createdAt: 2021-10-28
-updatedAt: 2022-03-19
+updatedAt: 2022-05-06
 sortNumber: 12
 ---
 
