@@ -32,27 +32,28 @@
           </div>
         </template>
 
-        <v-list tag="div" style="margin-left: 30px" class="d-flex">
-          <v-list-item
+        <v-row class="ml-8 bg-white" no-gutters>
+          <v-col
             v-for="(subItem, index) in subItems"
-            :to="subItem.to"
             router
             exact
             :key="index"
+            cols="4"
+            class="text-center"
           >
-            <div style="width: 30px; margin: 0 auto">
-              <v-list-item-action>
-                <v-icon size="30">
-                  {{ subItem.icon }}
-                </v-icon>
-                <v-list-item-title
-                  v-text="subItem.title"
-                  class="item-subtitle"
-                />
-              </v-list-item-action>
-            </div>
-          </v-list-item>
-        </v-list>
+            <v-card tag="div" :to="subItem.to" class="mx-auto pa-1">
+              <v-icon size="30" class="mx-auto pt-2">
+                {{ subItem.icon }}
+              </v-icon>
+              <v-card-text
+                tag="div"
+                class="sub-item-subtitle mx-auto pa-0"
+                width="30"
+                v-text="subItem.title"
+              ></v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
       </v-menu>
     </v-navigation-drawer>
     <v-app-bar fixed app>
@@ -141,8 +142,13 @@ export default {
         // },
         {
           icon: "mdi-bullseye",
-          title: "scratch",
+          title: "Scratch",
           to: "/scratch",
+        },
+        {
+          icon: "mdi-file-account",
+          title: "Career",
+          to: "/career",
         },
       ],
       miniVariant: true,
@@ -201,6 +207,12 @@ export default {
   padding: 0;
 }
 
+.sub-item-subtitle {
+  font-size: 5px;
+}
+.bg-white {
+  background-color: #fff;
+}
 .link-color {
   text-decoration: none;
   /* color: #fff; */

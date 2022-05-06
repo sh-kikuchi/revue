@@ -35,7 +35,7 @@
             >
           </div>
         </div>
-        <div class="md-content ma-2 pa-2">
+        <div class="md-content pa-4">
           <!-- マークダウンのレンダリング箇所 -->
           <nuxt-content :document="content" />
         </div>

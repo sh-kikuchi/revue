@@ -9,7 +9,7 @@
       <nuxt-link to="/blog" tag="a" class="navigation"> Blog</nuxt-link>
       <v-subheader tag="div" class="text-center">記事一覧</v-subheader>
     </div>
-    <v-list shaped class="ma-2">
+    <v-list class="ma-2">
       <div>
         <v-list-item-group tag="div" class="tag-div-item-group">
           <v-list-item v-for="(c, index) in contents" :key="index">
