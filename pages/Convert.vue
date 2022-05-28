@@ -1,143 +1,73 @@
 <template>
-  <div id="convert">
+  <div id="convert" class="ma-3">
     <h1 class="page-title mt-4">Convert</h1>
-    <div class="mt-2 text-center">概算値なので悪しからず</div>
-    <section class="mx-auto mt-4" style="width: 300px">
-      <p class="text-center blue-grey">バイト換算</p>
-      <div><input type="number" v-model="byte" /> B</div>
-      <div><input type="number" v-model="kb" /> KB</div>
-      <div><input type="number" v-model="mb" /> MB</div>
-      <div><input type="number" v-model="gb" /> GB</div>
-      <div><input type="number" v-model="tb" /> TB</div>
-    </section>
-    <!-- <section class="mx-auto mt-4" style="width: 300px">
-      <p class="text-center blue-grey">世界の「長さ」</p>
-      <div><input type="number" v-model.number="meter" /> m</div>
-      <div><input type="number" v-model.number="inch" /> inch</div>
-      <div><input type="number" v-model.number="ft" /> ft</div>
-      <div><input type="number" v-model.number="yard" /> yard</div>
-      <div><input type="number" v-model.number="mile" /> mile</div>
-    </section> -->
-    <!-- <section class="mx-auto mt-4" style="width: 300px">
-      <p class="text-center blue-grey">文字コード</p>
-      <div>Unicode：<input type="number" v-model="unicodeToString" /></div>
-      <div>文字：<input type="text" v-model="stringToUnicode" /></div>
-    </section> -->
-    <!-- <section class="mx-auto mt-4" style="width: 300px">
-      <p class="text-center blue-grey">フォント換算</p>
-      <div>HTML{ font-size: <input type="number" v-model="fontSize" /> px}</div>
-      <div><input type="number" v-model="px" /> px</div>
-      <div><input type="number" v-model="rem" /> rem</div>
-    </section> -->
+    <div class="mt-2 text-center"></div>
+    <v-card class="ma-3 mx-auto" max-width="800">
+      <v-toolbar flat class="black--text">
+        <small class="black-text">概算値なので目安として利用して下さい</small>
+      </v-toolbar>
+      <v-tabs>
+        <v-tab>長さ</v-tab>
+        <v-tab>重さ</v-tab>
+        <v-tab>温度</v-tab>
+        <v-tab>バイト数</v-tab>
+        <v-tab-item>
+          <v-card flat>
+            <v-card-text>
+              <Length />
+            </v-card-text>
+          </v-card>
+        </v-tab-item>
+        <v-tab-item>
+          <v-card flat>
+            <v-card-text>
+              <Weigh />
+            </v-card-text>
+          </v-card>
+        </v-tab-item>
+        <v-tab-item>
+          <v-card flat>
+            <v-card-text>
+              <div class="mx-auto mt-4">
+                <Temperature />
+              </div>
+            </v-card-text>
+          </v-card>
+        </v-tab-item>
+        <v-tab-item>
+          <v-card flat>
+            <v-card-text>
+              <div class="mx-auto mt-4">
+                <Bytes />
+              </div>
+            </v-card-text>
+          </v-card>
+        </v-tab-item>
+      </v-tabs>
+    </v-card>
   </div>
 </template>
+<script src="https://cdn.jsdelivr.net/npm/decimal.js-light@2.5.0/decimal.min.js"></script>
 <script>
+import Length from "../components/convert/Length.vue";
+import Temperature from "../components/convert/Temperature.vue";
+import Weigh from "../components/convert/Weigh.vue";
+import Bytes from "../components/convert/Bytes.vue";
 export default {
-  data() {
-    return {
-      // バイト換算
-      byte: 0,
-      kb: 0,
-      mb: 0,
-      gb: 0,
-      tb: 0,
-      //フォント換算
-      fontSize: 16,
-      px: 16,
-      rem: 1,
-      unicodeToString: 0,
-      stringToUnicode: "",
-      //世界の「長さ」
-      // meter: 0.0,
-      // inch: 0.0,
-      // ft: 0.0,
-      // yard: 0.0,
-      // mile: 0.0,
-    };
-  },
-  watch: {
-    //バイト換算
-    byte: function (value) {
-      this.byte = value;
-      this.kb = value / 1024;
-      this.mb = value / 1024 / 1024;
-      this.gb = value / 1024 / 1024 / 1024;
-      this.tb = value / 1024 / 1024 / 1024 / 1024;
-    },
-    kb: function (value) {
-      this.byte = value * 1024;
-      this.kb = value;
-      this.mb = value / 1024;
-      this.gb = value / 1024 / 1024;
-      this.tb = value / 1024 / 1024 / 1024;
-    },
-    mb: function (value) {
-      this.byte = value * 1024 * 1024;
-      this.kb = value * 1024;
-      this.mb = value;
-      this.gb = value / 1024;
-      this.tb = value / 1024 / 1024;
-    },
-    gb: function (value) {
-      this.byte = value * 1024 * 1024 * 1024;
-      this.kb = value * 1024 * 1024;
-      this.mb = value * 1024;
-      this.gb = value;
-      this.tb = value / 1024;
-    },
-    tb: function (value) {
-      this.byte = value * 1024 * 1024 * 1024 * 1024;
-      this.kb = value * 1024 * 1024 * 1024;
-      this.mb = value * 1024 * 1024;
-      this.gb = value * 1024;
-      this.tb = value;
-    },
-    // meter: function (value) {
-    //   this.meter = value;
-    //   this.inch = value * 39.37007;
-    //   this.ft = value * 3.280834;
-    //   this.yard = value * 1.09364;
-    //   this.mile = value * 0.000621;
-    // },
-    // inch: function (value) {
-    //   this.meter = value * 0.0254;
-    //   this.inch = value;
-    //   this.ft = value * 0.0833333;
-    //   this.yard = value * 0.0277777;
-    //   this.mile = value * 0.0000158;
-    // },
-    // ft: function (value) {
-    //   this.meter = value * 0.3048;
-    //   this.inch = value * 12.0;
-    //   this.ft = value;
-    //   this.yard = value * 0.3333333;
-    //   this.mile = value * 0.000189;
-    // },
-    // yard: function (value) {
-    //   this.meter = value * 0.914399;
-    //   this.inch = value * 36.0;
-    //   this.ft = value * 3.0;
-    //   this.yard = value;
-    //   this.mile = value * 0.000568;
-    // },
-    // mile: function (value) {
-    //   this.meter = value * 1609.34;
-    //   this.inch = value * 63359.9;
-    //   this.ft = value * 5280.0;
-    //   this.yard = value * 1760.0;
-    //   this.mile = value;
-    // },
-    //フォントサイズ
-    // unicodeToString: function (num) {
-    //   this.unicodeToString = num;
-    //   this.stringToUnicode = String.fromCharCode(num);
-    // },
-    // stringToUnicode: function (str) {
-    //   this.stringToUnicode = str;
-    //   this.unicodeToString = str.charCodeAt(0);
-    // },
-  },
+  components: { Length, Temperature, Weigh, Bytes },
 };
 </script>
-<style scoped>
+<style >
+/* コンポーネント共通 */
+.convert-input > input {
+  width: 250px;
+  border: 1px dashed black;
+  border-radius: 5px;
+  margin: 10px auto;
+  padding: 5px;
+}
+.convert-input > label {
+  display: inline-block;
+  width: 50px;
+}
 </style>
