@@ -41,7 +41,7 @@
             cols="4"
             class="text-center"
           >
-            <v-card tag="div" :to="subItem.to" class="mx-auto pa-1">
+            <v-card tag="div" :to="subItem.to" class="mx-auto pa-1" flat>
               <v-icon size="30" class="mx-auto pt-2">
                 {{ subItem.icon }}
               </v-icon>
