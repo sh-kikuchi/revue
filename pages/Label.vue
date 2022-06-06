@@ -34,7 +34,7 @@
                 </button>
               </div>
             </v-list-item-title>
-            <draggable>
+            <draggable group="items">
               <v-list-item
                 v-for="(item, index) in category.items"
                 :key="index"
