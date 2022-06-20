@@ -85,14 +85,35 @@
                     <span
                       ><font-awesome-icon
                         icon="database"
-                      />MySQL/SQLserver</span
+                      />MySQL</span
+                    >
+                  </v-chip>
+                  <v-chip class="mt-1">
+                    <span
+                      ><font-awesome-icon
+                        icon="database"
+                      />SQLserver</span
+                    >
+                  </v-chip>
+                  <v-chip class="mt-1">
+                    <span
+                      ><font-awesome-icon
+                        icon="database"
+                      />PostgresQL</span
                     >
                   </v-chip>
                   <v-chip class="mt-1">
                     <span
                       ><font-awesome-icon
                         :icon="['fab', 'vuejs']"
-                      />Vue.js(2.x)</span
+                      />Vue.js</span
+                    >
+                  </v-chip>
+                  <v-chip class="mt-1">
+                    <span
+                      ><font-awesome-icon
+                        :icon="['fab', 'vuejs']"
+                      />Nuxt.js(2.x)</span
                     >
                   </v-chip>
                   <v-chip class="mt-1">
@@ -100,6 +121,13 @@
                       ><font-awesome-icon
                         :icon="['fab', 'markdown']"
                       />Markdown</span
+                    >
+                  </v-chip>
+                  <v-chip class="mt-1">
+                    <span
+                      ><font-awesome-icon
+                        :icon="['fab', 'js']"
+                      />Express.js</span
                     >
                   </v-chip>
                   <!-- <v-chip class="mt-1">

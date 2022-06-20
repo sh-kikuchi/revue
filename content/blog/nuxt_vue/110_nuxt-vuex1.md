@@ -1,6 +1,6 @@
 ---
-title: 【解体新書】Vuexでカテゴリー別メモ帳を作る
-description: ちょっとトレロのような
+title: 【解体新書】Vuexでカテゴリー別メモ帳を作る1
+description: Vuexのstore/vuex-persistedstate
 category: Nuxt.js
 createdAt: 2022-01-13
 updatedAt: 2022-01-13
@@ -8,398 +8,178 @@ sortNumber: 110
 ---
 
 # 1.はじめに
+Vuexを使って、トレロを作ってみたいと思う。カテゴリ－が追加でき、且つカテゴリー内にアイテムが複数追加できる仕様。カテゴリーの移動、アイテムの移動（カテゴリ内外で可能）も出来るように実装していく。今回はVuexを使用し、データの保存はブラウザのLocalStorageですることとする。今回の目的はコンポ―ネント間の値の受け渡し方やVuexの基礎を学ぶことにある。
+
 -  Node.js：v14.17.5
 -  npm：6.14.14
 -  Nuxt.js：2.15.7
--  Nuxt Content：1.14.0
+-  vuedraggable：2.24.3
+-  vuejs-paginate： 2.1.0
+-  vuetify：2.5.5,
+-  vuex-persistedstate：4.1.0
 
 <br>
 
-# 2.Label.vueの全文
-```html
-<template>
-  <div id="labels">
-    <h1 class="page-title mt-2">Labels</h1>
-    <div class="text-center">
-      <span class="pc">▼ 入力してENTER </span>
-      <input
-        class="input-category pa-2"
-        placeholder="カテゴリーを追加する"
-        @keyup.enter="addCategory"
-      />
-      <v-btn class="ma-2" outlined color="red" @click="reset">
-        保存データクリア
-      </v-btn>
-    </div>
+- 実装：[Re:Vue](]https://sh-revue.net/label)
+- GitHub：https://github.com/sh-kikuchi/revue
 
-    <div class="label-content pa-5">
-      <div>
-        <draggable class="d-flex">
-          <v-card
-            v-for="(category, index) in categories"
-            :key="index"
-            width="300"
-            tag="div"
-            class="ma-2 label-list"
-          >
-            <v-list-item-title
-              class="category-title d-flex justify-space-between pr-3 pl-3"
-            >
-              <div></div>
-              <div>{{ category.title }}</div>
-              <div>
-                <button class="btn btn-danger" @click="deleteCategory(index)">
-                  ✖
-                </button>
-              </div>
-            </v-list-item-title>
-            <draggable>
-              <v-list-item
-                v-for="(item, index) in category.items"
-                :key="index"
-                :category_id="category.category_id"
-                tag="div"
-                class="item-border d-flex justify-space-between"
-              >
-                <div></div>
-                <div>{{ item.text }}</div>
-                <div>
-                  <button
-                    class="btn btn-danger"
-                    @click="deleteItem(category.category_id, index)"
-                  >
-                    ✖
-                  </button>
-                </div>
-              </v-list-item>
-            </draggable>
-            <v-list-item class="pa-0">
-              <input
-                class="input-item"
-                placeholder="アイテムを追加する"
-                @keyup.enter="addItem($event, category.category_id)"
-              />
-            </v-list-item>
-          </v-card>
-        </draggable>
-      </div>
-    </div>
-  </div>
-</template>
-<script>
-import draggable from "vuedraggable";
+<br>
 
-export default {
-  components: {
-    draggable,
-  },
-  computed: {
-    categories() {
-      return this.$store.state.label.categories;
-    },
-  },
-  methods: {
-    reset: function () {
-      if (
-        confirm(
-          "本当にクリアしますか？ ブラウザ（LocalStorage）に保存されているデータを消去します。"
-        )
-      ) {
-        localStorage.removeItem("revueLabel");
-        this.$router.go({ path: this.$router.currentRoute.path, force: true });
-      }
-    },
-    addCategory: function (e) {
-      if (e.target.value == "") {
-        return;
-      } else {
-        this.$store.dispatch("label/addCategory", e.target.value);
-        e.target.value = "";
-      }
-    },
-    addItem: function (e, prm) {
-      if (e.target.value == "") {
-        return;
-      } else {
-        this.$store.dispatch("label/addItem", {
-          text: e.target.value,
-          category_id: prm,
-        });
-        e.target.value = "";
-      }
-    },
-    deleteCategory: function (prm) {
-      if (confirm("本当にこのカテゴリーを削除しますか？")) {
-        this.$store.dispatch("label/deleteCategory", {
-          category_id: prm,
-        });
-      }
-    },
-    deleteItem: function (c_prm, i_prm) {
-      if (confirm("本当にこのアイテムを削除しますか？")) {
-        this.$store.dispatch("label/deleteItem", {
-          category_id: c_prm,
-          item_id: i_prm,
-        });
-      }
-    },
-  },
-};
-</script>
+# 2. コンポーネントの構成について
+今回、メインで使うディレクトリとファイルは以下を想定している。今回はドラッグアンドドロップをする対象であるカテゴリーとアイテムのコンポーネントをそれぞれ作成した。
+
+- Label.vue:ビューページ
+- category.vue:カテゴリー用コンポーネント
+- item.vue:アイテム用コンポーネント
+上記のコンポーネント構成：【親】 `Label.vue`←`category.vue`←`item.vue`【子】になっている。
+
+```
+プロジェクトディレクトリ
+│
+│── components
+│   │── label
+│       │── category.vue
+│       │── item.vue
+│
+│── pages
+│   │── Label.vue
+│
+│── plugins
+│   │── persistedstate.js
+│
+│── store
+│   │── label.js
 ```
 
 <br>
 
-# 3. データ表示
-■ computedでstoreフォルダ内の`label.js`のstateにあるdataを引っ張る。
-- $store.state.state名.オブジェクト名になっているのがPOINT
-```js
-  computed: {
-    categories() {
-      return this.$store.state.label.categories;
-    },
-  },
-```
-<br>
+# 3. Vuexの状態管理
 
-※ ちなみにデータの形は以下のようなJson風のオブジェクトになっている。
+### ■ State（label.js）
+Vuexはアプリケーション内のコンポーネントが共通で管理出来るデータストアである。データを管理する時にまず、state内に初期データを用意する。これを基にデータの表示・追加・削除などの操作を行っていく。<br>
+
+■Storeディレクトリ内に`label.js`を用意し、下記のような初期データを用意しておく。
+
 ```js
+export const state = () => ({
   categories: [
     {
-      category_id: 0,
       title: "トリセツ",
       items: [
         { text: "まずはお読み下さい" },
         { text: "カテゴリー/アイテムはEnterで追加" },
-        { text: "カテゴリー同士のソート可" },
-        { text: "カテゴリー内の項目のソート可" },
-        { text: "ブラウザに保存されます。" },
+        { text: "カテゴリーの移動可" },
+        { text: "カテゴリー間のアイテム移動可" },
+        { text: "ご自身ブラウザにのみ保存されます。" },
         { text: "LocalStorage(F12キー)を確認！" },
         { text: "個人情報は記載しないこと！" },
       ],
     }
   ],
-```
-<br>
-
-■ データはFor文でループさせる（二重ループ）
-- カテゴリー（categories）の数だけループ
-- カテゴリー内の項目数だけループ
-- `draggable`は別途説明
-
-```html
-    <div class="label-content pa-5">
-      <div>
-        <draggable class="d-flex">
-          <v-card
-            v-for="(category, index) in categories"
-            :key="index"
-            width="300"
-            tag="div"
-            class="ma-2 label-list"
-          >
-            <v-list-item-title
-              class="category-title d-flex justify-space-between pr-3 pl-3"
-            >
-              <div></div>
-              <div>{{ category.title }}</div>
-              <div>
-                <button class="btn btn-danger" @click="deleteCategory(index)">
-                  ✖
-                </button>
-              </div>
-            </v-list-item-title>
-            <draggable>
-              <v-list-item
-                v-for="(item, index) in category.items"
-                :key="index"
-                :category_id="category.category_id"
-                tag="div"
-                class="item-border d-flex justify-space-between"
-              >
-                <div></div>
-                <div>{{ item.text }}</div>
-                <div>
-                  <button
-                    class="btn btn-danger"
-                    @click="deleteItem(category.category_id, index)"
-                  >
-                    ✖
-                  </button>
-                </div>
-              </v-list-item>
-            </draggable>
-            <v-list-item class="pa-0">
-              <input
-                class="input-item"
-                placeholder="アイテムを追加する"
-                @keyup.enter="addItem($event, category.category_id)"
-              />
-            </v-list-item>
-          </v-card>
-        </draggable>
-      </div>
-    </div>
-  </div>
+})
 ```
 
 <br>
 
-# 4. カテゴリー追加処理用dispatch
-■ 入力してEnterを押下するとメソッドの`addCategory`の処理へ
-```html
-  <input
-    class="input-category pa-2"
-    placeholder="カテゴリーを追加する"
-    @keyup.enter="addCategory"
-  />
-```
+### ■ computed(Label.vue)
+`Label.vue`でVuexのデータを扱う時は基本的に`this.$store.state.label.categories`で受け取る。（mapStateとかもあるので、これに限らず）
+今回の実装で以下のエラーが発生し、その対処として`JSON.parse(JSON.stringify(obj))`という形をとっている。<br>
 
-<br>
-
-■ dispatch
->  Vuexのアクション（actions）は store.dispatch がトリガーとなって実行される。
-- inputタグで入力した値はイベントオブジェクト(e.target.value)で取得できる。
-- 何も入力なれけば、処理は何も行われない。
-- 入力があった場合は、`label.jsのaddCategory`の処理に行く。
-- e.target.valueはの`label.jsのaddCategory`の引数として渡されたあと、初期化（inputタグの初期化）
 ```js
-  addCategory: function (e) {
-    if (e.target.value == "") {
-      return;
-    } else {
-      this.$store.dispatch("label/addCategory", e.target.value);
-      e.target.value = "";
-    }
-  },
-```
-
-# 5. カテゴリー削除処理用dispatch
-■ ×ボタンをクリックしたら削除処理へ
-- 引数はindex。（何番目のカテゴリーを削除するか）
-```html
-  <v-card
-    v-for="(category, index) in categories"
-    :key="index"
-    width="300"
-    tag="div"
-    class="ma-2 label-list"
-  >
-    <v-list-item-title
-      class="category-title d-flex justify-space-between pr-3 pl-3"
-    >
-      <div></div>
-      <div>{{ category.title }}</div>
-      <div>
-        <button class="btn btn-danger" @click="deleteCategory(index)">
-          ✖
-        </button>
-      </div>
-    </v-list-item-title>
-  </v-card>
-
-```
-
-<br>
-
-■ dispatch
->  Vuexのアクション（actions）は store.dispatch がトリガーとなって実行される。
-- 確認画面でOKの場合に`label.jsのdeleteCategory`の処理に行く。
-- テンプレート部分で引数としたindexをprmとして受け取り、さらに`category_id`をキーとして`label.jsのdeleteCategory`に値を渡す。
-```js
-  deleteCategory: function (prm) {
-    if (confirm("本当にこのカテゴリーを削除しますか？")) {
-      this.$store.dispatch("label/deleteCategory", {
-        category_id: prm,
-      });
-    }
-  },
-```
-
-
-<br>
-
-# 6. アイテム追加処理用dispatch
-■ 入力してEnterを押下するとメソッドの`addCategory`の処理へ
-- アイテム追加の場合は少し複雑で、どのカテゴリーの中にアイテムを加えたいかの観点が必要になる。引数を`$event`(入力した値)と`category.category_id`(対象のカテゴリーID)の2つをセットしている。
-```html
-  <input
-    class="input-item"
-    placeholder="アイテムを追加する"
-    @keyup.enter="addItem($event, category.category_id)"
-  />
-```
-
-<br>
-
-■ dispatch
->  Vuexのアクション（actions）は store.dispatch がトリガーとなって実行される。
-- inputタグで入力した値はイベントオブジェクト(e.target.value)で取得できる。
-- 処理内容はカテゴリーの追加処理と同じ。
-- `label.jsのaddItem`に渡すデータは入力した値とカテゴリーIDの2つ
-```js
-  addItem: function (e, prm) {
-    if (e.target.value == "") {
-      return;
-    } else {
-      this.$store.dispatch("label/addItem", {
-        text: e.target.value,
-        category_id: prm,
-      });
-      e.target.value = "";
-    }
-  },
-```
-
-# 7. アイテム削除処理用dispatch
-■ ×ボタンをクリックしたら削除処理へ
-- 引数がカテゴリーIDとアイテムのindexの2つ。つまりどのカテゴリーの何番目を削除するかを指定する。
-
-```html
-  <v-list-item
-    v-for="(item, index) in category.items"
-    :key="index"
-    :category_id="category.category_id"
-    tag="div"
-    class="item-border d-flex justify-space-between"
-  >
-    <div></div>
-    <div>{{ item.text }}</div>
-    <div>
-      <button
-        class="btn btn-danger"
-        @click="deleteItem(category.category_id, index)"
-      >
-        ✖
-      </button>
-    </div>
-  </v-list-item>
-```
-
-<br>
-
-■ dispatch
->  Vuexのアクション（actions）は store.dispatch がトリガーとなって実行される。
-- 【template】category.category_id → 【script】c_prm
-- 【template】index → 【script】i_prm
-- `label.jsのdeleteItem`に渡すデータはカテゴリーidとアイテムのインデックス番号
-```js
-    deleteItem: function (c_prm, i_prm) {
-      if (confirm("本当にこのアイテムを削除しますか？")) {
-        this.$store.dispatch("label/deleteItem", {
-          category_id: c_prm,
-          item_id: i_prm,
-        });
-      }
+<script>
+  computed: {
+    categories: {
+      get: function () {
+        return JSON.parse(JSON.stringify(this.$store.state.label.categories));
+      },
     },
+  },
+</script>
 ```
 
+<br>
 
-
-
-
-
-# 8. おわりに
-くそややこしいわ。
+### ■　エラー内容
+```js
+[vuex] Do not mutate vuex store state outside mutation handlers
+```
 
 <br>
+
+これはvuexで管理している変数を直接書き換えようとした時に出るエラーで、これからまとめるドラッグ＆ドロップをする際に出たエラー。<b>swallow copy</b>と<b>deep copy</b>という考え方があるそう。前者はコピー元とコピー先両方が同じメモリを参照している状態で、後者は他のメモリ上にデータを複製するのでコピー先ではコミー元のメモリは参照していないのだと。前者でエラーを吐くので、後者の方法でエラー回避するために`JSON.parse(JSON.stringify(obj))`という書き方を行っている。
+
+<br>
+
+※参考
+- [【javascript】オブジェクトのコピーは沼にハマるから気をつけろ](https://zawatech.com/?p=326)
+- [ [Vuex]do not mutate vuex store state outside mutation handlers.の解決方法 ](https://zawatech.com/?p=319)
+（ちなみに実装時は子コンポーネントのドラッグ＆ドロップ時に出た。）
+
+<br><br>
+
+# 4. local storageへの保存
+
+### ■ インストール
+```
+npm install -S vuex-persistedstate
+```
+
+<br>
+
+`package.json`でインストールされているか確認
+
+
+<br>
+
+```json
+  "dependencies": {
+    "vuex-persistedstate": "^4.1.0"
+  },
+```
+
+<br>
+
+### ■ vuex-persistedstate用ファイル
+plugins配下にlocalStorage.jsという名前でファイルを作成。そして下記のようにコードを書く。` { key: 'revueLabel' }`の部分は実際にLocalStorageに保存する時の名前にあたる。
+
+```js
+import createPersistedState from "vuex-persistedstate";
+
+export default ({ store, isHMR }) => {
+  if (isHMR) return;
+
+  if (process.client) {
+    window.onNuxtReady((nuxt) => {
+      createPersistedState(
+        { key: 'revueLabel' }
+      )(store);
+    });
+  }
+};
+```
+
+<br>
+
+### ■ nuxt.config.js
+
+次に`nuxt.config.js`のplugins:に下記のコードを追加
+
+```js
+  plugins: [
+    { src: "~plugins/persistedstate.js", ssr: false },
+  ],
+```
+
+<br>
+
+上記の設定をすることによって、Stateのデータを変更し、リロードしてもデータが変更した状態のまま、保持される。
+
+<br>
+
+# 5. おわりに
+トレロ風のかんばんボートを作るにあたって、データの変更は追加や削除、ドラッグアンドドロップによる並べ替えを想定している。その時にどのようにデータを操作すれば良いかは本稿以降に整理する。
+
+<br>
+
+■ 参考
+[Nuxt.js vuex-persistedstateを使ってLocal Storageにデータを保存する](https://mebee.info/2019/12/25/post-4710/)

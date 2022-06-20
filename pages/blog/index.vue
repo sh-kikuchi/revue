@@ -49,20 +49,25 @@ export default {
           id: 3,
           name: "Vue.js/Nuxt.js",
           link: "/blog/nuxt_vue",
-          summery:
-            "JavaScriptのフレームワークがVue.js。そしてVue.jsのフレームワークがNuxt.js",
+          summery: "「Re:Vue」の解体新書とVueの学習ログ",
         },
         {
           id: 4,
           name: "PHP/MySQL",
           link: "/blog/php",
-          summery: "サーバーサイド言語とデータベース。CRUDを学ぶ",
+          summery: "我流フレームワークを作ってみる",
         },
         {
           id: 5,
           name: "Laravel",
           link: "/blog/laravel",
-          summery: "PHPのフレームワーク。",
+          summery: "個人開発での実装経験まとめ",
+        },
+        {
+          id: 6,
+          name: "Laravel×Vue",
+          link: "/blog/vue_laravel",
+          summery: "Vue.jsとLaravelの夢の共演",
         },
         // {
         //   id: 99,
