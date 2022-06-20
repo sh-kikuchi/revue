@@ -2,84 +2,60 @@
   <div id="labels">
     <h1 class="page-title mt-2">Labels</h1>
     <div class="text-center">
-      <span class="pc">▼ 入力してENTER </span>
       <input
-        class="input-category pa-2"
-        placeholder="カテゴリーを追加する"
+        class="input-category pa-2 ma-3"
+        placeholder="Enterキーでカテゴリー追加"
         @keyup.enter="addCategory"
       />
-      <v-btn class="ma-2" outlined color="red" @click="reset">
+      <v-btn class="ma-3" outlined color="red" @click="reset">
         保存データクリア
       </v-btn>
     </div>
-
-    <div class="label-content pa-5">
-      <div>
-        <draggable class="d-flex">
-          <v-card
-            v-for="(category, index) in categories"
-            :key="index"
-            width="300"
-            tag="div"
-            class="ma-2 label-list"
-          >
-            <v-list-item-title
-              class="category-title d-flex justify-space-between pr-3 pl-3"
-            >
-              <div></div>
-              <div>{{ category.title }}</div>
-              <div>
-                <button class="btn btn-danger" @click="deleteCategory(index)">
-                  ✖
-                </button>
-              </div>
-            </v-list-item-title>
-            <draggable group="items">
-              <v-list-item
-                v-for="(item, index) in category.items"
-                :key="index"
-                :category_id="category.category_id"
-                tag="div"
-                class="item-border d-flex justify-space-between"
-              >
-                <div></div>
-                <div>{{ item.text }}</div>
-                <div>
-                  <button
-                    class="btn btn-danger"
-                    @click="deleteItem(category.category_id, index)"
-                  >
-                    ✖
-                  </button>
-                </div>
-              </v-list-item>
-            </draggable>
-            <v-list-item class="pa-0">
-              <input
-                class="input-item"
-                placeholder="アイテムを追加する"
-                @keyup.enter="addItem($event, category.category_id)"
-              />
-            </v-list-item>
-          </v-card>
-        </draggable>
-      </div>
-    </div>
+    <!-- カテゴリー -->
+    <draggable class="d-flex" v-model="categories">
+      <category
+        v-for="(category, index) in categories"
+        :key="index"
+        :title="category.title"
+        :categoryIndex="index"
+        :items="category.items"
+        @change="shiftItem"
+      />
+    </draggable>
   </div>
 </template>
 <script>
 import draggable from "vuedraggable";
+import category from "../components/label/category.vue";
 
 export default {
   components: {
     draggable,
+    category,
   },
   computed: {
-    categories() {
-      return this.$store.state.label.categories;
+    categories: {
+      get: function () {
+        return JSON.parse(JSON.stringify(this.$store.state.label.categories));
+      },
+      set: function (newCategories) {
+        this.$store.dispatch("label/shiftCategory", {
+          newCategories,
+        });
+      },
     },
   },
   methods: {
+    shiftCategory: function () {
+      this.$store.dispatch("label/shiftCategory", {
+        categories: this.categories,
+      });
+    },
+    shiftItem: function () {
+      this.$store.dispatch("label/shiftItem", {
+        categories: this.categories,
+      });
+    },
     reset: function () {
       if (
         confirm(
@@ -98,29 +74,29 @@ export default {
         e.target.value = "";
       }
     },
-    addItem: function (e, prm) {
+    addItem: function (e, cardIndex) {
       if (e.target.value == "") {
         return;
       } else {
         this.$store.dispatch("label/addItem", {
           text: e.target.value,
-          category_id: prm,
+          category_id: cardIndex,
         });
         e.target.value = "";
       }
     },
-    deleteCategory: function (prm) {
+    deleteCategory: function (cardIndex) {
       if (confirm("本当にこのカテゴリーを削除しますか？")) {
         this.$store.dispatch("label/deleteCategory", {
-          category_id: prm,
+          category_id: cardIndex,
         });
       }
     },
-    deleteItem: function (c_prm, i_prm) {
+    deleteItem: function (cardIndex, itemIndex) {
       if (confirm("本当にこのアイテムを削除しますか？")) {
         this.$store.dispatch("label/deleteItem", {
-          category_id: c_prm,
-          item_id: i_prm,
+          category_id: cardIndex,
+          item_id: itemIndex,
         });
       }
     },
@@ -134,6 +110,7 @@ export default {
   overflow-x: auto;
 }
 .input-category {
+  width: 220px;
   background-color: rgb(241, 241, 243);
 }
 .label-content {
@@ -155,9 +132,9 @@ export default {
   text-align: center;
 }
 .item-border {
-  width: 100%;
+  width: 300px;
   display: flex;
-  border-bottom: 1px dotted black;
+  border: 1px dotted black;
   word-break: break-all;
 }
 </style>
