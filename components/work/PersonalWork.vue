@@ -65,7 +65,12 @@
         </v-card-text>
         <v-card-actions tag="div">
           <v-btn outlined rounded text
-            ><a href="" target="_blank"> 準備中 </a></v-btn
+            ><a
+              href="https://github.com/sh-kikuchi/the-elephant-in-the-room"
+              target="_blank"
+            >
+              準備中
+            </a></v-btn
           >
         </v-card-actions>
       </v-card>
