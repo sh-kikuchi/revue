@@ -7,12 +7,22 @@ updatedAt: 2021-11-21
 sortNumber: 007
 ---
 
-## モーダル画面で更新処理が出来るようにしよう（UPDATE）
+# 1. はじめに
+（面倒なので再放送）
+LaravelのCRUDをEloquentでやってみる。CRUDとはCreate（作成）・Read（表示）・Update（更新）・Delete（削除）のそれぞれの頭文字をとったもの。
+
+<br>
+
+今回は更新画面をモーダル画面にしてみようと。何してくれちゃっているのよって感じもあるけど。なので、Laravel記事にちょっとJavaScript交じり。それもjQueryさ。
+
+<br>
+
+# 2. モーダル画面で更新処理が出来るようにしよう（UPDATE）
 
 
 <br>
 
-■ views直下に「note」フォルダを作成
+### ■ views直下に「note」フォルダを作成
 - フォルダ内で`show.blade.php`をを作成。
 ```php
 <div>
@@ -33,7 +43,7 @@ sortNumber: 007
 
 ```
 
-■ 編集ボタン
+### ■ 編集ボタン
 > クリックすると、モーダルが出てくるように。
 
 ※データ属性の設定
@@ -45,7 +55,7 @@ sortNumber: 007
 <button type="submit" class="btn btn-primary js-modal-open" href="" data-target="note-modal" data-note_id="{{$note->id}}" data-note_text="{{ $note-> note }}">編集</button>
 ```
 
-### モーダル画面を作ろう。（Laravel mix）
+# 3.  モーダル画面を作ろう。（Laravel mix）
 
 ---
 
@@ -61,7 +71,7 @@ sortNumber: 007
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 ```
 
-■ `app.blade.php`の下にモーダルを追加
+### ■ `app.blade.php`の下にモーダルを追加
 ※app.blade.phpはビューのおおもと。
 
 ```html
@@ -85,7 +95,7 @@ sortNumber: 007
 </div><!--modal-->
 ```
 
-■ script.jsを作成し、jQueryでモーダルをつくる。
+### ■ script.jsを作成し、jQueryでモーダルをつくる。
 > public/js/script.js <br>
 > 編集ボタンをクリックした時に該当のIDとテキスト内容を表示する。
 >（ただし、IDはinputタグでhiddenにしているので画面には表示されない）
@@ -114,7 +124,7 @@ sortNumber: 007
   });
 ```
 
-■ モーダル用のCSS
+### ■ モーダル用のCSS
 ```css
 .js-modal{
     display: none;
@@ -144,7 +154,7 @@ sortNumber: 007
 
 <br>
 
-### NoteControllerに更新機能を追加
+### ■ NoteControllerに更新機能を追加
 
 ---
 
@@ -162,3 +172,7 @@ sortNumber: 007
         return redirect('/');
     }
 ```
+<br>
+
+# 4. おわりに
+データの更新完了。次はデータを削除するのじゃ。

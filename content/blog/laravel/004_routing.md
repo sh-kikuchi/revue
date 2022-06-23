@@ -7,9 +7,12 @@ updatedAt: 2021-11-21
 sortNumber: 004
 ---
 
-## ルーティング（URL）を設定しましょう・
-> ユーザーが見る画面表示（ビュー）や機能（追加、更新、削除など）用にurlを作成しよう。
+# 1. はじめに
+ ユーザーが見る画面表示（ビュー）や機能（追加、更新、削除など）用にurlを作成しよう。
 
+<br>
+
+# 2. ルーティング（URL）を設定しましょう。
 何を設定するのか？
 - GET送信かPOST送信か
 - URLを任意に設定
@@ -41,3 +44,8 @@ Route::post('note/store','NoteController@store')->name('note.store');
 Route::post('note/edit','NoteController@edit')->name('note.edit');
 Route::get('note/destroy/{note}','NoteController@destroy')->name('note.destroy');
 ```
+
+<br>
+
+# 3. おわりに
+ Laravel8以降はルーティングの書き方も変わっている。私のかんばんアプリはLaravel8以降も6と同じルーティングをしているんだけど、どのようにやったっけ。少し確認しておこう。

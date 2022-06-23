@@ -7,7 +7,12 @@ updatedAt: 2022-02-21
 sortNumber: 102
 ---
 
-## 1. composer.jsonを修正
+# 1. はじめに
+重い腰をあげてLaravel9にしよー。はぁー（溜息）
+
+<br>
+
+# 2. composer.jsonを修正
 
 ■ laravel/framework
 ```
@@ -34,10 +39,9 @@ sortNumber: 102
 上記を変更したら`composer update`
 (上手く行かない場合、`composer update --with-all-dependencies`)
 
+<br>
 
-
-
-## 2. Trusted Proxies
+# 3. Trusted Proxies
 
 ■ "fideloper/proxy": "^4.4"を削除
 
@@ -70,6 +74,9 @@ sortNumber: 102
 
   ```
 
-
-
 - [Error: While updating laravel 8 to 9. Script @php artisan package:discover --ansi handling the post-autoload-dump event returned with error code 1](https://stackoverflow.com/questions/71103241/error-while-updating-laravel-8-to-9-script-php-artisan-packagediscover-ans)
+
+<br>
+
+# 4. おわりに
+思いのほか、短時間で終わったので、1日で自分のアプリ×3のバックアップを終えた感じ。やったね。

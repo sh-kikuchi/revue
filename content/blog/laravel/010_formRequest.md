@@ -121,5 +121,3 @@ public function edit(UserRequest $request){
 
 # 8. おわりに
 仕事帰りの面談後にまとめるにしてはめんどくさかった。
-
-<br>

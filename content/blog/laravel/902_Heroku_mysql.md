@@ -7,7 +7,12 @@ updatedAt: 2021-10-28
 sortNumber: 902
 ---
 
-## 1. アカウント作成＆クレジット登録
+# 1. はじめに
+LaravelをHerokuにデプロイしてからのデータベース作成をしよう。ここではMySQLの設定をClearDBというHerokuのアドオンを用いて行う。
+
+<br>
+
+# 2. アカウント作成＆クレジット登録
 - アカウント登録：https://jp.heroku.com
 - クレジットカード登録
   <br>① 自分のアカウントの「Account settings」を選択
@@ -15,21 +20,27 @@ sortNumber: 902
   <br>※住所を英語表記にする時のお役立ち
   <br> - JuDress: http://judress.tsukuenoue.com/
 
-## 2. アドオン追加（cleardb）
+<br>
+
+# 3. アドオン追加（cleardb）
 ```
 $ heroku addons:add cleardb
 ```
 - configコマンドで Heroku の環境変数である CLEARDB_DATABASE_URL を確認
 
+<br>
 
-## 3. configで環境変数の取得
+# 4. configで環境変数の取得
 ```
 heroku config │ grep CLEARDB_DATABASE_URL
 ```
 > ▼コマンドを打つとしたのようなURLが出現（環境変数を設定するのに必要）
 CLEARDB_DATABASE_URL: mysql://[DB_USERNAME]:[DB_PASSWORD]@[DB_HOST]/[DB_DATABASE]?reconnect=true
 
-## 4. 環境変数の設定
+
+<br>
+
+# 5. 環境変数の設定
 - heroku configで取得した情報を基に設定
 ```
  $ heroku config:set DB_DATABASE=[データベース名]
@@ -45,7 +56,9 @@ $ heroku config:set LANG=ja_JP.UTF-8
 $ heroku config:set TZ=Asia/Tokyo
 ```
 
-## 5. マイグレーション
+<br>
+
+# 6. マイグレーション
 ```
 heroku run php artisan migrate
 ```
@@ -101,3 +114,8 @@ class AppServiceProvider extends ServiceProvider
     }
 }
 ```
+
+<br>
+
+# 7. おわりに
+PostgreSQLの時はそんなことなかったが、ClearDBによるMySqlの設定の際はカラムのバイト数、文字型を気にしなくていけないので注意が必要。もしPostgreSQLで問題ないのなら、そっちの方が面倒ではないかもしれぬ。

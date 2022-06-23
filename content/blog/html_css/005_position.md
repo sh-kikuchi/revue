@@ -4,18 +4,26 @@ description: Positionの使い方
 category: CSS
 createdAt: 2021-11-04
 updatedAt: 2021-11-04
-sortNumber: 5
+sortNumber: 005
 ---
 
-## Positionとは？
+# 1. はじめに
+Re:Vueサイトのdesignでは、`relative`と`absolute`の組み合わせが理解しやすい？コンテンツを作った。positionは地味に使い道があるので基礎は理解しておきたい。
+
+https://sh-revue.net/design
+
+<br>
+
+
+# 2. Positionとは？
 > 要素の位置を決めるためのもの
 
-1. position: relative
+### ■ position: relative
 - 普通の位置（初期値＝static）を基準として、配置を決めることが出来る。
 
 <br>
 
-2. position: absolute
+### ■ position: absolute
 - 親要素を基準として、配置を決めることが出来る。
 
 <br>
@@ -26,7 +34,7 @@ sortNumber: 5
 
 <br>
 
-## positionとセットで使って位置決め
+### ■ positionとセットで使って位置決め
   │        │                      │
   │ ------ │ -------------------- │
   │ top    │ ある基準から上の位置 │
@@ -36,7 +44,7 @@ sortNumber: 5
 
 <br>
 
-## 要素同士を重ねて使うには？
+### ■ 要素同士を重ねて使うには？
 > 親子関係を意識しよう！
 <br> 今回やりたいこと：【親】の正方形の中で【子】の正方形の位置を決めたい。
 -  HTMLにおける2つの正方形は以下の包含関係となっているとする。
@@ -80,3 +88,8 @@ sortNumber: 5
 
 ★ 詳しくはこちら！（小さい正方形を実際に動かして位置を確かめられる）
 https://sh-revue.net/design
+
+<br>
+
+# 3. おわりに
+経験的にposition自体はハンバーガーメニュ―のボタンやモーダル画面位置、モーダル背景などでも使う場面はあるかなと。うん、慣れ慣れ。

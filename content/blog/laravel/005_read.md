@@ -7,9 +7,14 @@ updatedAt: 2021-11-21
 sortNumber: 005
 ---
 
-## DBのデータを表示しよう（READ）
+# 1. はじめに
+LaravelのCRUDをEloquentでやってみる。CRUDとはCreate（作成）・Read（表示）・Update（更新）・Delete（削除）のそれぞれの頭文字をとったもの。
 
-### ビューの作成
+<br>
+
+# 2. DBのデータを表示しよう（READ）
+
+### ■ ビューの作成
 
 ---
 
@@ -30,7 +35,7 @@ sortNumber: 005
 @endforeach
 ```
 
-### NoteController内で「表示」するメソッドを編集
+### ■ NoteController内で「表示」するメソッドを編集
 ---
 
 <br>
@@ -67,3 +72,8 @@ class NoteController extends Controller
 ```
 
 ※ return view~はnoteフォルダの`show.blade.php`というビューファイルを返すよという意味。
+
+<br>
+
+# 3. おわりに
+データの表示完了。次はデータを追加するのじゃ。

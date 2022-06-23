@@ -7,9 +7,15 @@ updatedAt: 2021-11-21
 sortNumber: 008
 ---
 
-## ノート記事を削除出来るようにしよう（DELETE）
+# 1. はじめに
+（面倒なので再放送）
+LaravelのCRUDをEloquentでやってみる。CRUDとはCreate（作成）・Read（表示）・Update（更新）・Delete（削除）のそれぞれの頭文字をとったもの。
 
-### `show.blade.php`に削除ボタンを追加
+<br>
+
+# 2. ノート記事を削除出来るようにしよう（DELETE）
+
+### ■ `show.blade.php`に削除ボタンを追加
 ---
 
 <br>
@@ -31,7 +37,7 @@ sortNumber: 008
 
 ```
 
-### NoteControllerに削除機能を追加
+### ■ NoteControllerに削除機能を追加
 ```php
     public function destroy(Note $note)
     {
@@ -40,3 +46,7 @@ sortNumber: 008
         return redirect('/');
     }
 ```
+<br>
+
+# 3. おわりに
+データの削除完了。これでCRUDはおしまい。無敵です。

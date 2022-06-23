@@ -4,10 +4,18 @@ description: 枠線の設定から図形まで
 category: HTML,CSS
 createdAt: 2021-12-29
 updatedAt: 2021-12-29
-sortNumber: 4
+sortNumber: 004
 ---
 
-### border
+# 1. はじめに
+Re:Vueサイトのdesignでは、ボーダーの種類と三角形の作り方を目で確認出来るコンテンツがある。ここでは、その時の振り返りもかけて整理していこう。
+
+https://sh-revue.net/design
+
+<br>
+
+
+# 2. border
 > border: 幅 種類 色 ;
 ---
 ■ HTML
@@ -49,16 +57,15 @@ border-style: solid dashed groove dotted;
 
 <br>
 
-### 【図形】三角形を作ってみよう
-> CSSで三角形を作ってみましょう。といっても、下記のコードだけで出来てしまいます。
-> 本サイトの`<Design>`のページでは三角形のデモがあります。borderの調整をしながら様々な三角形を作ってみて下さい。
+# 3. 【図形】三角形を作ってみよう
+CSSで三角形を作ってみよう。といっても、下記のコードだけで出来る。
 
-■ HTML
+### ■ HTML
 ```html
 <div class="triangle"></div>
 ```
 
-■ CSS
+### ■ CSS
 ```css
 .triangle{
   width: 0px;
@@ -68,3 +75,8 @@ border-style: solid dashed groove dotted;
   border-left: 50px solid transparent; 
 }
 ```
+
+<br>
+
+# 4. おわりに
+ただの枠線だけでなく図形を作れるので、色々応用は出来そうである。三角形は向きを変えると、スライドボタンみたいなものになるし。。
