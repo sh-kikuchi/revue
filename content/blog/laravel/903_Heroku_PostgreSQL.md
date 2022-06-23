@@ -7,12 +7,19 @@ updatedAt: 2021-10-28
 sortNumber: 903
 ---
 
-## 1. herokuのアドオンにPostgreSQLを作成する
+# 1. はじめに
+LaravelをHerokuにデプロイしてからのデータベース作成をしよう。ここではPostgreSQLの設定をheroku-postgresqlというHerokuのアドオンを用いて行う。
+
+<br>
+
+# 2. herokuのアドオンにPostgreSQLを作成する
 ```
 $ heroku addons:create heroku-postgresql:hobby-dev
 ```
 
-## 2. 環境変数の取得
+<br>
+
+# 3. 環境変数の取得
 ```
 $ heroku config:get DATABASE_URL
 ```
@@ -27,7 +34,9 @@ $ heroku config:set DB_PASSWORD=<パスワード>
 ```
 ※configを設定する際、イコールより先はクオーテーションマークは要らない。そのままコピぺ。
 
-## 3. DBのマイグレーション
+<br>
+
+# 4. DBのマイグレーション
 ※準備：composer.jsonに加筆
 > Laravelの.env はgit管理外なので、Heroku用の.env.heroku を用意。デプロイの際にHerokuサーバー内で.env.heroku を.env にコピーするようにする。
 ```
@@ -48,3 +57,8 @@ $ heroku run php artisan migrate
 # (マイグレーションをやり直したい場合)
 > heroku run php artisan migrate:refresh --seed
 ```
+
+<br>
+
+# 5. おわりに
+MySqlよりはPostgreSQLの方が簡単な印象。

@@ -7,9 +7,15 @@ updatedAt: 2021-11-21
 sortNumber: 006
 ---
 
-## ノート記事を追加しよう（CREATE）
+# 1. はじめに
+（面倒なので再放送）
+LaravelのCRUDをEloquentでやってみる。CRUDとはCreate（作成）・Read（表示）・Update（更新）・Delete（削除）のそれぞれの頭文字をとったもの。
 
-### views直下に「note」フォルダを作成
+<br>
+
+# 2. ノート記事を追加しよう（CREATE）
+
+### ■ views直下に「note」フォルダを作成
 
 ---
 
@@ -41,7 +47,7 @@ sortNumber: 006
 @endsection
 ```
 
-### NoteControllerに追加機能を追加
+### ■ NoteControllerに追加機能を追加
 
 ---
 
@@ -59,3 +65,7 @@ public function store(Request $request)
     return redirect('/');
 }
 ```
+<br>
+
+# 3. おわりに
+データの追加完了。次はデータを更新するのじゃ。

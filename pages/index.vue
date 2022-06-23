@@ -24,12 +24,14 @@
 
 .first-view {
   position: relative;
-  background-color: rgb(96, 130, 145);
-  background-image: url("~@/assets/image/akabane.png");
+  /* background-color: rgb(96, 130, 145); */
+  background-color: rgb(183, 204, 219);
+  background-image: url("~@/assets/image/akabane.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-blend-mode: hard-light;
+  /* background-blend-mode: hard-light; */
+  background-blend-mode: darken;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -40,12 +42,13 @@
 @media only screen and (max-width: 750px) {
   .first-view-sp {
     position: relative;
-    background-color: rgb(96, 130, 145);
+    /* background-color: rgb(96, 130, 145); */
+    background-color: rgb(183, 204, 219);
     background-image: url("~@/assets/image/akabane_sp.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-blend-mode: screen;
+    background-blend-mode: darken;
     width: 100%;
     height: 100%;
     margin: 0;

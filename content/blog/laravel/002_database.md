@@ -7,10 +7,17 @@ updatedAt: 2021-11-18
 sortNumber: 002
 ---
 
-## データベースの準備
+# 1. はじめに
+データベースの作成方法を整理し、ダミーデータの入れ方も学ぶ。ダミー入れとくと開発時にデータが表示出来るか、追加・更新・削除が出来るかの確認もコストを下げることが出来ると思ふ。
+
+[smalltalk](http://toolbox-smalltalk.herokuapp.com/login)
+
+<br>
+
+# 2. データベースの準備
 [Laravel8レファレンス](https://readouble.com/laravel/8.x/ja/eloquent.html)
 
-### ファイル取得
+### ■ ファイル取得
 > モデルとマイグレーション、ファクトリ、シーダ、ポリシー、コントローラ、フォームリクエストを生成する短縮形<br>
 
 ```
@@ -27,10 +34,7 @@ Controller created successfully.
 Policy created successfully.
 ```
 
-### マイグレーションファイル
---- 
-<br>
-
+### ■ マイグレーションファイル
 > database>migrations>2021_11_21_052334_create_notes_table
 
 ```php
@@ -55,7 +59,7 @@ public function down()
 
 <br>
 
-### ダミーデータを入れる
+### ■ ダミーデータを入れる
 ---
 
 <br>
@@ -131,8 +135,7 @@ public function run()
 ```
 <br>
 
-### マイグレーション実行
----
+### ■ マイグレーション実行
 
   今回はダミーデータを生成しているので、`--seed`をつけている。
   ```
@@ -143,3 +146,8 @@ public function run()
   ```
   php artisan migrate:fresh --seed
   ```
+
+<br>
+
+# 3. おわりに
+Laravel Breezeのキャッチアップもしなくちゃ。Jet Streamもどうかな。。。

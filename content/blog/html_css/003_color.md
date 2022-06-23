@@ -4,14 +4,21 @@ description: 文字/背景/グラデーション
 category: HTML,CSS
 createdAt: 2021-12-29
 updatedAt: 2021-12-29
-sortNumber: 3
+sortNumber: 003
 ---
 
-## 文字や要素の背景の色を変える。
+# 1. はじめに
+Re:Vueサイトのdesignでは、三原色の組み合わせで色が変化する様が分かる「色」にまつわるdesignのコンテンツを用意している。今回はそれについての補強材料を作成していきたい。それを通じて、作ってみたいコンテンツが出来るやもしれない。
 
-### 1.テキストの色を変更したい。
+https://sh-revue.net/design
+
+<br>
+
+
+# 2. 文字や要素の背景の色を変える。
+
+### ■ テキストの色を変更したい。
 > color: 〇〇；
----
 ■ HTML
 ```html
 <p>テキスト</p>
@@ -23,9 +30,8 @@ p{
 }
 ```
 
-↑ textというクラス名のついた文字を赤字に変更する。
-
-#### ※他にもこんな使い方が出来る。
+↑ textというクラス名のついた文字を赤字に変更する。<br>
+ ※他にもこんな使い方が出来る。
 
 【カラー名を16進数で表記する】（短縮形も存在はする）
 ```css
@@ -34,6 +40,8 @@ p {
 }
 ```
 参考：http://www.netyasun.com/home/color.html
+
+<br>
 
 【RGBで設定】
 > R=赤、G=緑、B=青、それぞれに0-255の範囲で色の度合を設定する（%表記でも可）。aは色の透明度を決めることができ、0~1.0の間で設定する。
@@ -47,14 +55,13 @@ p {
 ```
 <br>
 
-### 2.要素の色を変更したい。
+### ■ 要素の色を変更したい。
 > background-color:〇〇;
----
-■ HTML
+【HTML】
 ```html
 <div>要素</div>
 ```
-■ CSS
+【CSS】
 ```css
 div{
   background-color: red;
@@ -62,15 +69,16 @@ div{
 ```
 <br>
 
-### 3.グラデーションをつける。
+### ■ グラデーションをつける。
 > background: linear-gradient();
----
 
-■ HTML
+<br>
+
+【HTML】
 ```html
 <div>要素</div>
 ```
-■ CSS
+【CSS】
 ```css
 div{
   background: linear-gradient(45deg, red, blue);
@@ -92,3 +100,8 @@ div{
     background: linear-gradient(to left top, red, blue);
  }
  ```
+
+<br>
+
+# 3. おわりに
+グラデーションについてもVue.jsのスタイルレンダリングで表現が出来そうな気がするので、コンテンツ化しようかしら。。。

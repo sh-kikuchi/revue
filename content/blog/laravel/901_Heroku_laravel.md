@@ -6,13 +6,20 @@ createdAt: 2021-10-28
 updatedAt: 2021-10-28
 sortNumber: 901
 ---
+# 1. はじめに
+HerokuにLaravelのアプリをインストールしてみる。まずはアプリをデプロイするところから順序立ててやってみる。
 
-## 1. Heroku CLIのインストール
+<br>
+
+# 2. Heroku CLIのインストール
 - 【事前準備】gitを使えるようにしておくこと
 - herokuのインストール
   https://devcenter.heroku.com/ja/articles/heroku-cli#download-and-install
 
-## 2. herokuをログイン
+
+<br>
+
+# 3. herokuをログイン
 - コマンドをたたく場所はプロジェクトディレクトリ
 > heroku login -i
 ```
@@ -23,14 +30,18 @@ Password: **************
 Logged in as ~~　←loggedでログイン成功！
 ```
 
-## 3. Procfileを作成する
+<br>
+
+# 4. Procfileを作成する
 - HerokuでWebアプリを動かす指示書のようなもの
 ```
   $ touch Procfile
   $ echo web: vendor/bin/heroku-php-apache2 public/ > Procfile
 ```
 
-## 4.レポジトリを作成する
+<br>
+
+# 5.レポジトリを作成する
 - コマンドをたたく場所はプロジェクトディレクトリ
 > $ heroku create 任意のアプリ名
 
@@ -40,17 +51,18 @@ Creating ⬢ toolbox-kanban... done
 https://toolbox-kanban.herokuapp.com/ │ https://git.heroku.com/toolbox-kanban.git
 
 ```
-<div style="page-break-before:always"></div>
+<div style="page-break-before:always"></div><br>
 
-## 5. アプリの情報を設定する
+
+# 6. アプリの情報を設定する
 ```
 $ heroku config:set APP_KEY=$(php artisan key:generate --show)
 ```
 上記のコマンドが効かない場合は予め、php artisan key:generate --showでアプリキーを取得して、heroku config:set APP_KEY=<アプリキー>のコマンドを打つこと。
 
-<div style="page-break-before:always"></div>
+<div style="page-break-before:always"></div><br>
 
-## 6. herokuサーバーにpush
+# 7. herokuサーバーにpush
 
 ①　既にアプリが出来上がっている場合
 （Gitも使っている状態）
@@ -81,3 +93,8 @@ $ git commit -m "the first commit"
 ```
 $ git push heroku master
 ```
+
+<br>
+
+# 8. おわりに
+procfileの用意とアプリキーの設定は漏れているとデプロイしても、上手く表示できないっぽい。気を付けないと。

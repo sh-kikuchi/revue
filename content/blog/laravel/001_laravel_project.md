@@ -7,7 +7,16 @@ updatedAt: 2021-11-18
 sortNumber: 001
 ---
 
-## 1. インストール
+
+# 1. はじめに
+Laravelで自分用メモアプリを作る。これは自分で作ったグループチャットアプリからリカットして編集してみた。そのアプリの「ひとりごと」コーナーは本当に愚痴の掃きだめにしかならないけど、モノは言いよう。同じ技術でもメモアプリと名を冠せば、有用性がぐーんとアップする（気がする）
+
+[smalltalk](http://toolbox-smalltalk.herokuapp.com/login)
+
+
+<br>
+
+# 2. インストール
 [レファレンスをこちら](https://readouble.com/laravel/8.x/ja/installation.html)
 > Laravel8をcomposerを使ってインストールしてみましょう。<br>
 > 【準備】XAMMPのhtdocsに「mymemo」というフォルダを作成しよう。
@@ -28,7 +37,9 @@ sortNumber: 001
   php artisan serve
   ```
 
-## 2. ログイン
+<br>
+
+# 3. ログイン
 [レファレンスをこちら](https://readouble.com/laravel/8.x/ja/installation.html)
 > Laravel8をcomposerを使ってインストールしてみましょう。<br>
 > 【準備】XAMMPのhtdocsに「mymemo」というフォルダを作成しよう。
@@ -98,4 +109,7 @@ sortNumber: 001
     Migrated:  2019_12_14_000001_create_personal_access_tokens_table (50.61ms)
   ```
 
-これでユーザー情報を格納するテーブルが用意でき、ログイン画面が実装できました(´▽｀)
+<br>
+
+# 4. おわりに
+これでユーザー情報を格納するテーブルが用意でき、ログイン画面が実装できタ(´▽｀)

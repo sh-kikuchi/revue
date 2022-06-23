@@ -7,10 +7,14 @@ updatedAt: 2021-11-03
 sortNumber: 12
 ---
 
-〇やりたいこと
->  Bookstockというアプリを作りました。そこではテーマごとに本を整理することができ、且つ本のブックメモが書けるのですが、CSV出力が出来ると良いなと思っていました。なので、今回はLaravelのCSV出力にチャレンジしてみたいと思います。
-→http://sk-bookstock.herokuapp.com で実装しております。(mail:test@test.com pass:testtestで試してもOK）
- 
+
+# 1. はじめに
+ Bookstockというアプリを作った。そこではテーマごとに本を整理することができ、且つ本のブックメモが書ける、けどCSV出力が出来ると良いな・・・と。なので、今回はLaravelのCSV出力にチャレンジしてみたいと思ふ。<br>
+
+ [Bookstock](http://sk-bookstock.herokuapp.com) <br> 
+- メールアドレス：test@test.com
+- パスワード：testtest
+
 <br>
 
 ※ マイグレーションファイル
@@ -32,7 +36,9 @@ sortNumber: 12
     }
 ```
 
-■ ボタン作り
+<br>
+
+# 2. ボタン作り
 - ここでは、「CSV出力」のボタンを押下した時に、引数としてユーザーIDとテーマIDをとってみたいと思います。フォームのPOST通信を使い、隠れINPUTを用意して値を渡してみます。<br>
 
 - inputの中身
@@ -44,7 +50,9 @@ sortNumber: 12
 </form>
 ```
 
-■ ルーティング
+<br>
+
+# 3. ルーティング
 - Laravel8の場合
 ```php
 Route::post('book/csv/export',[App\Http\Controllers\BookController::class,'csvExport'])->name('book.csv.export');
@@ -110,5 +118,9 @@ Route::post('csv/export', 'BookController@csvExport')->name('book.csv.export');
     }
 ```
 
-■ 参考
+<br>
+
+# 4. おわりに
+下記、参考にしていたんだけど、Yuus Memoのサイト閉じちゃっているっぽい。残念だな。（お世話になりました。どうもありがとうございました。）
+
 - [Yuus Memo -【Laravel】CSVエクスポート ☆超簡単！！](https://www.yuu-progra.com/2021/04/25/%e3%80%90laravel%e3%80%91csv%e3%82%a8%e3%82%af%e3%82%b9%e3%83%9d%e3%83%bc%e3%83%88-%e2%98%86%e8%b6%85%e7%b0%a1%e5%8d%98%ef%bc%81%ef%bc%81/)

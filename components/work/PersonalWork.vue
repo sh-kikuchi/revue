@@ -53,16 +53,43 @@
       <v-card class="mx-auto" outlined>
         <v-list-item three-line>
           <v-list-item-content>
+            <div class="text-overline mb-4">我流フレームワーク</div>
+            <v-list-item-title class="text-h5 mb-1">
+              The Elephant in the room
+            </v-list-item-title>
+            <v-list-item-subtitle>PHP8</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-card-text>
+          フレームワークに頼らないで、諸機能を実装しようとするとどれくらい大変だろうという観点のもとで、認証やメール送信、CRUDなどを実装してみました。
+        </v-card-text>
+        <v-card-actions tag="div">
+          <v-btn outlined rounded text
+            ><a href="" target="_blank"> 準備中 </a></v-btn
+          >
+        </v-card-actions>
+      </v-card>
+      <v-card class="mx-auto" outlined>
+        <v-list-item three-line>
+          <v-list-item-content>
             <div class="text-overline mb-4">toolboxシリーズ</div>
             <v-list-item-title class="text-h5 mb-1"> kanban </v-list-item-title>
             <v-list-item-subtitle
-              >Laravel9（5.5~）,jQuery,MySQL,HTML,CSS</v-list-item-subtitle
+              >Laravel9（5.5~）,Vue3,MySQL,HTML,CSS</v-list-item-subtitle
             >
           </v-list-item-content>
         </v-list-item>
         <v-card-text>
-          アプリで「お道具箱」をつくるコンセプトで始めた自主企画ものが「toolbox」です。第1弾（緑アプリ）がトレロ風かんばんアプリです。個人向けのタスク管理で、wiki機能も搭載。並べ替えは出来るようにしましたが、本家のようにドラッグアンドドロップは出来ませんので悪しからず。緑を基調としたデザイン。(テストアカウント_email:test@test.com
-          password:testtest ※パスワード変更はしないで下さい)
+          アプリで「お道具箱」をつくるコンセプトで始めた自主企画ものが「toolbox」です。第1弾（緑アプリ）がトレロ風かんばんアプリです。個人向けのタスク管理で、wiki機能も搭載。並べ替えは出来るようにしましたが、本家のようにドラッグアンドドロップは出来ませんので悪しからず。緑を基調としたデザイン。
+          <br />
+          <div>
+            <div>テストアカウント</div>
+            <ul>
+              <li>【email】test@test.com</li>
+              <li>【password】testtest</li>
+            </ul>
+            <small>変更禁止</small>
+          </div>
         </v-card-text>
         <v-card-actions>
           <v-btn outlined rounded text
@@ -80,15 +107,30 @@
               smalltalk（ver.2）
             </v-list-item-title>
             <v-list-item-subtitle
-              >Laravel9（6~）,Bootstrap,jQuery,MySQL,HTML,CSS</v-list-item-subtitle
+              >Laravel9（6~）,Bootstrap4,MySQL,HTML,CSS</v-list-item-subtitle
             >
           </v-list-item-content>
         </v-list-item>
         <v-card-text>
           「toolbox」第2弾（青アプリ）。元々、TwitterのようなSNSアプリを作っていたのですが、グループトークを意識したアプリにリミックスしました。（ver.1はGit
-          Hubでレガシーとして残している。）チャンネルを作って、それ毎に「お茶の間」トークを楽しめるようにしております。でも、たまには一人で居たい時も…。そんな時は「ひとりごと」を使ってぼそぼそ呟くことも可能です。必要かは別として。[テストアカウント_1)
-          email:test@test.com password:testtest 2) email:test2@test.com
-          password:test2test2]
+          Hubでレガシーとして残している。）チャンネルを作って、それ毎に「お茶の間」トークを楽しめるようにしております。でも、たまには一人で居たい時も…。そんな時は「ひとりごと」を使ってぼそぼそ呟くことも可能です。必要かは別として。
+          <div>
+            <br />
+            <div>■ テストアカウント1</div>
+            <ul>
+              <li>【email】test@test.com</li>
+              <li>【password】testtest</li>
+            </ul>
+            <small>変更禁止</small>
+          </div>
+          <div>
+            <div>■ テストアカウント2</div>
+            <ul>
+              <li>【email】test2@test.com</li>
+              <li>【password】test2test2</li>
+            </ul>
+            <small>変更禁止</small>
+          </div>
         </v-card-text>
         <v-card-actions>
           <v-btn outlined rounded text
@@ -106,13 +148,21 @@
               bookstock
             </v-list-item-title>
             <v-list-item-subtitle
-              >Laravel9(8~),Bootstrap,jQuery,MySQL,HTML,CSS</v-list-item-subtitle
+              >Laravel9(8~),Bootstrap4,MySQL,HTML,CSS</v-list-item-subtitle
             >
           </v-list-item-content>
         </v-list-item>
         <v-card-text>
-          「toolbox」第3弾（赤アプリ）はブックメモアプリ。自分で決めたテーマ毎に本の要約や引用をまとめられるもの。「自分が学生時代にレポートやレジュメを作成する中であったら便利だったな」という思いでつくってみました。複数の本から情報をまとめたい時には是非。(テストアカウント_email:test@test.com
-          password:testtest )
+          「toolbox」第3弾（赤アプリ）はブックメモアプリ。自分で決めたテーマ毎に本の要約や引用をまとめられるもの。「自分が学生時代にレポートやレジュメを作成する中であったら便利だったな」という思いでつくってみました。複数の本から情報をまとめたい時には是非。
+          <br />
+          <div>
+            <div>■ テストアカウント</div>
+            <ul>
+              <li>【email】test@test.com</li>
+              <li>【password】testtest</li>
+            </ul>
+            <small>変更禁止</small>
+          </div>
         </v-card-text>
         <v-card-actions>
           <v-btn outlined rounded text
