@@ -69,6 +69,12 @@ export default {
           link: "/blog/vue_laravel",
           summery: "Vue.jsとLaravelの夢の共演",
         },
+        {
+          id: 7,
+          name: "Flutter",
+          link: "/blog/flutter",
+          summery: "Dash、好きなキャラ。",
+        },
         // {
         //   id: 99,
         //   name: "闇鍋",
