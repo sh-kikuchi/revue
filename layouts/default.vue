@@ -150,6 +150,11 @@ export default {
           title: "Career",
           to: "/career",
         },
+        {
+          icon: "mdi-alpha-g-box-outline",
+          title: "Gen.",
+          to: "/sub/generator",
+        },
       ],
       miniVariant: true,
       right: false,

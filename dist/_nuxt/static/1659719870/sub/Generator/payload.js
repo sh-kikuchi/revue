@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/sub/Generator", {data:[{}],fetch:{},mutations:[]});
