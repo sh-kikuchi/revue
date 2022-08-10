@@ -17,9 +17,15 @@ export default {
       { hid: 'description', name: 'description', content: "Re:Vue is my anthology that expresses what I've learned from Information Technology." },
       { name: 'format-detection', content: 'telephone=no' },
       { hid: 'keywords', name: 'keywords', content: 'revue,vue,nuxt' },
+      { hid: 'msapplication-TileColor', name: 'msapplication-TileColor', content: '#da532c' },
+      { hid: 'theme-color', name: 'theme-color', content: '#ffffff' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { hid: 'icon', rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
+      { hid: 'apple-touch-icon', rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon/apple-touch-icon.png' },
+      { hid: 'icon32', rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon/favicon-32x32.png' },
+      { hid: 'icon16', rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon/favicon-16x16.png' },
+      { hid: 'manifest', rel: 'manifest', href: '/site.webmanifest' },
     ]
   },
 
