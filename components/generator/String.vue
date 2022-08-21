@@ -24,8 +24,8 @@
         ></v-checkbox>
         <v-checkbox
           v-model="selected"
-          label="特殊文字(!#$%&*+-./=?@_)"
-          value="!#$%&*+-./=?@_"
+          label="特殊文字(!#$%&*+./=@_)"
+          value="!#$%&*+./=@_"
           :rules="selectedRules"
         ></v-checkbox>
         <v-text-field

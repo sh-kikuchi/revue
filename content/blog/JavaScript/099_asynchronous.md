@@ -3,15 +3,15 @@ title: 非同期処理
 description: 処理タイミングを理解しよう
 category: JavaScript
 createdAt: 2021-01-30
-updatedAt: 2022-01-30
+updatedAt: 2022-08-21
 sortNumber: 99
 ---
 
 # 1. はじめに
-同期処理は上から順に一つずつ処理が動きます。その間に重い処理があるとそれだけ時間がかかってしまいます。それに対して非同期処理はレスポンスが返るまでに別の処理も進めてレスポンスを受け取り次第、呼び出し元に値を返すことをします。今回は非同期処理の代表例としてsetTimeout関数・Promise・async/awaitの使い方を簡単にまとめてみます。
+同期処理は上から順に一つずつ処理が動く。その間に重い処理があるとそれだけ時間がかかってしまう。それに対して非同期処理はレスポンスが返るまでに別の処理も進めてレスポンスを受け取り次第、呼び出し元に値を返すことをする。今回は非同期処理の代表例としてsetTimeout関数・Promise・async/awaitの使い方を簡単にまとめてみる。
 
 # 2. setTimeout
-`setTimeout`関数を使うと任意のタイミングで処理を動かすことが出来ます。下記のsetTimeout関数の例では、起動してから5秒後に処理が動きます。
+`setTimeout`関数を使うと任意のタイミングで処理を動かすことが出来る。下記のsetTimeout関数の例では、起動してから5秒後に処理が動く。
 
 ```js
 console.log('ぎりぎりセーフ', new Date());
@@ -28,7 +28,7 @@ setTimeout(() => {
 <br>
 
 # 3. Promiseを使った非同期処理
-Promiseオブジェクトも非同期処理を扱う機能です。この処理が成功した時には`resolve`、失敗した時には`reject`で値をセットします。`then`メソッドはPromise関数がした時に動く処理です。そのに対して失敗した時に動く処理が`catch`メソッドになります。
+Promiseオブジェクトも非同期処理を扱う機能。この処理が成功した時には`resolve`、失敗した時には`reject`で値をセットする。`then`メソッドはPromise関数が成功した時に動く処理を指す。それに対して失敗した時に動く処理が`catch`メソッド。
 
 ```js
 let result = true;
@@ -72,7 +72,7 @@ Promise.resolve()
 <br>
 
 # 5. asyncとawait
-非同期処理は`async`と`await`を使って書くことも出来ます。Promiseを利用した構文よりも、簡潔に書けるのが特徴です。async function内の処理の中にawaitをしていたPromise構文を作成します。そうすることでawaitを指定した関数のPromiseの結果が返されるまで、async function内の処理が一時停止されます。
+非同期処理は`async`と`await`を使って書くことも出来る。Promiseを利用した構文よりも、簡潔に書けるのが特徴的である。async function内の処理の中にawaitをしていたPromise構文を作成する。そうすることでawaitを指定した関数のPromiseの結果が返されるまで、async function内の処理が一時停止される。
 ```js
 let X = 1
 console.log(X);
@@ -83,8 +83,7 @@ async function start() {
     setTimeout(() => {
       resolve(console.log(X += 1));
     }, 1000);
-  });
-
+  })
   await new Promise((resolve) => {
     setTimeout(() => {
       resolve(console.log(X += 1));
@@ -98,7 +97,7 @@ async function start() {
 <br>
 
 # 6. Promise(並列処理)
-下記ではP1とP2の関数を用意しています。P1は起動から2秒後に処理が動き、P2では起動時に処理が動きます。`Promise.all`を使うことによって、結果をまとめて取得することが出来ます。
+下記ではP1とP2の関数を用意している。P1は起動から2秒後に処理が動き、P2では起動時に処理が動く。`Promise.all`を使うことによって、結果をまとめて取得することが出来る。
 ```js
 function P1() {
   return new Promise(function (resolve) {
@@ -128,6 +127,6 @@ Promise.all([
 <br>
 
 # 7. おわりに
-Node.jsを触っていると非同期処理から逃れられず、苦手意識があったとしても理解しておかないといけないなと痛感します。この記事は好例があれば更新したいと思います。まずは覚書程度ですが、参考になればと思います。
+Node.jsを触っていると非同期処理から逃れられず、苦手意識があったとしても理解しておかないといけないなと痛感する。この記事は好例があれば更新したいと思う。まずは覚書程度ですが、参考になればと思う。
 
 <br>

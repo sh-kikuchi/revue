@@ -1,10 +1,10 @@
 ---
-title: スクロールできるリスト
-description: ListView/SingleChildScrollView
+title: スプラッシュ画面
+description: flutter_native_splash
 category: flutter
 createdAt: 2021-07-06
 updatedAt: 2021-07-06
-sortNumber: 005
+sortNumber: 008
 ---
 
 # 1. はじめに

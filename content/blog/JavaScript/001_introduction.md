@@ -3,12 +3,12 @@ title: 変数と定数
 description: console.log、let、const
 category: JavaScript
 createdAt: 2021-11-06
-updatedAt: 2021-12-04
+updatedAt: 2022-08-21
 sortNumber: 1
 ---
 
 # 1. はじめに
-JavaScriptは動的にコンテンツを更新したり、マルチメディアを管理したりなどが出来るスクリプト言語です。（[JavaScript - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript)）もっとザックリ言うならば。Webページに様々な動きを加えることが出来るものです。これから様々な学びを通して、JavaScriptの可能性を広げてみたいです。
+「JavaScriptは動的にコンテンツを更新したり、マルチメディアを管理したりなどが出来るスクリプト言語である。」（[JavaScript - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript)）らしい。これが端的で良いと思ったりするけど、本屋に行くとJavaコーナーに誤って置かれる存在でもある（赤羽でも見た）。
 
 <br>
 
@@ -18,7 +18,7 @@ JavaScriptは動的にコンテンツを更新したり、マルチメディア�
 - 試しに書いてみよう。
     ```js 
      console.log(123);
-      console.log(1+2+3);
+    　console.log(1+2+3);
       console.log("文字列");
       console.log("1"+"2"+"3");
     ```
@@ -84,4 +84,4 @@ JavaScriptは動的にコンテンツを更新したり、マルチメディア�
 <br>
 
 # 4. おわりに
-console.logはデバッグに使えるので実装する時に処理がどのようにされているかを確認するのに役立つかと思います。変数や定数も今後、死ぬほど使うので意味をここで把握して色々なコーディングを通じて、それぞれの役割を体験していきましょう（自分もね）。
+`console.log`は変数・定数の中身を確認したり、処理の経過をマークすることで呼び出したい関数（メソッド）が呼び出せているかを確認したり出来るのでやはり重宝する。constとletはやったから、letとvarの違いに少し踏み込んでみようか。ちらっと聞くけど、ほぼ同じ性質じゃないかと思っていて実感がわいていない。
