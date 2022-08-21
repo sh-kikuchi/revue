@@ -3,12 +3,12 @@ title: フォームの入力チェックをしよう。
 description: addEventListenerを使って入力に不備がないかチェックする処理を書いてみましょう。
 category: JavaScript
 createdAt: 2022-01-15
-updatedAt: 2022-01-15
+updatedAt: 2022-08-21
 sortNumber: 7
 ---
 
 # 1. はじめに
-自分のサイトでコンタクト用にフォームを作成しました。そのフォームの各項目の入力に不備がないかのチェックをフロントエンドの部分でやってみたいと思い、実装してみました。本記事では簡単に下記のディレクトリを想定して進めて行きたいと思います。
+自分のサイトでコンタクト用にフォームを作成した。そのフォームの各項目の入力に不備がないかのチェックをフロントエンドの部分でやってみたいと思い、実装してみた。本記事では簡単に下記のディレクトリを想定して進めて行きたい。
 ```
   │── js
    │   │── script.js
@@ -63,7 +63,7 @@ sortNumber: 7
 
 <br>
 
-# 4. JavaScriptの実装
+# 3. JavaScriptの実装
 ↓まずは全体
 ```js
 const contactForm = document.getElementById('contactForm');
@@ -126,8 +126,8 @@ contactForm.addEventListener('submit', function (e) {
 ```
 <br>
 
-■ フォームの送信をした時にイベントを呼び出す。
-> `contactForm`というid名を持ったフォームがsubmitされた時に同時にイベントを呼び出します。ここでエラーチェックの処理を書いていきます。
+### ■ フォームの送信をした時にイベントを呼び出す。
+> `contactForm`というid名を持ったフォームがsubmitされた時に同時にイベントを呼び出す。ここでエラーチェックの処理を書いていく。
 ```js
 const contactForm = document.getElementById('contactForm');
 
@@ -137,8 +137,8 @@ contactForm.addEventListener('submit', function (e) {
 ```
 <br>
 
-■ フォームから値を取得
-> `document.getElementById('id名').value`でフォームの各項目の値を取得しています。現在の文書(document)にある特定のIDに紐づいているタグの値を取得しているという理解で良きだと思います。取得した値は定数に格納しています。
+### ■ フォームから値を取得
+> `document.getElementById('id名').value`でフォームの各項目の値を取得している。現在の文書(document)にある特定のIDに紐づいているタグの値を取得しているという理解で良きかな。取得した値は定数に格納している。
 ```js
   const name = document.getElementById('name').value;
   const mail = document.getElementById('mail').value;
@@ -148,8 +148,8 @@ contactForm.addEventListener('submit', function (e) {
 
 <br>
 
-■ 空チェック
-> フォームの各値を配列に突っ込んじゃいましょう。これを使って、ループを回して値が空かどうかを一気に確認してみます。
+### ■ 空チェック
+> フォームの各値を配列に突っ込んじゃおう。これを使って、ループを回して値が空かどうかを一気に確認している。
 ```js
   //空チェック用配列
   const formArray = [name, mail, option, comment];
@@ -184,8 +184,8 @@ contactForm.addEventListener('submit', function (e) {
 
 <br>
 
-■ 値の空チェック以外にも条件を追加してみよう。
-> 本記事は名前とコメントに文字制限、そしてメールアドレスの形式のチェックを実装してみます。ここではメールアドレスの形式チェックをピックアップしてみます。
+### ■ 値の空チェック以外にも条件を追加。
+> 本記事は名前とコメントに文字制限、そしてメールアドレスの形式のチェックを実装してみます。ここではメールアドレスの形式チェックをピックアップ。
 
 - まずはメールアドレスの正規表現
   ```
@@ -193,7 +193,7 @@ contactForm.addEventListener('submit', function (e) {
     const regex = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
   ```
 
-- `test`メソッドを使ってメールアドレスの形式が正しいかどうかのチェックが可能です。例えば下記のようなジャッジが出来ます。これに関しては[Let'sプログラミング](https://www.javadrive.jp/regex-basic/sample/index13.html)を参考にしました。
+- `test`メソッドを使ってメールアドレスの形式が正しいかどうかのチェックが可能です。例えば下記のようなジャッジが出来る。これに関しては[Let'sプログラミング](https://www.javadrive.jp/regex-basic/sample/index13.html)を参考にした。
 
   ```
   regex.test('hoge@example.com');
@@ -206,8 +206,8 @@ contactForm.addEventListener('submit', function (e) {
   --> false // ローカル部分で使用できない文字種
   ```
 
-- 本記事で実装しているメールアドレスのエラーチェックですが、
-  「正規表現でない」場合はアラートを出るようにしました。
+- 本記事で実装しているメールアドレスのエラーチェックだが、
+  「正規表現でない」場合はアラートを出るようにした。
   ```js
     if (!regex.test(mail)) {
       alert('メールアドレスの形式が不正です')
@@ -217,5 +217,5 @@ contactForm.addEventListener('submit', function (e) {
 
 <br>
 
-# 5.おわりに
-フォームのエラーチェックの実装を体験してみましたが、色々応用は出来そうです。例えば、サインアップの機能でパスワード欄とパスワードの確認用の欄があって、二つが同じ値かをチェックするこも可能かと思います。
+# 4.おわりに
+ヴァリデーションチェックはサーバーサイドで少なくともやってほしいが、ユーザービリティとかを考えるとフロントエンドでもチェックがあったの方が、ユーザーに親切かも。alert出しているだけだけど、そもそも入力が出来ていないと送信ボタンが非活性にならないとか、入力しながら足りていない要素を指摘してあげたり出来ると優しい気はする。
