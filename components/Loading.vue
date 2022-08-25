@@ -1,6 +1,9 @@
 <template>
   <div v-if="loading" class="loading">
-    <div class="loading__loader">Loading...</div>
+    <div class="loading__loader">
+      <img src="~@/assets/image/s_logo.png" />
+      <div class="loading_text">Loading</div>
+    </div>
   </div>
 </template>
 
@@ -10,7 +13,7 @@ export default Vue.extend({
   name: "Loading",
   data() {
     return {
-      loading: false
+      loading: false,
     };
   },
   methods: {
@@ -19,8 +22,8 @@ export default Vue.extend({
     },
     finish() {
       this.loading = false;
-    }
-  }
+    },
+  },
 });
 </script>
 
@@ -35,13 +38,32 @@ export default Vue.extend({
   height: 100vh;
   z-index: 9999;
   transition: all 1.2s ease;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
   &__loader {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 18px;
+  }
+}
+.loading img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  animation: spin 2s linear infinite;
+}
+.loading_text {
+  text-align: center;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>
