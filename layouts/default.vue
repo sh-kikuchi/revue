@@ -155,6 +155,11 @@ export default {
           title: "Gen.",
           to: "/sub/generator",
         },
+        {
+          icon: "mdi-controller",
+          title: "Game",
+          to: "/sub/game",
+        },
       ],
       miniVariant: true,
       right: false,
