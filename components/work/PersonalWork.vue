@@ -107,40 +107,28 @@
       <v-card class="mx-auto" outlined>
         <v-list-item three-line>
           <v-list-item-content>
-            <div class="text-overline mb-4">toolboxシリーズ</div>
+            <div class="text-overline mb-4">
+              toolboxシリーズ(legacy:-2021-4-2022.11)
+            </div>
             <v-list-item-title class="text-h5 mb-1">
               smalltalk（ver.2）
             </v-list-item-title>
             <v-list-item-subtitle
               >Laravel9（6~）,Bootstrap4,MySQL,HTML,CSS</v-list-item-subtitle
             >
+            <v-list-item-subtitle
+              >->
+              toolbox第2弾（青アプリ）。チャンネル毎に「お茶の間」トークslackライクなアプリ。</v-list-item-subtitle
+            >
           </v-list-item-content>
         </v-list-item>
-        <v-card-text>
-          「toolbox」第2弾（青アプリ）。元々、TwitterのようなSNSアプリを作っていたのですが、グループトークを意識したアプリにリミックスしました。（ver.1はGit
-          Hubでレガシーとして残している。）チャンネルを作って、それ毎に「お茶の間」トークを楽しめるようにしております。でも、たまには一人で居たい時も…。そんな時は「ひとりごと」を使ってぼそぼそ呟くことも可能です。必要かは別として。
-          <div>
-            <br />
-            <div>■ テストアカウント1</div>
-            <ul>
-              <li>【email】test@test.com</li>
-              <li>【password】testtest</li>
-            </ul>
-            <small>変更禁止</small>
-          </div>
-          <div>
-            <div>■ テストアカウント2</div>
-            <ul>
-              <li>【email】test2@test.com</li>
-              <li>【password】test2test2</li>
-            </ul>
-            <small>変更禁止</small>
-          </div>
-        </v-card-text>
         <v-card-actions>
           <v-btn outlined rounded text
-            ><a href="http://toolbox-smalltalk.herokuapp.com/" target="_blank">
-              DEMO
+            ><a
+              href="https://github.com/sh-kikuchi/toolbox-smalltalk"
+              target="_blank"
+            >
+              github
             </a></v-btn
           >
         </v-card-actions>
@@ -148,31 +136,27 @@
       <v-card class="mx-auto" outlined>
         <v-list-item three-line>
           <v-list-item-content>
-            <div class="text-overline mb-4">toolboxシリーズ</div>
+            <div class="text-overline mb-4">
+              toolboxシリーズ(legacy:-2021.6-2022.11)
+            </div>
             <v-list-item-title class="text-h5 mb-1">
               bookstock
             </v-list-item-title>
             <v-list-item-subtitle
               >Laravel9(8~),Bootstrap4,MySQL,HTML,CSS</v-list-item-subtitle
             >
+            <v-list-item-subtitle
+              >->「toolbox」第3弾（赤アプリ）はテーマごとに纏めるブックメモアプリ。</v-list-item-subtitle
+            >
           </v-list-item-content>
         </v-list-item>
-        <v-card-text>
-          「toolbox」第3弾（赤アプリ）はブックメモアプリ。自分で決めたテーマ毎に本の要約や引用をまとめられるもの。「自分が学生時代にレポートやレジュメを作成する中であったら便利だったな」という思いでつくってみました。複数の本から情報をまとめたい時には是非。
-          <br />
-          <div>
-            <div>■ テストアカウント</div>
-            <ul>
-              <li>【email】test@test.com</li>
-              <li>【password】testtest</li>
-            </ul>
-            <small>変更禁止</small>
-          </div>
-        </v-card-text>
         <v-card-actions>
           <v-btn outlined rounded text
-            ><a href="http://sk-bookstock.herokuapp.com/" target="_blank">
-              DEMO
+            ><a
+              href="https://github.com/sh-kikuchi/toolbox-bookstock"
+              target="_blank"
+            >
+              github
             </a></v-btn
           >
         </v-card-actions>
