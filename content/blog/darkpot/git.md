@@ -1,4 +1,11 @@
-
+---
+title: Gitのあんちょこ
+description: 基本コマンド
+category: darkpot
+createdAt: 2022-10-15
+updatedAt: 2022-10-15
+sortNumber: 001
+---
 
 # レポジトリ作成
 …or create a new repository on the command line
